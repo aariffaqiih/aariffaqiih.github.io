@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>'Aarif Faqiih</title>
+
+    <link rel="stylesheet" href="home.css" />
+
+    <link rel="stylesheet" href="global.css" />
+
+    <link rel="stylesheet" href="homerspnsv.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="logo.svg" /></a>
+      </div>
+
+      <div class="navbar-extra">
+        <a id="hamburger-menu"><i class="ri-menu-fill"></i></a>
+      </div>
+
+      <div class="menu">
+        <a href="tentang.html">Tentang</a>
+
+        <a href="portfolio.html">Portofolio</a>
+
+        <a href="" id="cvLink">CV</a>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+      <div class="popup">
+        <span class="close-btn" id="closeBtn">&times;</span>
+
+        <div class="alert">
+          <h2>Ingin mengunduh CV Saya?</h2>
+
+          <h2>Silakan isi email Anda.</h2>
+        </div>
+
+        <form action="https://formspree.io/f/xoqgakoo" method="POST">
+          <input type="email" placeholder="Email" id="emailInput" name="_replyto" required />
+
+          <button type="submit">Kirim</button>
+        </form>
+
+        <div class="note">
+          <p>Anda akan segera menerima CV Saya melalui email,</p>
+
+          <p>Terima kasih.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="home">
+      <div class="fog"><img src="fog.svg" /></div>
+
+      <div class="text">
+        <h1>'Aarif <span>Rahmaan</span></h1>
+
+        <h1><span>Jalaluddin</span> Faqiih</h1>
+
+        <p>Frontend Web Dev | Music Producer</p>
+      </div>
+    </div>
+
+    <div class="about" id="about">
+      <div class="text animate-left">
+        <h2 id="helloText">Halo!</h2>
+
+        <p>
+          Saya ‘Aarif Rahmaan Jalaluddin Faqiih, biasa dipanggil Faqih. Saya siswa SMK jurusan Rekayasa Perangkat lunak yang memiliki minat di bidang pemrograman web dan produksi musik dengan pengalaman magang dan sudah membuat sejumlah
+          proyek.
+        </p>
+
+        <a href="tentang.html">Mari Berkenalan</a>
+      </div>
+
+      <div class="photo-container animate-right">
+        <div class="circles">
+          <div class="circle1"><i class="ri-code-line"></i></div>
+
+          <div class="circle2"><i class="ri-music-fill"></i></div>
+        </div>
+
+        <div class="photo"><img src="profile.png" /></div>
+      </div>
+    </div>
+
+    <div class="portofolio" id="portfolio">
+      <h3>Portofolio</h3>
+
+      <div class="box">
+        <a href="portfolio.html#website" class="animate-bottom">
+          <div class="website">
+            <div class="frame">
+              <div class="photo"></div>
+            </div>
+
+            <div class="label">
+              <div class="text"><h4>Website</h4></div>
+
+              <div class="arrow"><i class="ri-arrow-right-line"></i></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="portfolio.html#musik" class="animate-bottom">
+          <div class="musik">
+            <div class="frame">
+              <div class="photo"></div>
+            </div>
+
+            <div class="label">
+              <div class="text"><h4>Musik</h4></div>
+
+              <div class="arrow"><i class="ri-arrow-right-line"></i></div>
+            </div>
+          </div>
+        </a>
+
+        <a href="portfolio.html#ui" class="animate-bottom">
+          <div class="animate-bottom">
+            <div class="lainnya">
+              <div class="frame">
+                <div class="photo"></div>
+              </div>
+
+              <div class="label">
+                <div class="text"><h4>UI Design</h4></div>
+
+                <div class="arrow"><i class="ri-arrow-right-line"></i></div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="real">
+        <div class="hubungi">
+          <h3>Hubungi</h3>
+
+          <div class="kontak">
+            <p>082242458593</p>
+
+            <p>aarifrjf@gmail.com</p>
+
+            <a href="https://www.linkedin.com/in/aarifrjf/">linkedin.com/in/aarifrjf</a>
+          </div>
+        </div>
+
+        <div class="wall"></div>
+
+        <div class="footbar">
+          <h3>Menu</h3>
+
+          <div class="footmenu">
+            <a href="tentang.html">Tentang Saya</a>
+
+            <a href="portfolio.html">Portofolio</a>
+
+            <a href="" id="cvLinkFooter">Unduh CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="thankyou">
+      <div class="thank"></div>
+
+      <div class="you"></div>
+    </div>
+
+    <script src="js.js"></script>
+  </body>
+</html>

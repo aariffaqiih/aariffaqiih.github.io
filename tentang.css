@@ -1,0 +1,114 @@
+:root {
+  --blue: #004cee;
+  --grey: #ddd;
+  --black1: rgba(0, 0, 0, 0.9);
+  --black2: rgba(0, 0, 0, 0.6);
+  --black3: rgba(0, 0, 0, 0.3);
+}
+
+.perkenalan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1078px;
+}
+
+.perkenalan .image {
+  width: 410px;
+  height: 450.15px;
+  background: url(profile2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.frames {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 588px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.siji,
+.loro {
+  gap: 20px;
+  display: flex;
+  font-size: 44px;
+  color: var(--blue);
+}
+
+.siji .pintar,
+.siji .rmx,
+.loro .rmx,
+.loro .pintar {
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.des,
+.text {
+  text-align: justify;
+  font-size: 18px;
+  font-family: 400;
+  line-height: 28px;
+}
+
+.des {
+  max-width: 1078px;
+}
+
+.perkenalan .text p {
+  text-indent: 36px;
+  max-width: 560px;
+}
+
+.dokumentasi {
+  width: 1078px;
+  height: 400px;
+}
+
+.magang .dokumentasi {
+  background: url(magang.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.organisasi .dokumentasi {
+  background: url(organisasi.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.magang,
+.organisasi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+.magang h2,
+.magang p,
+.organisasi h2,
+.organisasi p {
+  color: var(--black1);
+}
+
+.magang h2,
+.organisasi h2 {
+  font-size: 36px;
+  font-weight: 600;
+}

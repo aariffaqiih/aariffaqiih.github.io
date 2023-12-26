@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  scroll-behavior: smooth;
+  font-family: "Onest", sans-serif;
+}
+
+:root {
+  --blue: #004cee;
+  --grey: #ddd;
+  --black1: rgba(0, 0, 0, 0.9);
+  --black2: rgba(0, 0, 0, 0.6);
+  --black3: rgba(0, 0, 0, 0.4);
+  --reduced-size: 0.33;
+  --reduced-size2: 0.66;
+  --reduced-size3: 0.5;
+  --reduced-size4: 0.6;
+}
+
+@media screen and (orientation: portrait) {
+  .perkenalan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+  }
+
+  .portofolio,
+  .tentang {
+    padding-top: 96px;
+  }
+
+  .perkenalan .image {
+    width: calc(410px * var(--reduced-size4)) !important;
+    height: calc(450.15px * var(--reduced-size4)) !important;
+    background: url(profile2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .frames {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 380px;
+  }
+
+  .tentang .top h2 {
+    color: var(--blue);
+    font-size: calc(48px * var(--reduced-size2));
+    font-weight: 600;
+  }
+
+  .tentang .magang h2,
+  .tentang .organisasi h2 {
+    color: var(--black1);
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .icon {
+    display: flex;
+    flex-direction: column;
+    gap: calc(12px * var(--reduced-size)) !important;
+  }
+
+  .siji,
+  .loro {
+    gap: 0px;
+    display: flex;
+    font-size: 32px !important;
+    color: var(--blue);
+  }
+
+  .siji .pintar,
+  .siji .rmx,
+  .loro .rmx,
+  .loro .pintar {
+    height: 48px;
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .des,
+  .text {
+    text-align: justify;
+    font-size: 1px !important;
+    font-family: 400;
+    line-height: 28px;
+  }
+
+  .des {
+    max-width: 1078px;
+  }
+
+  .perkenalan .text p {
+    text-indent: 1px;
+    max-width: 560px;
+  }
+
+  .dokumentasi {
+    width: 100vw;
+    height: 56vh;
+  }
+
+  .magang .dokumentasi {
+    background: url(magang.svg);
+    background-position: left !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .organisasi .dokumentasi {
+    background: url(organisasi.svg);
+    background-position: left !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .magang,
+  .organisasi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    width: 80vw;
+  }
+
+  .magang h2,
+  .magang p,
+  .organisasi h2,
+  .organisasi p {
+    color: var(--black1);
+  }
+}
