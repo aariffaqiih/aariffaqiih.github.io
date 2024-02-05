@@ -125,10 +125,26 @@
     background-size: cover;
   }
 
+  .project .web5 .image {
+    background: url(TechLim.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .project .web6 .image {
+    background: url(claywave.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   .web1:hover .image,
   .web2:hover .image,
   .web3:hover .image,
   .web4:hover .image,
+  .web5:hover .image,
+  .web6:hover .image,
   .ui1:hover .image,
   .ui2:hover .image {
     transform: scale(1.1);
@@ -179,7 +195,9 @@
   .web1,
   .web2,
   .web3,
-  .web4 {
+  .web4,
+  .web5,
+  .web6 {
     width: 521px;
     height: 386px !important;
     border-radius: 18px;
@@ -194,7 +212,9 @@
   .web1,
   .web2,
   .web3,
-  .web4 {
+  .web4,
+  .web5,
+  .web6 {
     border: solid 8px var(--blue);
     height: calc(460px * var(--reduced-size2));
     background: var(--blue);
@@ -204,14 +224,18 @@
   .web1 a,
   .web2 a,
   .web3 a,
-  .web4 a {
+  .web4 a,
+  .web5 a,
+  .web6 a {
     color: rgba(255, 255, 255, 0.9);
   }
 
   .web1:hover,
   .web2:hover,
   .web3:hover,
-  .web4:hover {
+  .web4:hover,
+  .web5:hover,
+  .web6:hover {
     background: white;
   }
 
@@ -226,7 +250,13 @@
   .web3:hover a,
   .web4:hover h4,
   .web4:hover p,
-  .web4:hover a {
+  .web4:hover a,
+  .web5:hover h4,
+  .web5:hover p,
+  .web5:hover a,
+  .web6:hover h4,
+  .web6:hover p,
+  .web6:hover a {
     color: var(--blue);
   }
 
