@@ -111,6 +111,21 @@
     height: 56vh;
   }
 
+  .dokumentasi2 {
+    width: 100vw;
+    height: 56vh;
+  }
+
+  .magang .dokumentasi2 {
+    background: url(bc.png);
+    background-position: left !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100vw;
+    margin-top: -96px;
+    margin-bottom: -96px;
+  }
+
   .magang .dokumentasi {
     background: url(magang.svg);
     background-position: left !important;

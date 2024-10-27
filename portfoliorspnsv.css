@@ -62,6 +62,22 @@
     margin-bottom: 20px;
   }
 
+  .project .framee {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    height: calc(260px * var(--reduced-size2));
+    margin-bottom: 20px;
+  }
+
+
+  .project .frameee {
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    height: calc(260px * var(--reduced-size2));
+    margin-bottom: 20px;
+  }
+
+
   .ui .project .frame {
     overflow: hidden;
     border-radius: 10px;
@@ -196,6 +212,8 @@
   .web2,
   .web3,
   .web4,
+  .web11,
+  .web222,
   .web5,
   .web6 {
     width: 521px;
@@ -205,13 +223,18 @@
   }
 
   .ui1,
-  .ui2 {
+  .ui2,
+  .ui3,
+  .ui4,
+  .ui5 {
     width: 80vw;
   }
 
   .web1,
   .web2,
   .web3,
+  .web11,
+  .web222,
   .web4,
   .web5,
   .web6 {
