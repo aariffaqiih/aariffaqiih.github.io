@@ -8,6 +8,17 @@
   font-family: "Onest", sans-serif;
 }
 
+.highlight {
+  background-color: #004cee;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px; /* rounded full */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+
 :root {
   --blue: #004cee;
   --grey: #ddd;

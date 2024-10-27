@@ -42,7 +42,6 @@
   left: 864px;
 }
 
-
 .navbar-extra {
   visibility: hidden;
 }
@@ -228,7 +227,7 @@
   color: var(--black1);
   font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 32px;
   margin-bottom: 20px;
   max-width: 486px;
 }

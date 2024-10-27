@@ -69,7 +69,7 @@
 
 .perkenalan .text p {
   text-indent: 36px;
-  max-width: 560px;
+  /* max-width: 560px; */
 }
 
 .dokumentasi {
@@ -77,8 +77,20 @@
   height: 400px;
 }
 
+.dokumentasi2 {
+  width: 1078px;
+  height: 400px;
+}
+
 .magang .dokumentasi {
   background: url(magang.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.magang .dokumentasi2 {
+  background: url(bc.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

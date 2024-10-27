@@ -52,7 +52,27 @@
   margin-bottom: 20px;
 }
 
+.project .frameee {
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  height: 260px;
+  margin-bottom: 20px;
+}
+.project .framee {
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  height: 260px;
+  margin-bottom: 20px;
+}
+
 .ui .project .frame {
+  overflow: hidden;
+  border-radius: 10px;
+  height: 40vh !important;
+  margin-bottom: 20px;
+}
+
+.ui .project .frameee {
   overflow: hidden;
   border-radius: 10px;
   height: 40vh !important;
@@ -65,9 +85,43 @@
   filter: grayscale(100%);
   transition: 0.3s;
 }
+.project .imageee {
+  height: 260px;
+  border-radius: 10px 10px 0 0;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.project .imagee {
+  height: 260px;
+  border-radius: 10px 10px 0 0;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
 
 .ui .project .image {
   height: 260px;
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.project .framezz {
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  height: 640px;
+  margin-bottom: 20px;
+}
+
+.project .imagezz {
+  height: 640px;
+  border-radius: 10px 10px 0 0;
+  filter: grayscale(100%);
+  transition: 0.3s;
+}
+
+.ui .project .imagezz {
+  height: 640px;
   border-radius: 10px;
   filter: grayscale(100%);
   transition: 0.3s;
@@ -86,6 +140,27 @@
   background-size: cover;
 }
 
+.project .ui3 .imagezz {
+  background: url(ui1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.project .ui4 .imagezz {
+  background: url(ui2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.project .ui5 .imagezz {
+  background: url(ui3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .project .ui2 .image {
   background: url(borobudur.png);
   background-repeat: no-repeat;
@@ -95,6 +170,20 @@
 
 .project .web2 .image {
   background: url(mgs.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project .web11 .imagee {
+  background: url(pcap.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.project .web222 .imageee {
+  background: url(nocIncident.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -130,11 +219,16 @@
 
 .web1:hover .image,
 .web2:hover .image,
+.web222:hover .imageee,
+.web11:hover .imagee,
 .web3:hover .image,
 .web4:hover .image,
 .web5:hover .image,
 .web6:hover .image,
 .ui1:hover .image,
+.ui3:hover .imagezz,
+.ui4:hover .imagezz,
+.ui5:hover .imagezz,
 .ui2:hover .image {
   transform: scale(1.1);
   filter: grayscale(0%);
@@ -182,11 +276,16 @@
 
 .web1,
 .web2,
+.web222,
+.web11,
 .web3,
 .web4,
 .web5,
 .web6,
 .ui1,
+.ui3,
+.ui4,
+.ui5,
 .ui2 {
   width: 521px;
   border-radius: 18px;
@@ -195,6 +294,8 @@
 
 .web1,
 .web2,
+.web222,
+.web11,
 .web3,
 .web4,
 .web5,
@@ -207,6 +308,8 @@
 
 .web1 a,
 .web2 a,
+.web222 a,
+.web11 a,
 .web3 a,
 .web4 a,
 .web5 a,
@@ -216,6 +319,8 @@
 
 .web1:hover,
 .web2:hover,
+.web222:hover,
+.web11:hover,
 .web3:hover,
 .web4:hover,
 .web5:hover,
@@ -229,6 +334,12 @@
 .web2:hover h4,
 .web2:hover p,
 .web2:hover a,
+.web222:hover h4,
+.web222:hover p,
+.web222:hover a,
+.web11:hover h4,
+.web11:hover p,
+.web11:hover a,
 .web3:hover h4,
 .web3:hover p,
 .web3:hover a,
