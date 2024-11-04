@@ -82,6 +82,20 @@
   height: 400px;
 }
 
+.dokumentasi23 {
+  width: 1078px;
+  height: 1078px;
+}
+.dokumentasi234 {
+  width: 1078px;
+  height: 1078px;
+}
+
+.dokumentasi2345 {
+  width: 1078px;
+  height: 1078px;
+}
+
 .magang .dokumentasi {
   background: url(magang.svg);
   background-position: center;
@@ -96,6 +110,24 @@
   background-size: cover;
 }
 
+.magang .dokumentasi23 {
+  background: url(Braincode_sertif_anjayyy.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.magang .dokumentasi234 {
+  background: url(Braincode_anjayy.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.magang .dokumentasi2345 {
+  background: url(MGS_anjayy.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .organisasi .dokumentasi {
   background: url(organisasi.svg);
   background-position: center;

@@ -92,6 +92,7 @@ body {
 }
 
 .portofolio,
+.portofolio2,
 .tentang {
   padding-top: 144px;
   display: flex;
@@ -102,6 +103,7 @@ body {
 }
 
 .portofolio .top h2,
+.portofolio2 .top h2,
 .tentang .top h2 {
   color: var(--blue);
   font-size: 48px;
@@ -109,6 +111,7 @@ body {
 }
 
 .portofolio .content,
+.portofolio2 .content,
 .tentang .content {
   display: flex;
   flex-direction: column;
@@ -329,7 +332,7 @@ body {
   }
 
   .navbar .menu {
-    font-size: 8px !important;
+    display: none !important;
   }
 
   .navbar .menu a {

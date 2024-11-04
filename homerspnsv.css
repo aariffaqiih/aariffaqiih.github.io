@@ -21,6 +21,7 @@
 
 @media screen and (orientation: portrait) {
   .portofolio,
+  .portofolio2,
   .tentang {
     padding-top: 24px;
     display: flex;
@@ -31,6 +32,7 @@
   }
 
   .portofolio .top h2,
+  .portofolio2 .top h2,
   .tentang .top h2 {
     color: var(--blue);
     font-size: 48px;
@@ -38,6 +40,7 @@
   }
 
   .portofolio .content,
+  .portofolio2 .content,
   .tentang .content {
     display: flex;
     flex-direction: column;
@@ -418,12 +421,11 @@
   }
 
   .about a {
-    font-size: calc(18px * var(--reduced-size2));
+    font-size: calc(20px * var(--reduced-size2));
     color: white;
     background: var(--blue);
     text-decoration: none;
-    max-width: fit-content;
-    padding: 10px 28px;
+    padding: 12px;
     border-radius: 999px;
     transition: 0.3s;
     border: solid 2px var(--blue);
@@ -435,7 +437,8 @@
     background: white;
   }
 
-  .portofolio {
+  .portofolio,
+  .portofolio2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -451,13 +454,21 @@
     transform: translateY(48px);
     transition: opacity 0.6s, transform 0.6s;
   }
+  .portofolio2 h3 {
+    font-size: calc(48px * var(--reduced-size2));
+    color: var(--blue);
+    font-weight: 600;
+    transform: translateY(48px);
+  }
 
-  .portofolio.show h3 {
+  .portofolio.show h3,
+  .portofolio2 .show h3 {
     opacity: 1;
     transform: translateY(0);
   }
 
-  .portofolio .box {
+  .portofolio .box,
+  .portofolio2 .box {
     display: flex;
     flex-direction: column;
     gap: calc(44px * var(--reduced-size2));
@@ -597,6 +608,11 @@
   }
 
   .portofolio.show .animate-bottom {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .portofolio2.show .animate-bottom {
     opacity: 1;
     transform: translateY(0);
   }

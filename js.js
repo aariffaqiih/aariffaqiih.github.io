@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   const h1Elements = document.querySelectorAll(".home h1");
   h1Elements.forEach((h1Element) => {
@@ -6,9 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 const helloText = document.getElementById("helloText");
-const languages = ["Halo!", "Hello!", "¡Hola!", "Bonjour!", "Ciao!", "Hallo!", "你好!", "こんにちは!", "안녕하세요!", "Olá!"];
+const languages = [
+  "Halo!",
+  "Hello!",
+  "¡Hola!",
+  "Bonjour!",
+  "Ciao!",
+  "Hallo!",
+  "你好!",
+  "こんにちは!",
+  "안녕하세요!",
+  "Olá!",
+];
 let index = 0;
 
 function changeHelloText() {
@@ -64,13 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("overlay").style.display = "none";
   });
 
-  document.getElementById("emailForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-    const email = document.getElementById("emailInput").value;
+  document
+    .getElementById("emailForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const email = document.getElementById("emailInput").value;
 
-    console.log("Email yang diinput: " + email);
-    document.getElementById("overlay").style.display = "none";
-  });
+      console.log("Email yang diinput: " + email);
+      document.getElementById("overlay").style.display = "none";
+    });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -79,32 +90,35 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("overlay").style.display = "flex";
   });
 
-  document.getElementById("cvLinkFooter").addEventListener("click", function (event) {
-    event.preventDefault();
-    document.getElementById("overlay").style.display = "flex";
-  });
+  document
+    .getElementById("cvLinkFooter")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      document.getElementById("overlay").style.display = "flex";
+    });
 });
 
+document
+  .getElementById("emailForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah perilaku default dari form
 
-document.getElementById("emailForm").addEventListener("submit", function (event) {
-  event.preventDefault(); // Mencegah perilaku default dari form
+    // Ambil nilai email dari input
+    const email = document.getElementById("emailInput").value;
 
-  // Ambil nilai email dari input
-  const email = document.getElementById("emailInput").value;
-
-  // Kirim data ke Formspree
-  fetch("https://formspree.io/f/xoqgakoo", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email: email }),
-  })
-    .then((response) => {
-      // Tambahkan kode untuk menampilkan pesan sukses atau apa pun yang Anda inginkan di sini
-      console.log("Formulir terkirim!");
-      // Menutup popup setelah formulir terkirim
-      document.getElementById("overlay").style.display = "none";
+    // Kirim data ke Formspree
+    fetch("https://formspree.io/f/xoqgakoo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email }),
     })
-    .catch((error) => console.error("Error:", error));
-});
+      .then((response) => {
+        // Tambahkan kode untuk menampilkan pesan sukses atau apa pun yang Anda inginkan di sini
+        console.log("Formulir terkirim!");
+        // Menutup popup setelah formulir terkirim
+        document.getElementById("overlay").style.display = "none";
+      })
+      .catch((error) => console.error("Error:", error));
+  });

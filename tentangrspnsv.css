@@ -116,6 +116,19 @@
     height: 56vh;
   }
 
+  .dokumentasi23 {
+    width: 100vw;
+    height: 70vh;
+  }
+  .dokumentasi234 {
+    width: 100vw;
+    height: 70vh;
+  }
+  .dokumentasi2345 {
+    width: 100vw;
+    height: 70vh;
+  }
+
   .magang .dokumentasi2 {
     background: url(bc.png);
     background-position: left !important;
@@ -126,6 +139,27 @@
     margin-bottom: -96px;
   }
 
+  .magang .dokumentasi23 {
+    background: url(Braincode_sertif_anjayyy.png);
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100vw;
+  }
+  .magang .dokumentasi234 {
+    background: url(Braincode_anjayy.png);
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100vw;
+  }
+  .magang .dokumentasi2345 {
+    background: url(MGS_anjayy.png);
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100vw;
+  }
   .magang .dokumentasi {
     background: url(magang.svg);
     background-position: left !important;
