@@ -17,6 +17,7 @@
   padding: 0;
   scroll-behavior: smooth !important;
   cursor: crosshair;
+  overflow-x: hidden !important;
 }
 body {
   background: var(--white);
@@ -665,7 +666,6 @@ footer h3 span {
   }
   .face h1 {
     font-size: 12vh !important;
-    text-shadow: 0 0 100vh var(--blue);
   }
   .face h1 span {
     display: none;
@@ -702,6 +702,9 @@ footer h3 span {
   .aylin,
   .luna {
     height: 62vh;
+  }
+  #rain {
+    display: none;
   }
 }
 
