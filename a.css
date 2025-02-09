@@ -633,6 +633,12 @@ footer h3 span {
 } */
 
 @media (orientation: portrait) {
+  .code-wall h2 {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
   .hello {
     flex-direction: column-reverse;
   }
