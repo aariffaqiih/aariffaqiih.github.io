@@ -5,9 +5,30 @@
   --gray: rgb(120, 125, 130);
   --white: rgb(245, 250, 255);
 }
-::-webkit-scrollbar {
-  display: none !important;
+
+::-webkit-scrollbar,
+scrollbar {
+  width: 1vw;
+  cursor: ns-resize !important;
 }
+.tahubulatdigorengdadakan,
+.tahubulatdigorengdadakan a,
+.tahubulatdigorengdadakan h6,
+.tahubulatdigorengdadakan i {
+  cursor: pointer !important;
+}
+::-webkit-scrollbar-track,
+scrollbar-track {
+  background-color: var(--blue);
+  cursor: ns-resize !important;
+}
+
+::-webkit-scrollbar-thumb,
+scrollbar-thumb {
+  background-color: var(--white);
+  cursor: ns-resize !important;
+}
+
 * {
   -moz-window-dragging: no-drag !important;
   -webkit-user-drag: none !important;
@@ -40,14 +61,92 @@ nav {
   backdrop-filter: blur(1vh);
   font-size: 2vh;
 }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  4% {
+    transform: rotate(0deg);
+  }
+  8% {
+    transform: rotate(0deg);
+  }
+  12% {
+    transform: rotate(0deg);
+  }
+  16% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  24% {
+    transform: rotate(0deg);
+  }
+  28% {
+    transform: rotate(0deg);
+  }
+  32% {
+    transform: rotate(0deg);
+  }
+  36% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+  44% {
+    transform: rotate(0deg);
+  }
+  48% {
+    transform: rotate(0deg);
+  }
+  52% {
+    transform: rotate(0deg);
+  }
+  56% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  64% {
+    transform: rotate(0deg);
+  }
+  68% {
+    transform: rotate(0deg);
+  }
+  72% {
+    transform: rotate(0deg);
+  }
+  76% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  84% {
+    transform: rotate(0deg);
+  }
+  88% {
+    transform: rotate(0deg);
+  }
+  92% {
+    transform: rotate(0deg);
+  }
+  96% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 nav img {
+  animation: spin 4s infinite;
   height: 6vh;
   border-radius: 100vh;
 }
-nav .hamburger {
-  display: none;
-  color: var(--blue);
-}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -55,6 +154,7 @@ nav .hamburger {
   min-width: max-content;
 }
 .nav-links li a {
+  cursor: pointer !important;
   text-decoration: none;
   color: var(--black);
   position: relative;
@@ -87,6 +187,7 @@ nav .hamburger {
   color: var(--blue) !important;
 }
 .theme-toggle {
+  cursor: pointer !important;
   position: fixed;
   z-index: 99;
   bottom: 2vh;
@@ -96,14 +197,20 @@ nav .hamburger {
   display: flex;
   padding: 1vh;
   border-radius: 100%;
+  transition: filter 0.2s ease-in-out;
+}
+.theme-toggle:hover {
+  filter: brightness(0.9);
 }
 body.dark .bxs-sun,
 body:not(.dark) .bxs-moon {
   display: none;
+  cursor: pointer !important;
 }
 body.dark .bxs-moon,
 body:not(.dark) .bxs-sun {
   color: var(--blue);
+  cursor: pointer !important;
 }
 .face {
   min-height: 100vh;
@@ -122,10 +229,11 @@ body:not(.dark) .bxs-sun {
   letter-spacing: -0.4vh;
   transform: translateX(-100%);
   -webkit-text-stroke: 0.1vh var(--blue);
-  text-shadow: 0 0 100vh var(--blue);
+  transition: color 0.4s ease-in-out, text-shadow 0.8s ease-in-out;
 }
 .face h1:hover {
-  color: var(--white);
+  color: transparent;
+  text-shadow: 0 0 8vh var(--blue);
 }
 @keyframes slide-left {
   0% {
@@ -156,7 +264,8 @@ body:not(.dark) .bxs-sun {
   position: relative;
 }
 .face h1 span {
-  color: var(--white);
+  color: transparent;
+  transition: color 0.4s ease-in-out;
 }
 .face h1 span:hover {
   color: var(--blue);
@@ -213,10 +322,18 @@ body:not(.dark) .bxs-sun {
   position: relative;
 }
 .hello .text h2 {
-  font-size: 12vh;
+  font-size: 10vh;
+  height: 16vh;
   color: var(--blue);
-  position: relative;
+  transition: transform 0.4s ease-in-out, text-shadow 0.4s ease-in-out,
+    filter 0.4s ease-in-out;
 }
+
+.hidden {
+  transform: scale(0.9);
+  filter: blur(1vh);
+}
+
 .hello .text p {
   font-size: 2vh;
   line-height: 4vh;
@@ -231,21 +348,15 @@ body:not(.dark) .bxs-sun {
   position: relative;
 }
 .projects {
+  padding-top: 12vh;
+  padding-bottom: 20vh;
   margin: auto;
-  min-height: 100vh;
   color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-width: 70vw;
-}
-.projects h2,
-.certificates h2 {
-  text-align: center;
-  color: var(--blue);
-  font-size: 8vh;
-  margin-bottom: 6vh;
 }
 footer h2 {
   width: 400vw;
@@ -255,7 +366,7 @@ footer h2 {
   -webkit-text-stroke: 0.1vh var(--blue);
   display: flex;
   justify-content: space-around;
-  animation: moveRight 30s linear infinite;
+  animation: moveRight 60s linear infinite;
 }
 
 footer h2 span {
@@ -270,7 +381,7 @@ footer h3 {
   -webkit-text-stroke: 0.1vh var(--white);
   display: flex;
   justify-content: space-around;
-  animation: moveLeft 30s linear infinite;
+  animation: moveLeft 60s linear infinite;
 }
 
 footer h3 span {
@@ -307,19 +418,23 @@ footer h3 span {
   flex-direction: column;
 }
 .carousel .field .image {
+  cursor: pointer !important;
   height: 44vh;
   filter: grayscale(1);
+  transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .carousel .field .image:hover {
   filter: grayscale(0);
 }
 .carousel .field .name {
   display: flex;
+  cursor: pointer !important;
   justify-content: space-between;
   padding: 2vh 4vh;
   background: var(--blue);
   align-items: center;
   z-index: 1;
+  transition: all 0.2s ease-in-out;
 }
 .carousel .field:hover .image {
   transform: scale(1.2);
@@ -327,10 +442,14 @@ footer h3 span {
 .carousel .field .name h3 {
   font-size: 6vh;
   color: var(--white);
+  cursor: pointer !important;
+  transition: all 0.2s ease-in-out;
 }
 .carousel .field .name i {
+  cursor: pointer !important;
   font-size: 8vh;
   color: var(--white);
+  transition: all 0.2s ease-in-out;
 }
 .carousel .field:hover .name i {
   transform: rotate(-45deg);
@@ -345,17 +464,17 @@ footer h3 span {
   text-shadow: 0 0 4vh var(--blue);
 }
 .carousel .field:nth-child(1) .image {
-  background: url("https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png");
-  background-position: center;
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/co.png");
   background-size: cover;
+  background-position: center;
 }
 .carousel .field:nth-child(2) .image {
-  background: url("https://asset.kompas.com/crops/QtZ7rXIYuheUPIR7YIPFFwAT1Fg=/209x0:2234x1350/1200x800/data/photo/2023/03/23/641bd6e65efc1.jpg");
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/ui.png");
   background-position: center;
   background-size: cover;
 }
 .carousel .field:nth-child(3) .image {
-  background: url("https://www.blibli.com/friends-backend/wp-content/uploads/2024/02/B110272-Cover-istilah-dalam-valorant-scaled.jpg");
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/mu.png");
   background-position: center;
   background-size: cover;
 }
@@ -367,6 +486,7 @@ footer h3 span {
   align-items: center;
   position: relative;
 }
+
 .my-head {
   background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/me.png");
   background-size: cover;
@@ -478,7 +598,7 @@ footer h3 span {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  animation: moveLeft 30s linear infinite;
+  animation: moveLeft 60s linear infinite;
 }
 
 .code-wall h2 span {
@@ -520,10 +640,32 @@ footer h3 span {
 .certificates img {
   max-width: 24vw;
 }
+.code-project .screenshot-p {
+  height: 40vh;
+  min-width: 64vh;
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/pc.png");
+  background-size: cover;
+  background-position: top;
+}
+.code-project .screenshot-n {
+  height: 40vh;
+  min-width: 64vh;
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/no.png");
+  background-size: cover;
+  background-position: top;
+}
 .code-project .screenshot-a {
   height: 36vh;
   min-width: 64vh;
   background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/a.png");
+  background-size: cover;
+  animation: scrollBackground 40s linear infinite;
+}
+
+.code-project .screenshot-t {
+  height: 36vh;
+  min-width: 64vh;
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/te.png");
   background-size: cover;
   animation: scrollBackground 30s linear infinite;
 }
@@ -531,9 +673,9 @@ footer h3 span {
 .code-project .screenshot-c {
   height: 36vh;
   min-width: 64vh;
-  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/c.png");
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/cl.png");
   background-size: cover;
-  animation: scrollBackground 15s linear infinite;
+  animation: scrollBackground 20s linear infinite;
 }
 @keyframes scrollBackground {
   0% {
@@ -605,33 +747,29 @@ footer h3 span {
   background: var(--black);
   opacity: 0.1;
 }
-/* @media (max-width: 720px) {
-  nav {
-    padding: 2.5% 5%;
-    width: 90%;
-  }
-  .nav-links {
-    flex-direction: column;
-    position: fixed;
-    top: 100%;
-    right: 0;
-    opacity: 0;
-    width: 80%;
-    background-color: var(--white);
-    padding: 10%;
-  }
-  .nav-links.active {
-    display: flex;
-    opacity: 1;
-  }
-  .nav-links.active li {
-    filter: blur(0px);
-  }
-  nav .hamburger {
-    display: block;
-  }
-} */
-
+.soc {
+  position: absolute;
+  bottom: 4vh;
+  display: flex;
+  gap: 1vh;
+  align-items: baseline;
+  z-index: 97;
+}
+.soc i {
+  cursor: pointer !important;
+  transition: 0.2s ease-in-out;
+  font-size: 4vh;
+  color: var(--gray);
+  background: var(--white);
+  border-radius: 100%;
+  padding: 1vh;
+}
+.soc i:hover {
+  z-index: 98;
+  font-size: 6vh;
+  color: var(--blue);
+  text-shadow: 0 0 4vh var(--blue);
+}
 @media (orientation: portrait) {
   .code-wall h2 {
     display: none;
@@ -647,10 +785,6 @@ footer h3 span {
   }
   .hello .text h2 {
     font-size: 8vh !important;
-  }
-  .projects {
-    margin-top: 20vh;
-    margin-bottom: 10vh;
   }
   .projects h2,
   .certificates h2 {
@@ -752,16 +886,17 @@ footer h3 span {
   }
   .hello {
     max-width: 90vw;
+    gap: 10vw;
   }
   .hello .text {
-    max-width: 44vw;
+    max-width: 36vw;
   }
   .hello .text h2 {
-    font-size: 10vh;
+    font-size: 8vh;
+    min-width: max-content;
   }
   .hello img {
     max-width: 70vw !important;
-    margin-top: 16vh;
   }
   .carousel {
     width: 90vw;

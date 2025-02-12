@@ -1,6 +1,3 @@
-function toggleHamburger() {
-  document.querySelector(".nav-links").classList.toggle("active");
-}
 function toggleTheme() {
   const body = document.body;
   body.classList.toggle("dark");
@@ -33,3 +30,53 @@ function createRain() {
     rain.appendChild(drop);
   }
 }
+const greetings = [
+  "Halo",
+  "Bonjour",
+  "こんにちは",
+  "Helló",
+  "مرحبًا",
+  "Olá",
+  "здравей",
+  "Hej",
+  "你好",
+  "Tere",
+  "नमस्ते",
+  "Hei",
+  "Aloha",
+  "안녕하세요",
+  "Halló",
+  "สวัสดี",
+  "Ciao",
+  "မင်္ဂလာပါ",
+  "Cześć",
+  "Привет",
+  "Hola",
+  "Салом",
+  "Xin chào",
+  "Hello",
+];
+
+let index = 0;
+const helloWorld = document.getElementById("hello-world");
+
+function changeGreeting() {
+  helloWorld.classList.add("hidden"); // Hide current text
+
+  setTimeout(() => {
+    helloWorld.textContent = greetings[index];
+    helloWorld.classList.remove("hidden");
+    index = (index + 1) % greetings.length;
+  }, 400);
+}
+
+setInterval(changeGreeting, 2000);
+
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+window.addEventListener("keydown", function (e) {
+  if (e.key !== "ArrowUp" && e.key !== "ArrowDown") {
+    e.preventDefault();
+  }
+});
