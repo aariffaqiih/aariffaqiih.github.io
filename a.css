@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap");
 :root {
-  --blue: rgb(0, 85, 225);
+  --blue: #0055e1;
   --black: #050a0f;
   --gray: rgb(120, 125, 130);
   --white: rgb(245, 250, 255);
 }
-
+.nying {
+  display: none !important;
+}
 ::-webkit-scrollbar,
 scrollbar {
   width: 1vw;
   cursor: ns-resize !important;
+}
+
+* a {
+  text-decoration: none !important;
 }
 .tahubulatdigorengdadakan,
 .tahubulatdigorengdadakan a,
@@ -45,7 +51,7 @@ body {
   transition: 0.6s ease-in-out;
 }
 body.dark {
-  --blue: rgb(50, 225, 255);
+  --blue: #32e1ff;
   --white: rgb(15, 20, 25);
   --gray: rgb(120, 125, 130);
   --black: rgb(245, 250, 255);
@@ -598,7 +604,7 @@ footer h3 span {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  animation: moveLeft 60s linear infinite;
+  animation: moveRight 60s linear infinite;
 }
 
 .code-wall h2 span {
@@ -640,6 +646,34 @@ footer h3 span {
 .certificates img {
   max-width: 24vw;
 }
+.hello b {
+  color: var(--blue) !important;
+  text-shadow: 0 0 2vh var(--blue);
+}
+.hello .text h5 {
+  cursor: pointer;
+  margin-top: 4vh;
+  background: var(--blue);
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  gap: 1vh;
+  font-size: 2vh;
+  border-radius: 100vh;
+  padding: 1.2vh 4vh;
+}
+.hello .text i {
+  cursor: pointer;
+  font-size: 2.6vh;
+}
+.code-project .screenshot-nk {
+  height: 32vh;
+  min-width: 64vh;
+  background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/ka.png");
+  background-size: cover;
+  background-position: top;
+}
 .code-project .screenshot-p {
   height: 40vh;
   min-width: 64vh;
@@ -647,12 +681,29 @@ footer h3 span {
   background-size: cover;
   background-position: top;
 }
+.userinterface img {
+  width: 30vw;
+  height: fit-content;
+}
+
+.hanjay {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  gap: 2vh;
+}
 .code-project .screenshot-n {
   height: 40vh;
   min-width: 64vh;
   background: url("https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/no.png");
   background-size: cover;
   background-position: top;
+}
+.responsive-iframe {
+  height: 36vh;
+  width: 64vh;
 }
 .code-project .screenshot-a {
   height: 36vh;
@@ -703,11 +754,25 @@ footer h3 span {
   font-size: 2vh;
   color: var(--gray);
 }
+.crtfct-bc .description .time a {
+  text-decoration: none;
+}
+.nonn {
+  background: var(--white) !important;
+  color: var(--blue) !important;
+  border: solid 0.2vh var(--blue);
+  cursor: crosshair !important;
+}
+
+.codes .description i {
+  cursor: pointer;
+}
 .codes .description a {
+  cursor: pointer;
   margin-top: 1vh;
   font-size: 2vh;
   background: var(--blue);
-  padding: 1vh 4vh;
+  padding: 1vh 2vh;
   border-radius: 100vh;
   max-width: max-content;
   display: flex;
@@ -771,6 +836,9 @@ footer h3 span {
   text-shadow: 0 0 4vh var(--blue);
 }
 @media (orientation: portrait) {
+  .nying h2 {
+    display: block;
+  }
   .code-wall h2 {
     display: none;
   }
@@ -779,12 +847,16 @@ footer h3 span {
   }
   .hello {
     flex-direction: column-reverse;
+    margin-top: 20vh;
+    justify-content: center;
+    gap: 6vh !important;
   }
   .hello .text {
     max-width: 80vw !important;
   }
   .hello .text h2 {
     font-size: 8vh !important;
+    height: 12vh;
   }
   .projects h2,
   .certificates h2 {
