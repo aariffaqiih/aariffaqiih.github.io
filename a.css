@@ -835,8 +835,13 @@ footer h3 span {
   color: var(--blue);
   text-shadow: 0 0 4vh var(--blue);
 }
+.judulbos {
+  display: none;
+}
 @media (orientation: portrait) {
   .judulbos {
+    gap: 2vw;
+    align-items: center;
     display: flex;
     justify-content: center;
     background: var(--blue);
