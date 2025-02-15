@@ -839,9 +839,12 @@ footer h3 span {
   display: none;
 }
 @media (orientation: portrait) {
+  .code-project-wall {
+    width: 80vw !important;
+    margin-left: -5vw;
+  }
   .judulbos {
     gap: 2vw;
-    align-items: center;
     display: flex;
     justify-content: center;
     background: var(--blue);
@@ -958,8 +961,14 @@ footer h3 span {
     max-width: 80vw;
   }
   .code-project .screenshot-a,
-  .code-project .screenshot-c {
+  .code-project .screenshot-c,
+  .code-project .screenshot-t,
+  .code-project .screenshot-nk,
+  .code-project .screenshot-p,
+  .code-project .screenshot-n,
+  .code-project iframe {
     min-width: 80vw;
+    max-width: 80vw;
     height: 44vw;
   }
   .certificates .description h3,
