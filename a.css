@@ -445,6 +445,9 @@ footer h3 span {
 .carousel .field:hover .image {
   transform: scale(1.2);
 }
+.anti-sate-ayam {
+  height: 14vh;
+}
 .carousel .field .name h3 {
   font-size: 5vh;
   color: var(--white);
@@ -666,6 +669,13 @@ footer h3 span {
 .hello .text i {
   cursor: pointer;
   font-size: 2.6vh;
+}
+.code-project .screenshot-db {
+  height: 32vh;
+  min-width: 64vh;
+  background: url(./db.png);
+  background-size: cover;
+  background-position: top;
 }
 .code-project .screenshot-nk {
   height: 32vh;
