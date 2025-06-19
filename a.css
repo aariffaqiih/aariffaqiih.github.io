@@ -670,8 +670,15 @@ footer h3 span {
   cursor: pointer;
   font-size: 2.6vh;
 }
+.code-project .screenshot-piza {
+  height: 38vh;
+  min-width: 64vh;
+  background: url(./PIZZA.jpg);
+  background-size: cover;
+  background-position: top;
+}
 .code-project .screenshot-db {
-  height: 32vh;
+  height: 34vh;
   min-width: 64vh;
   background: url(./db.png);
   background-size: cover;
