@@ -60,7 +60,7 @@ nav {
   position: fixed;
   width: 84vw;
   z-index: 99;
-  padding: 2vh 8vw;
+  padding: 3vh 8vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,7 +156,7 @@ nav img {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2vh;
+  gap: 4vh;
   min-width: max-content;
 }
 .nav-links li a {
@@ -823,11 +823,11 @@ footer h3 span {
 .soc i {
   cursor: pointer !important;
   transition: 0.2s ease-in-out;
-  font-size: 4vh;
+  font-size: 5vh;
   color: var(--gray);
   background: var(--white);
   border-radius: 100%;
-  padding: 1vh;
+  padding: 2vh;
 }
 .soc i:hover {
   z-index: 98;
