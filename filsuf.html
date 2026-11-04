@@ -3,39 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flashcard: Soal = Jawaban</title>
+<meta name="theme-color" content="#08060d">
+<meta name="color-scheme" content="dark">
+<title>Flashcard Belajar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   /* ============================================================
-     Design tokens
-     Palette: warm lamp-lit study (amber on warm charcoal)
+     Design tokens — electric memory (DARK-PREMIUM / CYBER)
+     Palet: Cyber Yellow, Neon Orange, Electric Purple, Electric Cyan
      ============================================================ */
   :root {
-    --bg-base: #0b0908;
-    --bg-elevated: #1a1512;
-    --bg-input: #0f0c0a;
-    --bg-subtle: rgba(245, 158, 11, 0.05);
+    color-scheme: dark;
 
-    --text-primary: #f5ede0;
-    --text-secondary: #b8a99a;
-    --text-tertiary: #7a6e62;
-    --text-ink: #1a1410;
+    --bg-base: #08060d;
+    --bg-elevated: #151022;
+    --bg-input: #0c0916;
+    --bg-subtle: rgba(0, 255, 255, 0.05);
 
-    --accent: #f59e0b;
-    --accent-bright: #fbbf24;
-    --accent-deep: #b45309;
-    --accent-glow: rgba(251, 191, 36, 0.35);
-    --accent-soft: rgba(245, 158, 11, 0.12);
+    --text-primary: #f4f0ff;
+    --text-secondary: #b9b0cf;
+    --text-tertiary: #938ba8;
+    --text-ink: #1a1200;
+
+    /* Neon Orange — aksi utama */
+    --accent: #ff5f1f;
+    --accent-bright: #ffd300;      /* Cyber Yellow — highlight */
+    --accent-deep: #e04a0d;
+    --accent-glow: rgba(255, 95, 31, 0.42);
+    --accent-soft: rgba(255, 95, 31, 0.12);
+
+    /* Aksen pendukung */
+    --cyan: #00ffff;               /* Electric Cyan */
+    --cyan-soft: rgba(0, 255, 255, 0.12);
+    --cyan-glow: rgba(0, 255, 255, 0.38);
+    --purple: #bf00ff;             /* Electric Purple */
+    --purple-soft: rgba(191, 0, 255, 0.14);
+    --lime: #ccff00;               /* Electric Lime */
 
     --border: rgba(255, 255, 255, 0.08);
-    --border-strong: rgba(255, 255, 255, 0.14);
+    --border-strong: rgba(255, 255, 255, 0.16);
 
-    --card-front-bg: #faf5e9;
-    --card-front-text: #1a1410;
-    --card-back-bg: linear-gradient(155deg, #92400e 0%, #d97706 55%, #f59e0b 100%);
-    --card-back-text: #fffbeb;
+    /* Kartu depan: Cyber Yellow + teks gelap (kontras ekstrem) */
+    --card-front-bg: linear-gradient(160deg, #ffe135 0%, #ffd300 55%, #ffb800 100%);
+    --card-front-text: #1a1200;
+    /* Kartu belakang: Electric Purple + teks putih (AA pass) */
+    --card-back-bg: linear-gradient(155deg, #d400ff 0%, #bf00ff 50%, #8a00c4 100%);
+    --card-back-text: #ffffff;
 
     --radius-sm: 10px;
     --radius-md: 14px;
@@ -45,11 +60,15 @@
     --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
 
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-flip: cubic-bezier(0.4, 0.15, 0.2, 1);
+    --ease-flip: cubic-bezier(0.34, 1.2, 0.64, 1);
 
     --duration-fast: 160ms;
     --duration-base: 240ms;
     --duration-slow: 480ms;
+
+    --shadow-elevated:
+      0 24px 60px -20px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(0, 255, 255, 0.05);
   }
 
   /* ============================================================
@@ -66,8 +85,9 @@
     line-height: 1.55;
     color: var(--text-primary);
     background:
-      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(245, 158, 11, 0.14), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(180, 83, 9, 0.10), transparent 60%),
+      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(191, 0, 255, 0.20), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(255, 95, 31, 0.13), transparent 60%),
+      radial-gradient(ellipse 55% 45% at 0% 85%, rgba(0, 255, 255, 0.08), transparent 60%),
       var(--bg-base);
     display: flex;
     justify-content: center;
@@ -84,7 +104,7 @@
     position: fixed;
     inset: 0;
     pointer-events: none;
-    opacity: 0.03;
+    opacity: 0.035;
     z-index: 0;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
@@ -107,11 +127,12 @@
     line-height: 1.1;
     text-align: center;
     margin: 0 0 0.5rem;
-    background: linear-gradient(135deg, var(--accent-bright) 0%, var(--accent) 60%, var(--accent-deep) 100%);
+    background: linear-gradient(120deg, #ffd300 0%, #ff5f1f 38%, #bf00ff 72%, #00ffff 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     text-wrap: balance;
+    filter: drop-shadow(0 0 26px rgba(0, 255, 255, 0.22));
   }
 
   .app__subtitle {
@@ -127,8 +148,8 @@
     font-size: 0.82em;
     padding: 0.12em 0.42em;
     border-radius: 5px;
-    background: var(--accent-soft);
-    color: var(--accent-bright);
+    background: var(--cyan-soft);
+    color: var(--cyan);
   }
 
   /* ============================================================
@@ -140,15 +161,15 @@
      Input screen
      ============================================================ */
   .input-panel {
-    background: linear-gradient(180deg, rgba(26, 21, 18, 0.85), rgba(11, 9, 8, 0.9));
+    background: linear-gradient(180deg, rgba(21, 16, 34, 0.85), rgba(8, 6, 13, 0.9));
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: clamp(1.25rem, 3vw, 1.75rem);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.04),
-      0 24px 60px -20px rgba(0, 0, 0, 0.6);
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      var(--shadow-elevated);
   }
 
   @media (prefers-reduced-transparency: reduce) {
@@ -165,11 +186,11 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent-bright);
+    color: var(--cyan);
     margin-bottom: 0.65rem;
   }
 
-  /* Textarea — Glow focus variant (DARK-PREMIUM) */
+  /* Textarea — Glow focus variant (CYAN) */
   .input-panel__textarea {
     width: 100%;
     min-height: 230px;
@@ -195,11 +216,11 @@
 
   .input-panel__textarea:focus,
   .input-panel__textarea:focus-visible {
-    border-color: var(--accent);
+    border-color: var(--cyan);
     background: var(--bg-elevated);
     box-shadow:
-      0 0 0 3px var(--accent-soft),
-      0 0 24px -8px var(--accent-glow);
+      0 0 0 3px var(--cyan-soft),
+      0 0 26px -6px var(--cyan-glow);
   }
 
   /* ============================================================
@@ -229,7 +250,7 @@
   }
 
   .btn:focus-visible {
-    outline: 2px solid var(--accent-bright);
+    outline: 2px solid var(--cyan);
     outline-offset: 3px;
   }
 
@@ -242,22 +263,45 @@
     cursor: not-allowed;
   }
 
-  /* Primary — Glow + Float (DARK-PREMIUM) */
+  /* Primary — Neon Orange + Glow + Float + Shine sweep */
   .btn--primary {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff8c00 0%, #ff5f1f 55%, #e04a0d 100%);
     color: #1a0f00;
     box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.25),
-      0 6px 18px -6px rgba(245, 158, 11, 0.5);
+      inset 0 1px 0 rgba(255, 255, 255, 0.34),
+      0 6px 18px -6px rgba(255, 95, 31, 0.6);
   }
 
-  @media (hover: hover) {
+  .btn--primary::after {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -100%;
+    width: 60%;
+    height: 220%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.42),
+      transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 600ms var(--ease-out);
+    pointer-events: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
     .btn--primary:hover:not(:disabled) {
       transform: translateY(-2px);
       box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        0 10px 26px -8px rgba(245, 158, 11, 0.65),
-        0 0 32px -8px var(--accent-glow);
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
+        0 10px 28px -8px rgba(255, 95, 31, 0.75),
+        0 0 34px -8px var(--accent-glow);
+    }
+    .btn--primary:hover:not(:disabled)::after {
+      left: 140%;
     }
   }
 
@@ -265,10 +309,10 @@
     transform: translateY(1px) scale(0.985);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.2),
-      0 3px 8px -4px rgba(245, 158, 11, 0.4);
+      0 3px 8px -4px rgba(255, 95, 31, 0.45);
   }
 
-  /* Ghost — Background Fade + Border Fade */
+  /* Ghost — Background Fade + Border Fade + cyan Glow */
   .btn--ghost {
     background: rgba(255, 255, 255, 0.04);
     color: var(--text-secondary);
@@ -277,9 +321,10 @@
 
   @media (hover: hover) {
     .btn--ghost:hover:not(:disabled) {
-      background: rgba(245, 158, 11, 0.08);
-      color: var(--accent-bright);
-      border-color: rgba(245, 158, 11, 0.35);
+      background: var(--cyan-soft);
+      color: var(--cyan);
+      border-color: rgba(0, 255, 255, 0.38);
+      box-shadow: 0 0 22px -6px var(--cyan-glow);
     }
   }
 
@@ -295,16 +340,15 @@
 
   .input-panel__actions .btn--primary { flex: 1 1 180px; }
 
-  /* Error message */
   .input-panel__error {
     margin-top: 0.85rem;
     font-size: 0.82rem;
     line-height: 1.5;
-    color: #fca5a5;
+    color: #ff8a8a;
     padding: 0.7rem 0.85rem;
     border-radius: var(--radius-sm);
-    background: rgba(239, 68, 68, 0.08);
-    border: 1px solid rgba(239, 68, 68, 0.25);
+    background: rgba(255, 40, 0, 0.10);
+    border: 1px solid rgba(255, 40, 0, 0.30);
     display: none;
   }
 
@@ -316,7 +360,7 @@
     color: var(--text-tertiary);
     line-height: 1.65;
     padding-left: 0.9rem;
-    border-left: 2px solid var(--accent-soft);
+    border-left: 2px solid var(--cyan-soft);
   }
 
   .input-panel__tip code {
@@ -324,8 +368,8 @@
     font-size: 0.92em;
     padding: 0.1em 0.35em;
     border-radius: 4px;
-    background: var(--accent-soft);
-    color: var(--accent-bright);
+    background: var(--cyan-soft);
+    color: var(--cyan);
   }
 
   /* ============================================================
@@ -349,18 +393,37 @@
   .study__progress {
     height: 4px;
     border-radius: 99px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.07);
     overflow: hidden;
     margin-bottom: 1.5rem;
   }
 
   .study__progress-fill {
+    position: relative;
     height: 100%;
     width: 0%;
     border-radius: 99px;
-    background: linear-gradient(90deg, var(--accent-deep), var(--accent-bright));
-    box-shadow: 0 0 12px var(--accent-glow);
+    background: linear-gradient(90deg, var(--cyan), var(--lime));
+    box-shadow: 0 0 14px var(--cyan-glow);
+    overflow: hidden;
     transition: width var(--duration-slow) var(--ease-out);
+  }
+
+  /* Subtle shimmer sweep across the progress fill */
+  .study__progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    animation: progress-shimmer 2.4s ease-in-out infinite;
+  }
+
+  @keyframes progress-shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
   }
 
   /* Card scene */
@@ -375,18 +438,27 @@
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 600ms var(--ease-flip);
+    transition: transform 640ms var(--ease-flip);
     cursor: pointer;
     border-radius: var(--radius-lg);
     outline: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
+  /* Focus rings per face — cyan electric */
   .study__card:focus-visible .study__card-face--front {
     box-shadow:
-      0 24px 50px -16px rgba(0, 0, 0, 0.7),
-      0 0 0 2px var(--accent-bright),
-      0 0 40px -8px var(--accent-glow),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      0 24px 50px -16px rgba(0, 0, 0, 0.75),
+      0 0 0 3px var(--cyan),
+      0 0 44px -8px var(--cyan-glow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  }
+  .study__card:focus-visible .study__card-face--back {
+    box-shadow:
+      0 24px 50px -16px rgba(0, 0, 0, 0.75),
+      0 0 0 3px var(--cyan),
+      0 0 44px -8px var(--cyan-glow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35);
   }
 
   .study__card[data-flipped="true"] { transform: rotateY(180deg); }
@@ -403,15 +475,19 @@
     -webkit-user-select: none;
     user-select: none;
     overflow: hidden;
+    transition:
+      box-shadow var(--duration-base) var(--ease-out);
   }
 
+  /* FRONT — Cyber Yellow */
   .study__card-face--front {
     background: var(--card-front-bg);
     color: var(--card-front-text);
     box-shadow:
-      0 24px 50px -16px rgba(0, 0, 0, 0.7),
-      0 0 0 1px rgba(245, 158, 11, 0.15),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      0 24px 50px -16px rgba(0, 0, 0, 0.75),
+      0 0 0 1px rgba(255, 211, 0, 0.55),
+      0 0 44px -14px rgba(255, 211, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.65);
   }
 
   .study__card-face--front::after {
@@ -420,18 +496,37 @@
     inset: 0;
     pointer-events: none;
     border-radius: inherit;
-    background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.08), transparent 60%);
+    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.35), transparent 62%);
   }
 
+  /* BACK — Electric Purple */
   .study__card-face--back {
     background: var(--card-back-bg);
     color: var(--card-back-text);
     transform: rotateY(180deg);
     box-shadow:
-      0 24px 50px -16px rgba(0, 0, 0, 0.7),
-      0 0 0 1px rgba(251, 191, 36, 0.35),
-      inset 0 1px 0 rgba(255, 255, 255, 0.25),
-      0 0 60px -10px var(--accent-glow);
+      0 24px 50px -16px rgba(0, 0, 0, 0.75),
+      0 0 0 1px rgba(191, 0, 255, 0.65),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      0 0 64px -10px rgba(191, 0, 255, 0.55);
+  }
+
+  /* Shadow Radial hover — yellow glow front, purple glow back */
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .study__card:not([data-flipped="true"]):hover .study__card-face--front {
+      box-shadow:
+        0 30px 60px -18px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(255, 211, 0, 0.8),
+        0 0 60px -8px rgba(255, 211, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+    .study__card[data-flipped="true"]:hover .study__card-face--back {
+      box-shadow:
+        0 30px 60px -18px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(191, 0, 255, 0.9),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 0 90px -8px rgba(191, 0, 255, 0.65);
+    }
   }
 
   .study__card-label {
@@ -443,7 +538,7 @@
     flex-shrink: 0;
   }
 
-  .study__card-face--back .study__card-label { opacity: 0.85; }
+  .study__card-face--back .study__card-label { opacity: 0.75; }
 
   .study__card-body {
     flex: 1;
@@ -476,6 +571,8 @@
     flex-shrink: 0;
     letter-spacing: 0.02em;
   }
+
+  .study__card-face--back .study__card-foot { opacity: 0.7; }
 
   /* Controls */
   .study__controls {
@@ -519,6 +616,30 @@
   }
 
   /* ============================================================
+     View Transitions API — screen swap (progressive)
+     ============================================================ */
+  @supports (view-transition-name: none) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 380ms;
+      animation-timing-function: var(--ease-out);
+    }
+    ::view-transition-old(root) {
+      animation-name: vt-out;
+    }
+    ::view-transition-new(root) {
+      animation-name: vt-in;
+    }
+  }
+
+  @keyframes vt-out {
+    to   { opacity: 0; transform: scale(0.985); }
+  }
+  @keyframes vt-in {
+    from { opacity: 0; transform: scale(1.015); }
+  }
+
+  /* ============================================================
      Entrance animations (gated by motion preference)
      ============================================================ */
   @media (prefers-reduced-motion: no-preference) {
@@ -545,6 +666,29 @@
   }
 
   /* ============================================================
+     Prefers-contrast: more — beef up borders & text
+     ============================================================ */
+  @media (prefers-contrast: more) {
+    :root {
+      --border: rgba(255, 255, 255, 0.24);
+      --border-strong: rgba(255, 255, 255, 0.38);
+      --text-secondary: #d8d0ea;
+      --text-tertiary: #b4abc9;
+      --cyan-soft: rgba(0, 255, 255, 0.22);
+    }
+    .study__card-face--front {
+      box-shadow:
+        0 24px 50px -16px rgba(0, 0, 0, 0.9),
+        0 0 0 2px rgba(26, 18, 0, 0.55);
+    }
+    .study__card-face--back {
+      box-shadow:
+        0 24px 50px -16px rgba(0, 0, 0, 0.9),
+        0 0 0 2px rgba(255, 255, 255, 0.55);
+    }
+  }
+
+  /* ============================================================
      Reduced motion — hard override
      ============================================================ */
   @media (prefers-reduced-motion: reduce) {
@@ -554,6 +698,7 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+    .study__card { transition-duration: 1ms !important; }
   }
 </style>
 </head>
@@ -659,12 +804,26 @@ Planet terbesar di tata surya = Jupiter"></textarea>
   const shuffleBtn   = document.getElementById("shuffleBtn");
   const restartBtn   = document.getElementById("restartBtn");
 
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
   /* ---------- State ---------- */
   const state = {
     cards: [],
     index: 0,
     flipped: false
   };
+
+  /* ---------- View Transition helper ---------- */
+  function transitionScreens(updater) {
+    if (
+      !reduceMotion.matches &&
+      typeof document.startViewTransition === "function"
+    ) {
+      document.startViewTransition(updater);
+    } else {
+      updater();
+    }
+  }
 
   /* ---------- Parsing ---------- */
   function parseCards(text) {
@@ -726,7 +885,8 @@ Planet terbesar di tata surya = Jupiter"></textarea>
     const result = parseCards(rawInput.value);
 
     if (result.cards.length === 0) {
-      errorMsg.textContent = "Tidak ada kartu valid. Pastikan tiap baris berformat: soal = jawaban";
+      errorMsg.textContent =
+        "Tidak ada kartu valid. Pastikan tiap baris berformat: soal = jawaban";
       errorMsg.dataset.visible = "true";
       return;
     }
@@ -736,17 +896,21 @@ Planet terbesar di tata surya = Jupiter"></textarea>
     state.index = 0;
     state.flipped = false;
 
-    inputScreen.hidden = true;
-    studyScreen.hidden = false;
-
-    render();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    transitionScreens(function () {
+      inputScreen.hidden = true;
+      studyScreen.hidden = false;
+      render();
+    });
   }
 
   function backToInput() {
-    studyScreen.hidden = true;
-    inputScreen.hidden = false;
-    rawInput.focus();
+    transitionScreens(function () {
+      studyScreen.hidden = true;
+      inputScreen.hidden = false;
+    });
+    requestAnimationFrame(function () {
+      rawInput.focus();
+    });
   }
 
   function shuffleCards() {
