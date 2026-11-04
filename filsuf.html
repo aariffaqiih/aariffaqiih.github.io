@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcard: Soal = Jawaban</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     Design tokens
+     Palette: warm lamp-lit study (amber on warm charcoal)
+     ============================================================ */
+  :root {
+    --bg-base: #0b0908;
+    --bg-elevated: #1a1512;
+    --bg-input: #0f0c0a;
+    --bg-subtle: rgba(245, 158, 11, 0.05);
+
+    --text-primary: #f5ede0;
+    --text-secondary: #b8a99a;
+    --text-tertiary: #7a6e62;
+    --text-ink: #1a1410;
+
+    --accent: #f59e0b;
+    --accent-bright: #fbbf24;
+    --accent-deep: #b45309;
+    --accent-glow: rgba(251, 191, 36, 0.35);
+    --accent-soft: rgba(245, 158, 11, 0.12);
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+
+    --card-front-bg: #faf5e9;
+    --card-front-text: #1a1410;
+    --card-back-bg: linear-gradient(155deg, #92400e 0%, #d97706 55%, #f59e0b 100%);
+    --card-back-text: #fffbeb;
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+
+    --font-display: 'Sora', system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-flip: cubic-bezier(0.4, 0.15, 0.2, 1);
+
+    --duration-fast: 160ms;
+    --duration-base: 240ms;
+    --duration-slow: 480ms;
+  }
+
+  /* ============================================================
+     Reset & base
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    font-family: var(--font-display);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-primary);
+    background:
+      radial-gradient(ellipse 80% 55% at 50% -10%, rgba(245, 158, 11, 0.14), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(180, 83, 9, 0.10), transparent 60%),
+      var(--bg-base);
+    display: flex;
+    justify-content: center;
+    padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2rem) 3.5rem;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior-y: none;
+  }
+
+  /* Film-grain overlay (fixed, pointer-events off) */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    z-index: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  /* ============================================================
+     Layout
+     ============================================================ */
+  .app {
+    width: 100%;
+    max-width: 680px;
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+  }
+
+  .app__title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    text-align: center;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(135deg, var(--accent-bright) 0%, var(--accent) 60%, var(--accent-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-wrap: balance;
+  }
+
+  .app__subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0 0 1.75rem;
+    text-wrap: pretty;
+  }
+
+  .app__subtitle code {
+    font-family: var(--font-mono);
+    font-size: 0.82em;
+    padding: 0.12em 0.42em;
+    border-radius: 5px;
+    background: var(--accent-soft);
+    color: var(--accent-bright);
+  }
+
+  /* ============================================================
+     Screens
+     ============================================================ */
+  .screen[hidden] { display: none; }
+
+  /* ============================================================
+     Input screen
+     ============================================================ */
+  .input-panel {
+    background: linear-gradient(180deg, rgba(26, 21, 18, 0.85), rgba(11, 9, 8, 0.9));
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 24px 60px -20px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .input-panel {
+      background: var(--bg-elevated);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+  }
+
+  .input-panel__label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+    margin-bottom: 0.65rem;
+  }
+
+  /* Textarea — Glow focus variant (DARK-PREMIUM) */
+  .input-panel__textarea {
+    width: 100%;
+    min-height: 230px;
+    resize: vertical;
+    padding: 0.95rem 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    outline: none;
+    transition:
+      border-color var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      background-color var(--duration-base) var(--ease-out);
+  }
+
+  .input-panel__textarea::placeholder { color: var(--text-tertiary); }
+
+  .input-panel__textarea:hover { border-color: var(--border-strong); }
+
+  .input-panel__textarea:focus,
+  .input-panel__textarea:focus-visible {
+    border-color: var(--accent);
+    background: var(--bg-elevated);
+    box-shadow:
+      0 0 0 3px var(--accent-soft),
+      0 0 24px -8px var(--accent-glow);
+  }
+
+  /* ============================================================
+     Buttons
+     ============================================================ */
+  .btn {
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      transform var(--duration-fast) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out),
+      background-color var(--duration-base) var(--ease-out),
+      border-color var(--duration-base) var(--ease-out),
+      color var(--duration-base) var(--ease-out);
+  }
+
+  .btn:focus-visible {
+    outline: 2px solid var(--accent-bright);
+    outline-offset: 3px;
+  }
+
+  .btn:active:not(:disabled) {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  .btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  /* Primary — Glow + Float (DARK-PREMIUM) */
+  .btn--primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    color: #1a0f00;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      0 6px 18px -6px rgba(245, 158, 11, 0.5);
+  }
+
+  @media (hover: hover) {
+    .btn--primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        0 10px 26px -8px rgba(245, 158, 11, 0.65),
+        0 0 32px -8px var(--accent-glow);
+    }
+  }
+
+  .btn--primary:active:not(:disabled) {
+    transform: translateY(1px) scale(0.985);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.2),
+      0 3px 8px -4px rgba(245, 158, 11, 0.4);
+  }
+
+  /* Ghost — Background Fade + Border Fade */
+  .btn--ghost {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+    border-color: var(--border);
+  }
+
+  @media (hover: hover) {
+    .btn--ghost:hover:not(:disabled) {
+      background: rgba(245, 158, 11, 0.08);
+      color: var(--accent-bright);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+  }
+
+  /* ============================================================
+     Input actions row
+     ============================================================ */
+  .input-panel__actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-top: 0.9rem;
+  }
+
+  .input-panel__actions .btn--primary { flex: 1 1 180px; }
+
+  /* Error message */
+  .input-panel__error {
+    margin-top: 0.85rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #fca5a5;
+    padding: 0.7rem 0.85rem;
+    border-radius: var(--radius-sm);
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    display: none;
+  }
+
+  .input-panel__error[data-visible="true"] { display: block; }
+
+  .input-panel__tip {
+    margin-top: 1.1rem;
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    line-height: 1.65;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--accent-soft);
+  }
+
+  .input-panel__tip code {
+    font-family: var(--font-mono);
+    font-size: 0.92em;
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: var(--accent-soft);
+    color: var(--accent-bright);
+  }
+
+  /* ============================================================
+     Study screen
+     ============================================================ */
+  .study__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.65rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+  }
+
+  .study__counter { color: var(--text-primary); font-weight: 600; }
+  .study__hint { color: var(--text-tertiary); }
+
+  .study__progress {
+    height: 4px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .study__progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--accent-deep), var(--accent-bright));
+    box-shadow: 0 0 12px var(--accent-glow);
+    transition: width var(--duration-slow) var(--ease-out);
+  }
+
+  /* Card scene */
+  .study__scene {
+    perspective: 1600px;
+    height: clamp(260px, 52dvh, 380px);
+    margin-bottom: 1.5rem;
+  }
+
+  .study__card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 600ms var(--ease-flip);
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+    outline: none;
+  }
+
+  .study__card:focus-visible .study__card-face--front {
+    box-shadow:
+      0 24px 50px -16px rgba(0, 0, 0, 0.7),
+      0 0 0 2px var(--accent-bright),
+      0 0 40px -8px var(--accent-glow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .study__card[data-flipped="true"] { transform: rotateY(180deg); }
+
+  .study__card-face {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+    padding: 1.35rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  .study__card-face--front {
+    background: var(--card-front-bg);
+    color: var(--card-front-text);
+    box-shadow:
+      0 24px 50px -16px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(245, 158, 11, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  .study__card-face--front::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.08), transparent 60%);
+  }
+
+  .study__card-face--back {
+    background: var(--card-back-bg);
+    color: var(--card-back-text);
+    transform: rotateY(180deg);
+    box-shadow:
+      0 24px 50px -16px rgba(0, 0, 0, 0.7),
+      0 0 0 1px rgba(251, 191, 36, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      0 0 60px -10px var(--accent-glow);
+  }
+
+  .study__card-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    flex-shrink: 0;
+  }
+
+  .study__card-face--back .study__card-label { opacity: 0.85; }
+
+  .study__card-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    display: flex;
+    padding: 0.85rem 0.15rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+
+  .study__card-body p {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(1.05rem, 3.2vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+    letter-spacing: -0.015em;
+  }
+
+  .study__card-foot {
+    font-size: 0.7rem;
+    opacity: 0.5;
+    text-align: center;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+
+  /* Controls */
+  .study__controls {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .study__controls .btn { flex: 1; }
+
+  .study__controls .btn--primary {
+    flex: 0 0 auto;
+    padding-inline: 1.5rem;
+  }
+
+  .study__controls-2 {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .study__controls-2 .btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* ============================================================
+     Responsive
+     ============================================================ */
+  @media (max-width: 520px) {
+    .study__controls { flex-wrap: wrap; }
+    .study__controls .btn--primary {
+      order: -1;
+      flex: 1 1 100%;
+    }
+    .study__topbar { font-size: 0.72rem; }
+    .study__hint { display: none; }
+  }
+
+  /* ============================================================
+     Entrance animations (gated by motion preference)
+     ============================================================ */
+  @media (prefers-reduced-motion: no-preference) {
+    .input-panel {
+      animation: fade-up 500ms var(--ease-out) both;
+    }
+
+    .screen--study:not([hidden]) .study__scene {
+      animation: fade-up 500ms var(--ease-out) both;
+    }
+
+    .screen--study:not([hidden]) .study__controls {
+      animation: fade-up 500ms var(--ease-out) 100ms both;
+    }
+
+    .screen--study:not([hidden]) .study__controls-2 {
+      animation: fade-up 500ms var(--ease-out) 180ms both;
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  }
+
+  /* ============================================================
+     Reduced motion — hard override
+     ============================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+  <h1 class="app__title">Flashcard Belajar</h1>
+  <p class="app__subtitle">Tulis <code>soal = jawaban</code> pada tiap baris</p>
+
+  <!-- ===== INPUT SCREEN ===== -->
+  <section class="screen screen--input" id="inputScreen" aria-label="Input kartu">
+    <div class="input-panel">
+      <label class="input-panel__label" for="rawInput">Daftar kartu</label>
+      <textarea
+        class="input-panel__textarea"
+        id="rawInput"
+        spellcheck="false"
+        placeholder="Ibu kota Indonesia = Jakarta
+2 + 2 = 4
+Apa itu fotosintesis = Proses tumbuhan membuat makanan dengan bantuan cahaya matahari
+Planet terbesar di tata surya = Jupiter"></textarea>
+
+      <div class="input-panel__actions">
+        <button class="btn btn--primary" id="startBtn" type="button">Mulai Belajar</button>
+        <button class="btn btn--ghost" id="exampleBtn" type="button">Isi Contoh</button>
+      </div>
+
+      <div class="input-panel__error" id="errorMsg" role="alert" data-visible="false"></div>
+
+      <div class="input-panel__tip">
+        Satu baris = satu kartu. Teks sebelum tanda <code>=</code> menjadi
+        halaman depan (soal), teks sesudahnya menjadi halaman belakang (jawaban).
+        Baris kosong akan diabaikan.
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STUDY SCREEN ===== -->
+  <section class="screen screen--study" id="studyScreen" hidden aria-label="Belajar kartu">
+    <div class="study__topbar">
+      <span class="study__counter" id="counter">Kartu 1 / 1</span>
+      <span class="study__hint">Klik kartu untuk membalik</span>
+    </div>
+
+    <div class="study__progress" aria-hidden="true">
+      <div class="study__progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="study__scene">
+      <div
+        class="study__card"
+        id="card"
+        data-flipped="false"
+        role="button"
+        tabindex="0"
+        aria-label="Kartu flashcard, klik atau tekan Enter untuk membalik">
+        <div class="study__card-face study__card-face--front">
+          <span class="study__card-label">Soal</span>
+          <div class="study__card-body"><p id="frontText"></p></div>
+          <span class="study__card-foot">klik untuk melihat jawaban</span>
+        </div>
+        <div class="study__card-face study__card-face--back">
+          <span class="study__card-label">Jawaban</span>
+          <div class="study__card-body"><p id="backText"></p></div>
+          <span class="study__card-foot">klik untuk kembali ke soal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="study__controls">
+      <button class="btn btn--ghost" id="prevBtn" type="button" aria-label="Kartu sebelumnya">Sebelumnya</button>
+      <button class="btn btn--primary" id="flipBtn" type="button">Balik</button>
+      <button class="btn btn--ghost" id="nextBtn" type="button" aria-label="Kartu berikutnya">Berikutnya</button>
+    </div>
+
+    <div class="study__controls-2">
+      <button class="btn btn--ghost" id="shuffleBtn" type="button">Acak</button>
+      <button class="btn btn--ghost" id="restartBtn" type="button">Ubah Set</button>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Elements ---------- */
+  const inputScreen  = document.getElementById("inputScreen");
+  const studyScreen  = document.getElementById("studyScreen");
+  const rawInput     = document.getElementById("rawInput");
+  const startBtn     = document.getElementById("startBtn");
+  const exampleBtn   = document.getElementById("exampleBtn");
+  const errorMsg     = document.getElementById("errorMsg");
+
+  const card         = document.getElementById("card");
+  const frontText    = document.getElementById("frontText");
+  const backText     = document.getElementById("backText");
+  const counter      = document.getElementById("counter");
+  const progressFill = document.getElementById("progressFill");
+  const prevBtn      = document.getElementById("prevBtn");
+  const nextBtn      = document.getElementById("nextBtn");
+  const flipBtn      = document.getElementById("flipBtn");
+  const shuffleBtn   = document.getElementById("shuffleBtn");
+  const restartBtn   = document.getElementById("restartBtn");
+
+  /* ---------- State ---------- */
+  const state = {
+    cards: [],
+    index: 0,
+    flipped: false
+  };
+
+  /* ---------- Parsing ---------- */
+  function parseCards(text) {
+    const cards = [];
+    let skipped = 0;
+
+    text.split(/\r?\n/).forEach(function (line) {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+
+      const pos = trimmed.indexOf("=");
+      if (pos === -1) { skipped++; return; }
+
+      const q = trimmed.slice(0, pos).trim();
+      const a = trimmed.slice(pos + 1).trim();
+
+      if (!q || !a) { skipped++; return; }
+
+      cards.push({ q: q, a: a });
+    });
+
+    return { cards: cards, skipped: skipped };
+  }
+
+  /* ---------- Render ---------- */
+  function render() {
+    const total = state.cards.length;
+    const item  = state.cards[state.index];
+
+    frontText.textContent = item.q;
+    backText.textContent  = item.a;
+    card.dataset.flipped  = state.flipped ? "true" : "false";
+
+    card.querySelectorAll(".study__card-body").forEach(function (el) {
+      el.scrollTop = 0;
+    });
+
+    counter.textContent = "Kartu " + (state.index + 1) + " / " + total;
+    progressFill.style.width = ((state.index + 1) / total * 100) + "%";
+
+    prevBtn.disabled = state.index === 0;
+    nextBtn.disabled = state.index === total - 1;
+  }
+
+  function setFlipped(value) {
+    state.flipped = value;
+    card.dataset.flipped = value ? "true" : "false";
+  }
+
+  function goTo(newIndex) {
+    if (newIndex < 0 || newIndex >= state.cards.length) return;
+    state.index = newIndex;
+    state.flipped = false;
+    render();
+  }
+
+  /* ---------- Actions ---------- */
+  function startStudy() {
+    const result = parseCards(rawInput.value);
+
+    if (result.cards.length === 0) {
+      errorMsg.textContent = "Tidak ada kartu valid. Pastikan tiap baris berformat: soal = jawaban";
+      errorMsg.dataset.visible = "true";
+      return;
+    }
+
+    errorMsg.dataset.visible = "false";
+    state.cards = result.cards;
+    state.index = 0;
+    state.flipped = false;
+
+    inputScreen.hidden = true;
+    studyScreen.hidden = false;
+
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function backToInput() {
+    studyScreen.hidden = true;
+    inputScreen.hidden = false;
+    rawInput.focus();
+  }
+
+  function shuffleCards() {
+    for (let i = state.cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [state.cards[i], state.cards[j]] = [state.cards[j], state.cards[i]];
+    }
+    goTo(0);
+  }
+
+  /* ---------- Event listeners ---------- */
+  startBtn.addEventListener("click", startStudy);
+
+  exampleBtn.addEventListener("click", function () {
+    rawInput.value =
+      "Ibu kota Indonesia = Jakarta\n" +
+      "2 + 2 = 4\n" +
+      "Apa itu fotosintesis = Proses tumbuhan membuat makanan dengan bantuan cahaya matahari\n" +
+      "Planet terbesar di tata surya = Jupiter\n" +
+      "Lambang unsur emas = Au";
+    rawInput.focus();
+  });
+
+  card.addEventListener("click", function () {
+    setFlipped(!state.flipped);
+  });
+
+  card.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      e.stopPropagation();
+      setFlipped(!state.flipped);
+    }
+  });
+
+  flipBtn.addEventListener("click", function () {
+    setFlipped(!state.flipped);
+  });
+
+  prevBtn.addEventListener("click", function () { goTo(state.index - 1); });
+  nextBtn.addEventListener("click", function () { goTo(state.index + 1); });
+  shuffleBtn.addEventListener("click", shuffleCards);
+  restartBtn.addEventListener("click", backToInput);
+
+  /* Keyboard: ←/→ navigate, Space/Enter flip (when card not focused) */
+  document.addEventListener("keydown", function (e) {
+    if (studyScreen.hidden) return;
+
+    const t = e.target;
+    if (t instanceof Element && (t.matches("input, textarea") || t.closest("button"))) return;
+
+    if (e.key === "ArrowLeft")  { e.preventDefault(); goTo(state.index - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); goTo(state.index + 1); }
+    if (e.key === " " || e.key === "Enter") {
+      e.preventDefault();
+      setFlipped(!state.flipped);
+    }
+  });
+
+  /* Ctrl/Cmd+Enter from textarea starts the session */
+  rawInput.addEventListener("keydown", function (e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") startStudy();
+  });
+
+  rawInput.focus();
+})();
+</script>
+</body>
+</html>
