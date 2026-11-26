@@ -1,128 +1,380 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>'Aarif Faqiih</title>
-    <link rel="stylesheet" href="a.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      href="https://avatars.githubusercontent.com/u/154689194"
-      type="image/png"
-    />
-  </head>
-  <body>
-    <nav>
-      <a href="/">
-        <img a href="/" src="https://avatars.githubusercontent.com/u/154689194"
-      /></a>
-      <ul class="nav-links">
-        <li><a href="/projects.html">Projects</a></li>
-        <li><a href="/certificates.html">Certificates</a></li>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>‘Aarif Rahmaan Jalaluddin Faqiih — Data Scientist &amp; AI Engineer</title>
+  <meta
+    name="description"
+    content="Portfolio of ‘Aarif Rahmaan Jalaluddin Faqiih — Informatics student at Telkom University Purwokerto (GPA 3.77/4.00) specializing in Data Science, Machine Learning, and Data Engineering."
+  />
+  <meta property="og:title" content="‘Aarif Rahmaan Jalaluddin Faqiih — Data Scientist &amp; AI Engineer" />
+  <meta
+    property="og:description"
+    content="End-to-end Machine Learning, Data Engineering, and Fullstack Product Portfolio."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aariffaqiih.github.io/" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      const saved = localStorage.getItem("af-theme");
+      if (saved === "dark" || saved === "light") {
+        document.documentElement.setAttribute("data-theme", saved);
+      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Minimal Top Utility Bar (Grace Wijaya style) -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-actions">
+        <a
+          class="pill-btn"
+          href="assets/Aarif_Faqiih_CV.pdf"
+          download="CV_Aarif_Rahmaan_Jalaluddin_Faqiih.pdf"
+          aria-label="Download CV as PDF"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" />
+          </svg>
+          <span data-i18n="downloadPdf">Download PDF</span>
+        </a>
+
+        <button
+          type="button"
+          class="pill-btn lang-btn"
+          id="langToggle"
+          aria-label="Switch language between English and Indonesian"
+        >
+          <span id="langLabel">EN</span>
+        </button>
+
+        <button
+          type="button"
+          class="theme-switch"
+          id="themeToggle"
+          aria-label="Toggle dark and light theme"
+          aria-pressed="false"
+        >
+          <span class="theme-thumb" aria-hidden="true">
+            <svg class="icon icon-sun" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
+            </svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Centered Editorial Hero -->
+    <section class="hero" aria-label="Introduction">
+      <div class="avatar-wrap">
+        <img
+          src="assets/avatar.jpg"
+          alt="Portrait of ‘Aarif Rahmaan Jalaluddin Faqiih"
+          class="avatar"
+          width="104"
+          height="104"
+        />
+      </div>
+
+      <h1 class="hero-name">‘Aarif Rahmaan Jalaluddin Faqiih</h1>
+
+      <div class="availability-pill">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span data-i18n="availability">Open to Data Science &amp; Data Engineering</span>
+      </div>
+
+      <ul class="hero-meta" aria-label="Quick profile metadata">
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2" />
+            <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+          </svg>
+          <span data-i18n="roleTitle">Data Scientist &amp; AI Engineer</span>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Purwokerto, ID</span>
+        </li>
+        <li>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3 2" />
+          </svg>
+          <span id="localTime" class="mono">--:-- WIB</span>
+        </li>
+        <li>
+          <a href="mailto:aarifrjf@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M22 6l-10 7L2 6" />
+            </svg>
+            <span>Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/aariffaqiih" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+            </svg>
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/aariffaqiih" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </li>
       </ul>
-    </nav>
-    <div class="theme-toggle" onclick="toggleTheme()">
-      <i class="bx bxs-sun"></i> <i class="bx bxs-moon"></i>
-    </div>
-    <div class="face">
-      <h1 class="AR">'Aarif <span>Rahmaan</span></h1>
-      <h1 class="JF"><span>Jalaluddin</span> Faqiih</h1>
-      <div class="headline">
-        <p><i class="bx bx-code"></i> Former Frontend Developer</p>
-        <div class="II">|</div>
-        <p><i class="bx bx-bar-chart-square"></i> Aspiring Data Analyst</p>
-        <div class="II">|</div>
-        <p><i class="bx bx-equalizer"></i> Music Composer</p>
-      </div>
-      <div id="rain"></div>
-      <div class="soc">
-        <a href="https://github.com/aariffaqiih">
-          <i class="bx bxl-github"></i
-        ></a>
+    </section>
 
-        <a href="https://wa.me/6282242458593">
-          <i class="bx bxl-whatsapp"></i
-        ></a>
+    <!-- 2-Column Editorial Resume Sections -->
+    <div class="sections">
+      <!-- ABOUT -->
+      <section class="section-grid" id="about" aria-labelledby="heading-about">
+        <div class="section-label">
+          <h2 id="heading-about" data-i18n="secAbout">About</h2>
+        </div>
+        <div class="section-content about-copy">
+          <p data-i18n-html="aboutP1">
+            I am ‘Aarif Rahmaan Jalaluddin Faqiih, a 5th-semester Informatics student at Telkom University Purwokerto (GPA 3.77/4.00) and Algorithms &amp; Programming Lab Assistant. My focus lies in
+            <mark>end-to-end machine learning and data engineering</mark>, bridging raw datasets into
+            <mark>calibrated, production-ready predictive systems</mark>.
+          </p>
+          <p data-i18n-html="aboutP2">
+            With hands-on experience in AI dataset optimization, credit risk modeling, and enterprise analytics dashboards, I combine
+            <mark>statistical rigor with full-stack software execution</mark> to ship data products that teams can actually inspect, trust, and deploy.
+          </p>
+        </div>
+      </section>
 
-        <a href="https://www.linkedin.com/in/aariffaqiih">
-          <i class="bx bxl-linkedin"></i
-        ></a>
-      </div>
-    </div>
-    <div class="hello">
-      <div class="text">
-        <h2 id="hello-world">Hello</h2>
-        <p>
-          A student who is still studying for a Bachelor of Informatics
-          Engineering at Telkom University who is currently interested in the
-          field of <b>Data Analysis</b> which was previously Web Development.
-          Has a 1-year internship experience as a Front End Developer and
-          concurrently as a UI designer. Outside of the IT field, I am also
-          active in making instrumental electronic music.
-        </p>
-        <a href="projects.html">
-          <h5>Projets <i class="bx bx-right-arrow-alt"></i></h5
-        ></a>
-      </div>
-      <img
-        src="https://raw.githubusercontent.com/aariffaqiih/aariffaqiih.github.io/refs/heads/main/me.jpg"
-      />
-    </div>
-    <div class="code-wall">
-      <h2>
-        PROJECTS <span>PROJECTS </span>PROJECTS <span>PROJECTS </span>PROJECTS
-        <span>PROJECTS </span>PROJECTS <span>PROJECTS </span>PROJECTS
-        <span>PROJECTS </span>PROJECTS <span>PROJECTS </span>PROJECTS
-        <span>PROJECTS </span>
-        PROJECTS <span>PROJECTS </span>
-      </h2>
-    </div>
-    <h2 class="nying">Projects</h2>
-    <div class="projects">
-      <div class="carousel">
-        <div class="field">
-          <a href="/projects.html#code"> <div class="image"></div></a>
-
-          <div class="name">
-            <a href="/projects.html#code"> <h3>Code & Data</h3></a>
-            <i class="bx bx-right-arrow-alt"></i>
+      <!-- PROJECTS -->
+      <section class="section-grid" id="projects" aria-labelledby="heading-projects">
+        <div class="section-label">
+          <h2 id="heading-projects" data-i18n="secProjects">Projects</h2>
+        </div>
+        <div class="section-content">
+          <div class="projects-grid" id="projectsGrid">
+            <!-- Rendered cleanly from app.js so language toggle + modal stay in 100% sync -->
           </div>
         </div>
-        <div class="field">
-          <a href="/projects.html#design"> <div class="image"></div></a>
+      </section>
 
-          <div class="name">
-            <a href="/projects.html#design"> <h3>UI Design</h3></a>
-            <i class="bx bx-right-arrow-alt"></i>
+      <!-- EXPERIENCE -->
+      <section class="section-grid" id="experience" aria-labelledby="heading-experience">
+        <div class="section-label">
+          <h2 id="heading-experience" data-i18n="secExperience">Experience</h2>
+        </div>
+        <div class="section-content">
+          <div class="card-stack" id="experiencePrimary"></div>
+
+          <div class="earlier-wrap">
+            <button
+              type="button"
+              class="expand-btn"
+              id="toggleEarlierExp"
+              aria-expanded="false"
+              aria-controls="experienceEarlier"
+            >
+              <span id="toggleEarlierLabel" data-i18n="showEarlierExp">
+                Show 3 earlier engineering &amp; UI/UX roles (2023–2025)
+              </span>
+              <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="card-stack earlier-stack" id="experienceEarlier" hidden></div>
           </div>
         </div>
-        <div class="field">
-          <a href="/projects.html#music"> <div class="image"></div></a>
+      </section>
 
-          <div class="name">
-            <a href="/projects.html#music"> <h3>Music</h3></a>
-            <i class="bx bx-right-arrow-alt"></i>
-          </div>
+      <!-- ORGANIZATION -->
+      <section class="section-grid" id="organization" aria-labelledby="heading-organization">
+        <div class="section-label">
+          <h2 id="heading-organization" data-i18n="secOrganization">Organization</h2>
         </div>
-      </div>
+        <div class="section-content">
+          <div class="card-stack" id="organizationStack"></div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section-grid" id="education" aria-labelledby="heading-education">
+        <div class="section-label">
+          <h2 id="heading-education" data-i18n="secEducation">Education</h2>
+        </div>
+        <div class="section-content">
+          <article class="entry-card">
+            <div class="entry-head">
+              <div>
+                <h3 class="entry-title" data-i18n="eduDegree">B.S. in Informatics</h3>
+                <p class="entry-org">Telkom University Purwokerto, Jawa Tengah</p>
+              </div>
+              <span class="entry-badge mono">GPA 3.77 / 4.00</span>
+            </div>
+            <p class="entry-date" data-i18n="eduDate">2024 – Present · Semester 5</p>
+            <ul class="entry-bullets" id="eduBullets"></ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section-grid" id="skills" aria-labelledby="heading-skills">
+        <div class="section-label">
+          <h2 id="heading-skills" data-i18n="secSkills">Skills</h2>
+        </div>
+        <div class="section-content">
+          <ul class="skills-list" id="skillsList"></ul>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section-grid" id="contact" aria-labelledby="heading-contact">
+        <div class="section-label">
+          <h2 id="heading-contact" data-i18n="secContact">Contact</h2>
+        </div>
+        <div class="section-content contact-content">
+          <dl class="contact-rows">
+            <div class="contact-row">
+              <dt>Email</dt>
+              <dd>
+                <a href="mailto:aarifrjf@gmail.com">aarifrjf@gmail.com</a>
+                <button type="button" class="copy-btn" id="copyEmailBtn" aria-label="Copy email address">
+                  <span data-i18n="copy">Copy</span>
+                </button>
+              </dd>
+            </div>
+            <div class="contact-row">
+              <dt data-i18n="phoneLabel">Phone</dt>
+              <dd><a href="tel:+6282242458593">+62 822 4245 8593</a></dd>
+            </div>
+            <div class="contact-row">
+              <dt>LinkedIn</dt>
+              <dd>
+                <a href="https://linkedin.com/in/aariffaqiih" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/aariffaqiih
+                </a>
+              </dd>
+            </div>
+            <div class="contact-row">
+              <dt>GitHub</dt>
+              <dd>
+                <a href="https://github.com/aariffaqiih" target="_blank" rel="noopener noreferrer">
+                  github.com/aariffaqiih
+                </a>
+              </dd>
+            </div>
+            <div class="contact-row social-row">
+              <dt data-i18n="socialLabel">Profiles</dt>
+              <dd class="social-circles">
+                <a
+                  href="https://github.com/aariffaqiih"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-circle"
+                  aria-label="GitHub profile"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                  </svg>
+                </a>
+                <a
+                  href="https://linkedin.com/in/aariffaqiih"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-circle"
+                  aria-label="LinkedIn profile"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <a
+                  href="mailto:aarifrjf@gmail.com"
+                  class="social-circle"
+                  aria-label="Send email"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="M22 6l-10 7L2 6" />
+                  </svg>
+                </a>
+                <a
+                  href="assets/Aarif_Faqiih_CV.pdf"
+                  download="CV_Aarif_Rahmaan_Jalaluddin_Faqiih.pdf"
+                  class="social-circle"
+                  aria-label="Download CV PDF"
+                >
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <path d="M14 2v6h6M12 18v-6m0 6l-3-3m3 3l3-3" />
+                  </svg>
+                </a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
     </div>
-    <footer>
-      <h2>
-        'AARIF <span>RAHMAAN </span>'AARIF <span>RAHMAAN </span>'AARIF
-        <span>RAHMAAN </span>'AARIF <span>RAHMAAN </span>'AARIF
-        <span>RAHMAAN </span>'AARIF <span>RAHMAAN </span>'AARIF
-        <span>RAHMAAN </span>
-      </h2>
-      <h3>
-        JALALUDDIN <span>FAQIIH </span>JALALUDDIN <span>FAQIIH </span>JALALUDDIN
-        <span>FAQIIH </span>JALALUDDIN <span>FAQIIH </span> JALALUDDIN
-        <span>FAQIIH </span> JALALUDDIN <span>FAQIIH </span>
-      </h3>
+
+    <footer class="footer">
+      <p>© 2026 ‘Aarif Rahmaan Jalaluddin Faqiih · Purwokerto, Indonesia</p>
     </footer>
-  </body>
+  </main>
+
+  <!-- Minimalist Case Study Modal -->
+  <div class="modal-backdrop" id="projectModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel">
+      <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close project details">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="modal-thumb-wrap">
+        <img id="modalThumb" src="" alt="" />
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta-row">
+          <span id="modalPeriod" class="modal-period"></span>
+          <span id="modalHighlight" class="modal-highlight mono"></span>
+        </div>
+        <h3 id="modalTitle" class="modal-title"></h3>
+        <p id="modalSummary" class="modal-summary"></p>
+        <ul id="modalBullets" class="entry-bullets"></ul>
+        <div id="modalTags" class="tag-row"></div>
+        <div id="modalActions" class="modal-actions"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>
-<script src="a.js"></script>

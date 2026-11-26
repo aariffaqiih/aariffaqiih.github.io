@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#F2F4F7"/>
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#111315" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <!-- Elevated minimalist white dashboard card -->
+  <g filter="url(#cardShadow)">
+    <rect x="76" y="54" width="648" height="392" rx="16" fill="#FFFFFF" stroke="#E6E9EE" stroke-width="1.5"/>
+  </g>
+  <!-- Top window bar -->
+  <circle cx="106" cy="84" r="5" fill="#E2E6EC"/>
+  <circle cx="124" cy="84" r="5" fill="#E2E6EC"/>
+  <circle cx="142" cy="84" r="5" fill="#E2E6EC"/>
+  <text x="170" y="88" fill="#68707A" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Credit Risk Scoring · LightGBM vs Logistic Regression</text>
+  <line x1="76" y1="108" x2="724" y2="108" stroke="#EEF1F4" stroke-width="1.2"/>
+
+  <!-- 3 KPI pills -->
+  <rect x="104" y="130" width="184" height="72" rx="10" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="122" y="156" fill="#6B7280" font-family="Inter, system-ui, sans-serif" font-size="12">Best ROC-AUC</text>
+  <text x="122" y="186" fill="#111315" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700">0.7450</text>
+
+  <rect x="308" y="130" width="184" height="72" rx="10" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="326" y="156" fill="#6B7280" font-family="Inter, system-ui, sans-serif" font-size="12">Engineered Features</text>
+  <text x="326" y="186" fill="#111315" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700">192</text>
+
+  <rect x="512" y="130" width="184" height="72" rx="10" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="530" y="156" fill="#6B7280" font-family="Inter, system-ui, sans-serif" font-size="12">Relational Tables</text>
+  <text x="530" y="186" fill="#111315" font-family="JetBrains Mono, monospace" font-size="24" font-weight="700">7 Joined</text>
+
+  <!-- Left panel: ROC Curve visual -->
+  <rect x="104" y="220" width="286" height="198" rx="10" fill="#FFFFFF" stroke="#EAEEF3"/>
+  <text x="122" y="246" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">ROC Curve Comparison</text>
+  <line x1="130" y1="392" x2="366" y2="392" stroke="#D9DFE6" stroke-width="1.2"/>
+  <line x1="130" y1="264" x2="130" y2="392" stroke="#D9DFE6" stroke-width="1.2"/>
+  <line x1="130" y1="392" x2="366" y2="264" stroke="#CBD2DA" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <!-- LightGBM curve -->
+  <path d="M130 392 C145 316, 210 276, 366 264" stroke="#0F5C6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- LR curve -->
+  <path d="M130 392 C158 334, 232 292, 366 264" stroke="#9CA3AF" stroke-width="2" fill="none" stroke-dasharray="5 3"/>
+  <circle cx="240" cy="285" r="4" fill="#0F5C6E"/>
+  <text x="252" y="289" fill="#0F5C6E" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">LightGBM</text>
+
+  <!-- Right panel: Multi-table aggregation bars -->
+  <rect x="410" y="220" width="286" height="198" rx="10" fill="#FFFFFF" stroke="#EAEEF3"/>
+  <text x="428" y="246" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Top Predictive Signals</text>
+  <text x="428" y="278" fill="#555A60" font-family="Inter, system-ui, sans-serif" font-size="11.5">EXT_SOURCE_MEAN</text>
+  <rect x="428" y="286" width="218" height="10" rx="5" fill="#0F5C6E"/>
+  <text x="428" y="318" fill="#555A60" font-family="Inter, system-ui, sans-serif" font-size="11.5">BUREAU_DEBT_RATIO</text>
+  <rect x="428" y="326" width="168" height="10" rx="5" fill="#2A7F91"/>
+  <text x="428" y="358" fill="#555A60" font-family="Inter, system-ui, sans-serif" font-size="11.5">PREV_APP_APPROVAL</text>
+  <rect x="428" y="366" width="136" height="10" rx="5" fill="#64A6B5"/>
+  <text x="428" y="396" fill="#555A60" font-family="Inter, system-ui, sans-serif" font-size="11.5">PAYMENT_DELAY_DAYS</text>
+  <rect x="428" y="402" width="104" height="10" rx="5" fill="#A5CDD6"/>
+</svg>
