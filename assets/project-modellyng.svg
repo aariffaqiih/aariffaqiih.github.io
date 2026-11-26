@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#F2F4F7"/>
+  <defs>
+    <filter id="cardShadowM" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#111315" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <g filter="url(#cardShadowM)">
+    <rect x="76" y="54" width="648" height="392" rx="16" fill="#FFFFFF" stroke="#E6E9EE" stroke-width="1.5"/>
+  </g>
+  <!-- Window header -->
+  <circle cx="106" cy="84" r="5" fill="#E2E6EC"/>
+  <circle cx="124" cy="84" r="5" fill="#E2E6EC"/>
+  <circle cx="142" cy="84" r="5" fill="#E2E6EC"/>
+  <text x="170" y="88" fill="#68707A" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Modellyng · Evidence-Grounded RAG &amp; Research Graph</text>
+  <rect x="572" y="70" width="124" height="26" rx="13" fill="#E6F4F7" stroke="#BFE2EA"/>
+  <text x="634" y="87" text-anchor="middle" fill="#0F5C6E" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Web + Mobile</text>
+  <line x1="76" y1="108" x2="724" y2="108" stroke="#EEF1F4" stroke-width="1.2"/>
+
+  <!-- Pipeline chain banner -->
+  <rect x="104" y="126" width="592" height="56" rx="10" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <rect x="120" y="140" width="114" height="28" rx="6" fill="#FFFFFF" stroke="#DCE2E9"/>
+  <text x="177" y="158" text-anchor="middle" fill="#111315" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">PyMuPDF ETL</text>
+  <path d="M240 154 L256 154" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="262" y="140" width="126" height="28" rx="6" fill="#FFFFFF" stroke="#DCE2E9"/>
+  <text x="325" y="158" text-anchor="middle" fill="#111315" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Celery + Redis</text>
+  <path d="M394 154 L410 154" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="416" y="140" width="126" height="28" rx="6" fill="#0F5C6E"/>
+  <text x="479" y="158" text-anchor="middle" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Hybrid RAG</text>
+  <path d="M548 154 L564 154" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="570" y="140" width="110" height="28" rx="6" fill="#FEF3C7" stroke="#FDE68A"/>
+  <text x="625" y="158" text-anchor="middle" fill="#92400E" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Verified PDF</text>
+
+  <!-- Left panel: Knowledge Graph Synthesis -->
+  <rect x="104" y="200" width="292" height="220" rx="12" fill="#FFFFFF" stroke="#EAEEF3"/>
+  <text x="122" y="226" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Knowledge Graph Synthesis</text>
+  <!-- Graph edges -->
+  <line x1="184" y1="278" x2="302" y2="264" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="184" y1="278" x2="220" y2="356" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="302" y1="264" x2="328" y2="348" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="220" y1="356" x2="328" y2="348" stroke="#0F5C6E" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Nodes -->
+  <rect x="126" y="258" width="98" height="36" rx="8" fill="#0F5C6E"/>
+  <text x="175" y="280" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600">13 Parameters</text>
+
+  <rect x="266" y="246" width="106" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="319" y="267" text-anchor="middle" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Embeddings</text>
+
+  <rect x="148" y="340" width="114" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="205" y="361" text-anchor="middle" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Evidence Block</text>
+
+  <rect x="278" y="332" width="98" height="34" rx="8" fill="#FEF3C7" stroke="#FDE68A"/>
+  <text x="327" y="353" text-anchor="middle" fill="#92400E" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Research Gap</text>
+
+  <text x="122" y="404" fill="#6B7280" font-family="JetBrains Mono, monospace" font-size="10.5">PostgreSQL · PLpgSQL · 11 Migrations</text>
+
+  <!-- Right panel: Grounded Agent Chat & Verification -->
+  <rect x="412" y="200" width="284" height="220" rx="12" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="430" y="226" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Grounded RAG Agent Chat</text>
+
+  <rect x="430" y="242" width="248" height="44" rx="8" fill="#FFFFFF" stroke="#E5E9F0"/>
+  <text x="442" y="260" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">Compare methodology limitations</text>
+  <text x="442" y="276" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">across uploaded papers...</text>
+
+  <rect x="430" y="298" width="248" height="72" rx="8" fill="#FFFFFF" stroke="#BFE2EA"/>
+  <text x="442" y="317" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Agentic Synthesis (Verified)</text>
+  <text x="442" y="335" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="10.5">Cited to exact PDF page blocks with</text>
+  <text x="442" y="351" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="10.5">Accept / Edit / Reject human review.</text>
+
+  <rect x="430" y="382" width="108" height="24" rx="12" fill="#DCFCE7"/>
+  <text x="484" y="398" text-anchor="middle" fill="#15803D" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">Source Linked</text>
+  <rect x="546" y="382" width="132" height="24" rx="12" fill="#FFFFFF" stroke="#DCE2E9"/>
+  <text x="612" y="398" text-anchor="middle" fill="#374151" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">FastAPI + Gemini</text>
+</svg>

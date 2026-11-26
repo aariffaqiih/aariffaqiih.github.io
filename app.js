@@ -1,10 +1,11 @@
-/* Portfolio content, bilingual EN/ID switcher, live WIB clock, and case-study modal */
+/* Portfolio v2 — Tailored for AI Engineer, Data Engineer & Data Analyst roles
+   (PT Wiratek Solusi Asia, PT NexWave Indonesia, & enterprise AI/Data teams). */
 
 const CONTENT = {
   en: {
     downloadPdf: "Download PDF",
-    availability: "Open to Data Science & Data Engineering",
-    roleTitle: "Data Scientist & AI Engineer",
+    availability: "Open to AI Engineer, Data Engineer & Data Analyst roles",
+    roleTitle: "AI & Data Engineer · Data Analyst",
     secAbout: "About",
     secProjects: "Projects",
     secExperience: "Experience",
@@ -13,92 +14,140 @@ const CONTENT = {
     secSkills: "Skills",
     secContact: "Contact",
     aboutP1:
-      "I am ‘Aarif Rahmaan Jalaluddin Faqiih, a 5th-semester Informatics student at Telkom University Purwokerto (GPA 3.77/4.00) and Algorithms &amp; Programming Lab Assistant. My focus lies in <mark>end-to-end machine learning and data engineering</mark>, turning messy real-world datasets into <mark>calibrated, production-ready predictive systems</mark>.",
+      "I am ‘Aarif Rahmaan Jalaluddin Faqiih, a 5th-semester Informatics student at Telkom University Purwokerto (GPA 3.77/4.00) and Algorithms &amp; Programming Lab Assistant. I build <mark>end-to-end RAG &amp; agentic AI systems</mark> (FastAPI, Celery, Redis, PostgreSQL embeddings) alongside <mark>reliable SQL/Python data pipelines</mark> and <mark>clinical &amp; financial ML models</mark>.",
     aboutP2:
-      "With hands-on experience in AI dataset optimization, credit risk modeling, and enterprise analytics dashboards, I combine <mark>statistical rigor with full-stack software execution</mark> to ship data products that teams can inspect, trust, and deploy.",
-    showEarlierExp: "Show 3 earlier engineering & UI/UX roles (2023–2025)",
-    hideEarlierExp: "Hide earlier engineering & UI/UX roles",
+      "Having optimized AI datasets at Eklipse.gg, engineered 192-feature credit models for Home Credit, and shipped internal analytics dashboards for <mark>enterprise telecom &amp; energy clients (Telkomsel, Pertamina, Mipcon)</mark>, I bridge AI engineering, data pipelines, and clear business reporting.",
+    showEarlierExp: "Show 3 earlier web & mobile roles (2023–2026)",
+    hideEarlierExp: "Hide earlier web & mobile roles",
     eduDegree: "B.S. in Informatics",
     eduDate: "2024 – Present · Semester 5",
     phoneLabel: "Phone",
     socialLabel: "Profiles",
     copy: "Copy",
     copied: "Copied",
-    viewOnGithub: "View GitHub profile",
+    filters: [
+      { key: "all", label: "All (5)" },
+      { key: "ai", label: "AI & RAG" },
+      { key: "de", label: "Data Engineering" },
+      { key: "da", label: "Data Analytics & ML" },
+    ],
     eduBullets: [
-      "Algorithms & Programming: Built a bank customer loan transaction recording and reporting application in Golang.",
-      "Object-Oriented Programming: Developed a Java room reservation system covering relational database design, REST APIs, and Postman QA.",
-      "Database Modeling: Designed an SQL relational database for restaurant operations and raw-material inventory management.",
-      "AI Foundations: Engineered a passenger satisfaction classification model integrating Fuzzy Logic with Machine Learning and Deep Learning.",
+      "Database Modeling: Designed an SQL relational database schema for restaurant operations and raw-material inventory tracking.",
+      "AI Foundations: Built a passenger satisfaction classification model integrating Fuzzy Logic with Machine Learning and Deep Learning.",
+      "Algorithms & Programming: Engineered a bank customer loan transaction recording and reporting system in Golang.",
+      "Object-Oriented Programming: Developed a Java room reservation backend covering relational database design, REST APIs, and Postman QA.",
     ],
     projects: [
       {
+        id: "modellyng",
+        tracks: ["ai", "de"],
+        title: "Modellyng — AI Research & RAG Platform",
+        subtitle: "Hybrid RAG, Agentic LLM, FastAPI, Celery & Redis",
+        metric: "Web + Mobile",
+        period: "2026",
+        thumb: "assets/project-modellyng.svg",
+        summary:
+          "Collaborative enterprise-style knowledge platform that transforms academic PDFs into structured, evidence-verified knowledge graphs and grounded RAG conversations across both Web (React 19/TypeScript) and Mobile (Flutter).",
+        bullets: [
+          "Built end-to-end async PDF ETL & AI extraction pipelines using PyMuPDF, FastAPI, Celery, and Redis workers extracting 11–13 structured academic parameters via Gemini & Groq with custom LLM Gatekeeper, Model Registry, and rate limiting.",
+          "Engineered PostgreSQL/PLpgSQL storage with 11 versioned SQL migrations, document block embeddings, and Hybrid Search + RAG backed by Supabase Row-Level Security (RLS) and private storage.",
+          "Implemented agentic workflows (Core Agent, citation/source verification linking every AI output back to exact PDF page blocks, and human-in-the-loop Accept/Edit/Reject review).",
+          "Shipped interactive Knowledge Graph Synthesis (React Flow) and structured Excel/PDF reporting exports (openpyxl, ReportLab).",
+        ],
+        tags: [
+          "Python (Async)",
+          "RAG & Embeddings",
+          "FastAPI",
+          "Celery + Redis",
+          "PostgreSQL / PLpgSQL",
+          "Gemini & Groq",
+          "React 19 / TS",
+          "Flutter",
+        ],
+        links: [
+          { label: "Web Repo (RAG + Agent)", url: "https://github.com/Extluke/Modellying-web", primary: true },
+          { label: "Mobile Repo (Flutter + FastAPI)", url: "https://github.com/Extluke/modellyng", primary: false },
+        ],
+      },
+      {
         id: "cdc-diabetes",
-        title: "CDC Diabetes Risk Screening",
-        subtitle: "End-to-end ML, TreeSHAP & Streamlit App",
+        tracks: ["ai", "de", "da"],
+        title: "CDC Diabetes Clinical Risk Screening",
+        subtitle: "Clinical AI, Data Quality Pipeline & Streamlit App",
         metric: "ROC-AUC 0.8287",
         period: "Nov 2026",
         thumb: "assets/project-cdc-diabetes.png",
         summary:
-          "Clinical diabetes screening pipeline trained on 253,680 CDC BRFSS survey records (UCI ID 891), engineered with strict leakage-free validation, calibrated probabilities, fairness auditing, and a 3-page Streamlit screening app.",
+          "Production-grade clinical AI & data quality pipeline trained on 253,680 CDC BRFSS survey records (UCI ID 891), featuring automated schema contracts, leakage-free validation, calibrated probabilities, fairness auditing, and a 3-page Streamlit screening app.",
         bullets: [
-          "Prevented duplicate profile leakage across train/test splits via 21-feature hash Stratified Group Split (0 profile overlap).",
-          "Engineered 8 domain clinical features and proved via inside-CV ablation that Unweighted + OOF threshold tuning outperforms SMOTE (PR-AUC 0.4331 vs 0.3742) and Class Weighting (Brier 0.0966 vs 0.1739).",
-          "Optuna-tuned LightGBM reached Hold-Out ROC-AUC 0.8287, PR-AUC 0.4303 (3.1× baseline), Brier 0.0967, and 85.1% Recall in F2 screening mode.",
-          "Deployed an interactive 3-page Streamlit Web App featuring real-time TreeSHAP individual risk drivers, a What-If lifestyle simulator, batch CSV triage, and a Model Card.",
+          "Built reproducible Parquet ingestion and automated BRFSS codebook/schema validation protected by 9 pytest unit & UI AppTest checks.",
+          "Eliminated duplicate profile leakage via 21-feature hash Stratified Group Split (0 profile overlap) and proved via inside-CV ablation that Unweighted + OOF threshold tuning outperforms SMOTE (PR-AUC 0.4331 vs 0.3742) and Class Weighting (Brier 0.0966 vs 0.1739).",
+          "Optuna-tuned LightGBM reached Hold-Out ROC-AUC 0.8287, PR-AUC 0.4303 (3.1× baseline), Brier 0.0967, and 85.1% Recall in F2 clinical screening mode.",
+          "Shipped a 3-page Streamlit clinical app with real-time TreeSHAP explanations, a What-If lifestyle simulator, batch CSV triage, and subgroup fairness Model Card.",
         ],
-        tags: ["Python", "LightGBM", "Optuna", "TreeSHAP", "Scikit-learn", "Streamlit", "pytest"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Python", "LightGBM", "Optuna", "TreeSHAP", "Parquet", "Streamlit", "pytest", "Git"],
+        links: [
+          { label: "View GitHub Profile", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
       {
         id: "home-credit",
-        title: "Credit Default Risk Model",
-        subtitle: "Home Credit Indonesia × Rakamin",
-        metric: "ROC-AUC 0.7450",
+        tracks: ["de", "da"],
+        title: "Credit Default Pipeline & Risk Scoring",
+        subtitle: "7-Table Feature Pipeline · Home Credit × Rakamin",
+        metric: "192 Features · 0.745",
         period: "Feb – Mar 2026",
         thumb: "assets/project-home-credit.svg",
         summary:
-          "Project-based Data Scientist internship developing a multi-table credit default scoring model to evaluate borrower repayment risk across seven relational financial tables.",
+          "Multi-table relational data engineering and predictive credit default modeling across seven financial datasets to support borrower risk evaluation.",
         bullets: [
-          "Aggregated and engineered 192 predictive modeling features from 7 relational bureau, payment, and prior-application tables.",
-          "Benchmarked Logistic Regression against gradient-boosted LightGBM with disciplined validation, achieving 0.7450 ROC-AUC.",
-          "Translated credit risk drivers into actionable approval and risk-mitigation insights for lending stakeholders.",
+          "Joined and aggregated 7 relational bureau, installment, POS, and prior-application tables into a clean 192-feature modeling dataset.",
+          "Benchmarked Logistic Regression and LightGBM models with structured evaluation, achieving a best Hold-Out ROC-AUC of 0.7450.",
+          "Translated key delinquency and debt-ratio signals into clear analytical findings for credit risk review.",
         ],
-        tags: ["Python", "LightGBM", "Logistic Regression", "Feature Engineering", "Pandas", "SQL"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Python", "SQL", "Pandas", "Feature Engineering", "LightGBM", "Logistic Regression"],
+        links: [
+          { label: "View GitHub Profile", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
       {
         id: "gdgoc-dropout",
+        tracks: ["ai", "da"],
         title: "Student Drop-out Early Detection",
         subtitle: "GDGoC Championship · 2nd Place Winner",
         metric: "2nd Place",
         period: "Dec 2025 – Jun 2026",
         thumb: "assets/project-gdgoc-dropout.svg",
         summary:
-          "Machine learning early-warning system and full-stack web application built with Google Developer Group on Campus to help university counselors proactively support at-risk students.",
+          "Machine learning early-warning system and full-stack web application built with Google Developer Group on Campus to help university counselors proactively identify at-risk students.",
         bullets: [
-          "Awarded 2nd Place in the GDGoC Member Project Championship at Telkom University Purwokerto.",
-          "Preprocessed student academic performance records, evaluated classification algorithms, and shipped a web app serving real-time model predictions.",
-          "Collaborated directly with the campus counseling team to refine domain features and intervention usability.",
+          "Won 2nd Place in the GDGoC Member Project Championship at Telkom University Purwokerto.",
+          "Cleaned student academic performance data, compared ML classification algorithms, and shipped a web app serving live risk predictions.",
+          "Consulted directly with the campus counseling team to validate domain indicators and practical screening workflows.",
         ],
-        tags: ["Machine Learning", "Python", "Scikit-learn", "Fullstack Web", "Domain Collaboration"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Machine Learning", "Python", "Scikit-learn", "Fullstack Web", "Analytics"],
+        links: [
+          { label: "View GitHub Profile", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
       {
         id: "vehicle-sales",
+        tracks: ["da"],
         title: "Global Vehicle Sales Analytics",
-        subtitle: "RevoU Data Analytics Project",
-        metric: "KPI Dashboard",
+        subtitle: "Excel Pivot Reporting & KPI Insights · RevoU",
+        metric: "BI & Excel",
         period: "Apr 2025",
         thumb: "assets/project-vehicle-sales.svg",
         summary:
-          "Structured exploratory sales performance analysis uncovering regional revenue drivers, vehicle segment trends, and actionable recommendations for commercial decision-making.",
+          "Structured business data analysis identifying regional automotive sales drivers, product mix performance, and executive KPI visualizations for commercial decision-making.",
         bullets: [
-          "Analyzed multi-region global vehicle sales datasets using structured Excel Pivot Tables to answer core commercial performance questions.",
-          "Designed executive-ready charts highlighting top-performing product lines and seasonal revenue shifts to support data-driven decisions.",
+          "Analyzed multi-region global vehicle sales datasets using structured Microsoft Excel Pivot Tables to answer core revenue and unit-volume questions.",
+          "Built clear, decision-ready KPI charts translating raw operational records into actionable business reports.",
         ],
-        tags: ["Excel Pivot Tables", "Data Analytics", "Data Visualization", "Business Storytelling"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Microsoft Excel", "Pivot Tables", "Data Analytics", "KPI Visualization", "Reporting"],
+        links: [
+          { label: "View GitHub Profile", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
     ],
     experiencePrimary: [
@@ -107,8 +156,8 @@ const CONTENT = {
         org: "Informatics Laboratory, Telkom University Purwokerto",
         period: "September 2026 – Present",
         bullets: [
-          "Lead laboratory sessions for Algorithms & Programming 1 for undergraduate Informatics cohorts.",
-          "Mentor students through algorithmic exercises, debugging workflows, and problem-solving fundamentals.",
+          "Teach Algorithms & Programming 1 lab sessions and coach undergraduate cohorts on algorithmic logic and clean problem-solving.",
+          "Mentor students through debugging exercises, data structures fundamentals, and structured code workflows.",
         ],
       },
       {
@@ -116,8 +165,8 @@ const CONTENT = {
         org: "Eklipse.gg, Jakarta (WFO)",
         period: "August – September 2026",
         bullets: [
-          "Collected and processed structured datasets while evaluating and selecting AI models to optimize internal workflows.",
-          "Analyzed user behavior and product performance metrics into clear data reports and curated training datasets for model iteration.",
+          "Collected, cleaned, and curated training datasets while evaluating and selecting AI models to optimize internal production workflows.",
+          "Analyzed user behavior and product performance metrics into actionable analytical reports to guide product and model iterations.",
         ],
       },
       {
@@ -125,37 +174,37 @@ const CONTENT = {
         org: "Home Credit Indonesia × Rakamin, Jakarta (WFA)",
         period: "February – March 2026",
         bullets: [
-          "Built a credit default prediction pipeline via multi-table feature engineering across 7 tables, producing 192 modeling features.",
-          "Benchmarked Logistic Regression and LightGBM models, reaching a best performance of ROC-AUC 0.7450.",
+          "Built a multi-table credit default data pipeline across 7 relational tables, engineering 192 clean modeling features.",
+          "Evaluated Logistic Regression and LightGBM classifiers, achieving a best performance of ROC-AUC 0.7450.",
         ],
       },
+      {
+        role: "Frontend Developer & UI/UX Designer (Analytics & ERP)",
+        org: "PT Braincode Solution, Jakarta (WFA)",
+        period: "May – October 2024",
+        bullets: [
+          "Built internal analytics dashboards and operational ERP systems using SolidJS and Figma specifications.",
+          "Delivered internal reporting interfaces and operational apps for major telecom & enterprise clients: Telkomsel, Pertamina, and Mipcon.",
+        ],
+      },
+    ],
+    experienceEarlier: [
       {
         role: "Web & Android Developer",
         org: "bikinkreatif.id, Purwokerto (WFO)",
         period: "July 2026",
         bullets: [
-          "Delivered custom websites and Android applications tailored to client business workflows, including requirement analysis.",
-          "Shipped an official private school website and an LPK Android registration & information app.",
+          "Delivered custom websites and Android applications tailored to client requirements, including requirement discovery.",
+          "Shipped an official private school portal and an LPK Android registration & information app.",
         ],
       },
-    ],
-    experienceEarlier: [
       {
         role: "Frontend Developer",
         org: "HUMIC (Human Centric Engineering Research Center), Bandung (WFA)",
         period: "May 2025",
         bullets: [
           "Built a seminar certificate management dashboard that accelerated certificate issuance workflows.",
-          "Integrated authentication APIs to secure user access and implemented end-to-end application user flows.",
-        ],
-      },
-      {
-        role: "Frontend Developer & UI/UX Designer",
-        org: "PT Braincode Solution, Jakarta (WFA)",
-        period: "May – October 2024",
-        bullets: [
-          "Developed internal analytics dashboards and ERP systems for operational data management using SolidJS.",
-          "Designed Figma interface systems prior to engineering handoff and delivered internal apps for Telkomsel, Pertamina, and Mipcon.",
+          "Integrated authentication APIs for secure user access and implemented end-to-end application user flows.",
         ],
       },
       {
@@ -163,8 +212,8 @@ const CONTENT = {
         org: "PT Mega Giga Solusindo, Yogyakarta (WFO)",
         period: "April – September 2023",
         bullets: [
-          "Implemented responsive Vue.js company profile interfaces from UI team specifications.",
-          "Built a CodeIgniter CRUD inventory management app for SMEs grounded in user research and verified functionality via Postman QA.",
+          "Implemented responsive Vue.js company profile interfaces and a CodeIgniter CRUD inventory app for SMEs grounded in user research.",
+          "Executed API and web quality assurance testing using Postman.",
         ],
       },
     ],
@@ -175,40 +224,40 @@ const CONTENT = {
         period: "December 2025 – June 2026",
         badge: "2nd Place",
         bullets: [
-          "Won 2nd Place in the Member Project Championship by building a Machine Learning Student Drop-out Risk Detection System.",
-          "Engineered the student performance dataset, selected optimal ML algorithms, and built the full-stack web interface for model serving.",
-          "Consulted with the campus counseling team to optimize feature relevance and practical screening workflow.",
+          "Won 2nd Place in the Member Project Championship by building an ML-powered Student Drop-out Risk Detection System.",
+          "Processed student performance datasets, selected optimal ML algorithms, and developed the full-stack web app for live inference.",
+          "Consulted with the campus counseling team to align feature engineering with real operational decision-making.",
         ],
       },
     ],
     skills: [
       {
-        name: "Data Science & Machine Learning",
-        desc: "Python, Scikit-learn, LightGBM, XGBoost, Optuna, TreeSHAP, Pandas, NumPy, probability calibration, and statistical hypothesis testing.",
+        name: "AI Engineering, RAG & Agentic Workflows",
+        desc: "Python (async), end-to-end RAG pipelines, Hybrid Search & PostgreSQL embeddings, Gemini & Groq LLMs, structured JSON extraction, source/citation verification, FastAPI, Celery, Redis, and background worker orchestration.",
       },
       {
-        name: "Data Engineering & Analytics",
-        desc: "SQL, relational database modeling, multi-table feature engineering, Matplotlib, Seaborn, Plotly, and Excel Pivot analytics.",
+        name: "Data Engineering & Quality Pipelines",
+        desc: "SQL & PLpgSQL (relational modeling, versioned migrations, RLS), Python ETL (Pandas, PyMuPDF, Parquet), multi-table feature engineering, automated schema contracts (pytest), and Git version control.",
       },
       {
-        name: "Software & Fullstack Engineering",
-        desc: "Streamlit, Golang, Java, REST APIs, SolidJS, Vue.js, CodeIgniter, Git, and API quality assurance with Postman.",
+        name: "Data Analytics, BI & Machine Learning",
+        desc: "Microsoft Excel (Pivot Tables & KPI reporting), statistical testing, LightGBM, XGBoost, Scikit-learn, Optuna, TreeSHAP explainability, Matplotlib, Seaborn, Plotly, ECharts, and analytical dashboard design.",
       },
       {
-        name: "UI/UX & Analytics Dashboards",
-        desc: "Figma prototyping, user research, and clean enterprise analytics & ERP dashboard design.",
+        name: "Full-Stack Product & API Integration",
+        desc: "React 19 / TypeScript, SolidJS, Vue.js, Flutter (Dart), Streamlit, Golang, Java REST APIs, Docker, Figma UI/UX, and Postman QA.",
       },
       {
         name: "Languages & Working Style",
-        desc: "Indonesian (Native), English (Professional Working) — proactive mindset, detail-oriented, and collaborative across technical and domain teams.",
+        desc: "Indonesian (Native), English (Professional Working) — analytical problem-solver, proactive, detail-oriented, and experienced collaborating with technical and enterprise stakeholders.",
       },
     ],
   },
 
   id: {
     downloadPdf: "Unduh PDF",
-    availability: "Terbuka untuk peran Data Science & Data Engineering",
-    roleTitle: "Data Scientist & AI Engineer",
+    availability: "Terbuka untuk peran AI Engineer, Data Engineer & Data Analyst",
+    roleTitle: "AI & Data Engineer · Data Analyst",
     secAbout: "Tentang",
     secProjects: "Proyek",
     secExperience: "Pengalaman",
@@ -217,92 +266,140 @@ const CONTENT = {
     secSkills: "Kemampuan",
     secContact: "Kontak",
     aboutP1:
-      "Saya ‘Aarif Rahmaan Jalaluddin Faqiih, mahasiswa Informatika semester 5 Universitas Telkom Purwokerto (IPK 3,77/4,00) dan Asisten Praktikum Algoritma Pemrograman. Fokus utama saya adalah <mark>machine learning end-to-end dan data engineering</mark>, mengolah data mentah menjadi <mark>sistem prediktif yang terkalibrasi dan siap produksi</mark>.",
+      "Saya ‘Aarif Rahmaan Jalaluddin Faqiih, mahasiswa Informatika semester 5 Universitas Telkom Purwokerto (IPK 3,77/4,00) dan Asisten Praktikum Algoritma Pemrograman. Saya membangun <mark>sistem RAG &amp; agentic AI end-to-end</mark> (FastAPI, Celery, Redis, PostgreSQL embeddings) sekaligus <mark>data pipeline SQL/Python yang terukur</mark> dan <mark>model ML klinis maupun finansial</mark>.",
     aboutP2:
-      "Berbekal pengalaman langsung dalam optimasi dataset AI, pemodelan risiko kredit, serta pembangunan dashboard analytics korporasi, saya memadukan <mark>ketajaman statistik dengan eksekusi software full-stack</mark> agar model data benar-benar dapat dipakai dan dipercaya pengguna.",
-    showEarlierExp: "Lihat 3 pengalaman rekayasa & UI/UX sebelumnya (2023–2025)",
-    hideEarlierExp: "Sembunyikan pengalaman sebelumnya",
+      "Berbekal pengalaman optimasi dataset AI di Eklipse.gg, rekayasa 192 fitur risiko kredit untuk Home Credit, serta pembangunan dashboard analytics internal bagi <mark>klien korporasi telekomunikasi &amp; energi (Telkomsel, Pertamina, Mipcon)</mark>, saya menjembatani AI engineering, data pipeline, dan pelaporan bisnis yang jernih.",
+    showEarlierExp: "Lihat 3 pengalaman pengembangan web & mobile lainnya (2023–2026)",
+    hideEarlierExp: "Sembunyikan pengalaman lainnya",
     eduDegree: "S1 Informatika",
     eduDate: "2024 – Sekarang · Semester 5",
     phoneLabel: "Telepon",
     socialLabel: "Profil",
     copy: "Salin",
     copied: "Tersalin",
-    viewOnGithub: "Buka profil GitHub",
+    filters: [
+      { key: "all", label: "Semua (5)" },
+      { key: "ai", label: "AI & RAG" },
+      { key: "de", label: "Data Engineering" },
+      { key: "da", label: "Data Analytics & ML" },
+    ],
     eduBullets: [
-      "Algoritma dan Pemrograman: Membangun aplikasi pencatatan dan pelaporan transaksi pinjaman nasabah bank berbasis Golang.",
-      "Pemrograman Berorientasi Objek: Mengembangkan aplikasi reservasi ruangan berbasis Java mencakup desain database, REST API, dan pengujian Postman.",
-      "Pemodelan Basis Data: Merancang database relasional SQL untuk manajemen operasional restoran dan pengelolaan bahan baku.",
+      "Pemodelan Basis Data: Merancang skema database relasional SQL untuk manajemen operasional restoran dan pengelolaan bahan baku.",
       "Dasar Kecerdasan Artifisial: Membangun model klasifikasi kepuasan penumpang berbasis Fuzzy Logic terintegrasi Machine Learning dan Deep Learning.",
+      "Algoritma dan Pemrograman: Membangun aplikasi pencatatan dan pelaporan transaksi pinjaman nasabah bank berbasis Golang.",
+      "Pemrograman Berorientasi Objek: Mengembangkan backend reservasi ruangan berbasis Java mencakup desain database, REST API, dan pengujian Postman.",
     ],
     projects: [
       {
+        id: "modellyng",
+        tracks: ["ai", "de"],
+        title: "Modellyng — Platform Riset AI & RAG",
+        subtitle: "Hybrid RAG, Agentic LLM, FastAPI, Celery & Redis",
+        metric: "Web + Mobile",
+        period: "2026",
+        thumb: "assets/project-modellyng.svg",
+        summary:
+          "Platform pengetahuan kolaboratif yang mengubah PDF akademik menjadi ekstraksi terstruktur terverifikasi bukti, knowledge graph, dan obrolan RAG di versi Web (React 19/TypeScript) serta Mobile (Flutter).",
+        bullets: [
+          "Membangun pipeline ETL PDF & ekstraksi AI asinkron menggunakan PyMuPDF, FastAPI, Celery, dan worker Redis untuk mengekstrak 11–13 parameter riset via Gemini & Groq dengan LLM Gatekeeper, Model Registry, dan rate limiter.",
+          "Merancang penyimpanan PostgreSQL/PLpgSQL dengan 11 migrasi SQL terversi, embedding blok dokumen, serta Hybrid Search + RAG berbasis Supabase RLS dan private storage.",
+          "Mengimplementasikan alur agentic (Core Agent, verifikasi sumber/sitasi langsung ke halaman PDF asli, serta tinjauan manusia Accept/Edit/Reject).",
+          "Menyediakan sintesis Knowledge Graph interaktif (React Flow) dan ekspor laporan terstruktur Excel/PDF (openpyxl, ReportLab).",
+        ],
+        tags: [
+          "Python (Async)",
+          "RAG & Embeddings",
+          "FastAPI",
+          "Celery + Redis",
+          "PostgreSQL / PLpgSQL",
+          "Gemini & Groq",
+          "React 19 / TS",
+          "Flutter",
+        ],
+        links: [
+          { label: "Repo Web (RAG + Agent)", url: "https://github.com/Extluke/Modellying-web", primary: true },
+          { label: "Repo Mobile (Flutter + FastAPI)", url: "https://github.com/Extluke/modellyng", primary: false },
+        ],
+      },
+      {
         id: "cdc-diabetes",
-        title: "Skrining Risiko Diabetes CDC",
-        subtitle: "ML End-to-End, TreeSHAP & Web App Streamlit",
+        tracks: ["ai", "de", "da"],
+        title: "Skrining Risiko Klinis Diabetes CDC",
+        subtitle: "Clinical AI, Data Quality Pipeline & Web App Streamlit",
         metric: "ROC-AUC 0.8287",
         period: "Nov 2026",
         thumb: "assets/project-cdc-diabetes.png",
         summary:
-          "Pipeline skrining risiko diabetes pada 253.680 data survei CDC BRFSS (UCI ID 891) dengan validasi ketat bebas data leakage, kalibrasi probabilitas, audit fairness, dan aplikasi web Streamlit 3 halaman.",
+          "Pipeline Clinical AI & kualitas data pada 253.680 data survei CDC BRFSS (UCI ID 891) dengan kontrak skema otomatis, validasi bebas data leakage, kalibrasi probabilitas, audit fairness, dan aplikasi Streamlit 3 halaman.",
         bullets: [
-          "Mencegah kebocoran profil duplikat antar train/test melalui Stratified Group Split berbasis hash 21 fitur (0 overlap profil).",
-          "Merekayasa 8 fitur klinis dan membuktikan lewat ablasi dalam CV bahwa Unweighted + tuning threshold OOF mengungguli SMOTE (PR-AUC 0,4331 vs 0,3742) maupun Class Weighting (Brier 0,0966 vs 0,1739).",
+          "Membangun caching data Parquet dan validasi kontrak skema BRFSS otomatis yang dilindungi 9 pengujian pytest & Streamlit AppTest.",
+          "Menghilangkan kebocoran duplikat profil lewat Stratified Group Split hash 21 fitur (0 overlap) dan membuktikan melalui ablasi CV bahwa Unweighted + tuning threshold OOF mengungguli SMOTE (PR-AUC 0,4331 vs 0,3742) maupun Class Weighting (Brier 0,0966 vs 0,1739).",
           "LightGBM hasil tuning Optuna meraih Hold-Out ROC-AUC 0,8287, PR-AUC 0,4303 (3,1× baseline), Brier 0,0967, dan Recall 85,1% pada mode skrining F2.",
-          "Menyajikan Web App Streamlit 3 halaman lengkap dengan penjelasan TreeSHAP individu real-time, simulator What-If gaya hidup, triase CSV massal, dan Kartu Model.",
+          "Menyajikan aplikasi klinis 3 halaman berisi penjelasan TreeSHAP individu real-time, simulator What-If gaya hidup, triase CSV massal, dan Kartu Model.",
         ],
-        tags: ["Python", "LightGBM", "Optuna", "TreeSHAP", "Scikit-learn", "Streamlit", "pytest"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Python", "LightGBM", "Optuna", "TreeSHAP", "Parquet", "Streamlit", "pytest", "Git"],
+        links: [
+          { label: "Buka Profil GitHub", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
       {
         id: "home-credit",
-        title: "Prediksi Risiko Credit Default",
-        subtitle: "Home Credit Indonesia × Rakamin",
-        metric: "ROC-AUC 0.7450",
+        tracks: ["de", "da"],
+        title: "Pipeline & Prediksi Risiko Credit Default",
+        subtitle: "Feature Pipeline 7 Tabel · Home Credit × Rakamin",
+        metric: "192 Fitur · 0.745",
         period: "Feb – Mar 2026",
         thumb: "assets/project-home-credit.svg",
         summary:
-          "Magang berbasis proyek sebagai Data Scientist membangun model prediksi gagal bayar kredit dari tujuh tabel relasional keuangan.",
+          "Rekayasa data multi-tabel relasional dan pemodelan prediksi gagal bayar kredit lintas tujuh tabel finansial untuk mendukung evaluasi risiko peminjam.",
         bullets: [
-          "Melakukan agregasi dan feature engineering lintas 7 tabel finansial yang menghasilkan 192 fitur pemodelan.",
-          "Membandingkan Logistic Regression dan LightGBM secara terukur, dengan performa terbaik mencapai ROC-AUC 0,7450.",
-          "Menyusun rekomendasi mitigasi risiko kredit berbasis faktor pendorong utama gagal bayar.",
+          "Menggabungkan dan mengagregasi 7 tabel relasional (bureau, angsuran, riwayat pengajuan) menjadi 192 fitur pemodelan yang bersih.",
+          "Membandingkan Logistic Regression dan LightGBM secara terukur dengan performa terbaik mencapai ROC-AUC 0,7450.",
+          "Menerjemahkan indikator risiko keterlambatan dan rasio utang menjadi rekomendasi analitik bagi tim risiko kredit.",
         ],
-        tags: ["Python", "LightGBM", "Logistic Regression", "Feature Engineering", "Pandas", "SQL"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Python", "SQL", "Pandas", "Feature Engineering", "LightGBM", "Logistic Regression"],
+        links: [
+          { label: "Buka Profil GitHub", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
       {
         id: "gdgoc-dropout",
+        tracks: ["ai", "da"],
         title: "Deteksi Dini Potensi Drop-out",
         subtitle: "GDGoC Championship · Juara 2",
         metric: "Juara 2",
         period: "Des 2025 – Jun 2026",
         thumb: "assets/project-gdgoc-dropout.svg",
         summary:
-          "Sistem deteksi dini potensi mahasiswa putus kuliah berbasis Machine Learning dan aplikasi web full-stack bersama Google Developer Group on Campus.",
+          "Sistem deteksi dini mahasiswa berisiko putus kuliah berbasis Machine Learning dan aplikasi web full-stack bersama Google Developer Group on Campus.",
         bullets: [
           "Meraih Juara 2 Member Project Championship GDGoC Universitas Telkom Purwokerto.",
-          "Mengolah dataset performa mahasiswa, menyeleksi algoritma ML terbaik, dan membangun web app untuk menyajikan prediksi model.",
-          "Berkonsultasi langsung dengan tim konseling kampus untuk mengoptimalkan relevansi fitur klinis dan alur intervensi.",
+          "Mengolah data performa akademik, menyeleksi algoritma ML terbaik, dan membangun web app untuk menyajikan prediksi langsung.",
+          "Berkonsultasi dengan tim konseling kampus guna menyelaraskan fitur pemodelan dengan alur pendampingan nyata.",
         ],
-        tags: ["Machine Learning", "Python", "Scikit-learn", "Fullstack Web", "Domain Research"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Machine Learning", "Python", "Scikit-learn", "Fullstack Web", "Analytics"],
+        links: [
+          { label: "Buka Profil GitHub", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
       {
         id: "vehicle-sales",
+        tracks: ["da"],
         title: "Analisis Penjualan Kendaraan Global",
-        subtitle: "Proyek Data Analytics · RevoU",
-        metric: "KPI Dashboard",
+        subtitle: "Pelaporan Excel Pivot & KPI · RevoU",
+        metric: "BI & Excel",
         period: "Apr 2025",
         thumb: "assets/project-vehicle-sales.svg",
         summary:
-          "Analisis terstruktur performa penjualan otomotif global untuk memetakan tren segmen pasar dan mendukung keputusan bisnis berbasis data.",
+          "Analisis data bisnis terstruktur untuk memetakan penggerak penjualan otomotif global, performa segmen produk, dan visualisasi KPI untuk pengambilan keputusan.",
         bullets: [
-          "Menganalisis dataset penjualan lintas wilayah menggunakan pivot table Excel untuk menjawab pertanyaan utama performa komersial.",
-          "Menyusun visualisasi grafik terstruktur guna menyoroti segmen terkuat dan mendukung pengambilan keputusan berbasis data.",
+          "Menganalisis dataset penjualan lintas wilayah menggunakan Microsoft Excel Pivot Table untuk menjawab pertanyaan utama performa komersial.",
+          "Menyusun visualisasi grafik KPI yang jelas untuk mengubah data operasional menjadi laporan keputusan bisnis.",
         ],
-        tags: ["Excel Pivot Table", "Data Analytics", "Visualisasi Data", "Business Insight"],
-        githubUrl: "https://github.com/aariffaqiih",
+        tags: ["Microsoft Excel", "Pivot Tables", "Data Analytics", "Visualisasi KPI", "Reporting"],
+        links: [
+          { label: "Buka Profil GitHub", url: "https://github.com/aariffaqiih", primary: true },
+        ],
       },
     ],
     experiencePrimary: [
@@ -311,8 +408,8 @@ const CONTENT = {
         org: "Laboratorium Informatika, Telkom University Purwokerto",
         period: "September 2026 – Sekarang",
         bullets: [
-          "Mengajar sesi praktikum mata kuliah Algoritma Pemrograman 1 di laboratorium kampus.",
-          "Mendampingi mahasiswa menyelesaikan latihan algoritma, debugging, dan pemahaman logika pemrograman.",
+          "Mengajar sesi praktikum Algoritma Pemrograman 1 dan melatih logika pemecahan masalah mahasiswa Informatika.",
+          "Mendampingi debugging, pemahaman struktur data dasar, dan alur penulisan kode yang terstruktur.",
         ],
       },
       {
@@ -320,8 +417,8 @@ const CONTENT = {
         org: "Eklipse.gg, Jakarta (WFO)",
         period: "Agustus – September 2026",
         bullets: [
-          "Mengumpulkan dan memproses dataset serta mengevaluasi dan menyeleksi model AI untuk optimasi workflow internal.",
-          "Menganalisis perilaku pengguna dan performa produk menjadi laporan data serta menyiapkan dataset untuk pelatihan model.",
+          "Mengumpulkan, membersihkan, dan mengkurasi dataset pelatihan sekaligus mengevaluasi serta menyeleksi model AI untuk optimasi workflow internal.",
+          "Menganalisis perilaku pengguna dan performa produk menjadi laporan data yang dapat ditindaklanjuti untuk iterasi produk dan model.",
         ],
       },
       {
@@ -329,37 +426,37 @@ const CONTENT = {
         org: "Home Credit Indonesia × Rakamin, Jakarta (WFA)",
         period: "Februari – Maret 2026",
         bullets: [
-          "Membangun model prediksi credit default melalui feature engineering dari 7 tabel yang menghasilkan 192 fitur pemodelan.",
-          "Membandingkan Logistic Regression dan LightGBM dengan model terbaik mencapai ROC-AUC 0,7450.",
+          "Membangun pipeline data risiko kredit lintas 7 tabel relasional yang menghasilkan 192 fitur pemodelan bersih.",
+          "Membandingkan Logistic Regression dan LightGBM dengan performa terbaik mencapai ROC-AUC 0,7450.",
         ],
       },
       {
-        role: "Web Developer & Android Developer",
-        org: "bikinkreatif.id, Purwokerto (WFO)",
-        period: "Juli 2026",
+        role: "Frontend Developer & UI/UX Designer (Analytics & ERP)",
+        org: "PT Braincode Solution, Jakarta (WFA)",
+        period: "Mei – Oktober 2024",
         bullets: [
-          "Membangun website dan aplikasi Android sesuai kebutuhan bisnis klien termasuk analisis fitur bersama klien.",
-          "Menghasilkan website resmi sekolah swasta dan aplikasi Android LPK untuk publikasi informasi dan pendaftaran.",
+          "Membangun dashboard analytics internal dan sistem ERP pengelolaan data operasional berbasis SolidJS dan desain Figma.",
+          "Menghasilkan aplikasi analitik & operasional internal bagi klien besar telekomunikasi dan energi: Telkomsel, Pertamina, dan Mipcon.",
         ],
       },
     ],
     experienceEarlier: [
       {
+        role: "Web Developer & Android Developer",
+        org: "bikinkreatif.id, Purwokerto (WFO)",
+        period: "Juli 2026",
+        bullets: [
+          "Membangun website dan aplikasi Android sesuai kebutuhan bisnis klien termasuk analisis kebutuhan fitur bersama klien.",
+          "Menghasilkan portal resmi sekolah swasta dan aplikasi Android LPK untuk publikasi informasi dan pendaftaran.",
+        ],
+      },
+      {
         role: "Frontend Developer",
         org: "HUMIC (Human Centric Engineering Research Center), Bandung (WFA)",
         period: "Mei 2025",
         bullets: [
-          "Membangun dashboard sertifikat seminar yang mempercepat alur penerbitan sertifikat.",
-          "Mengintegrasikan API autentikasi untuk keamanan pengguna serta merancang dan mengimplementasikan user flow aplikasi.",
-        ],
-      },
-      {
-        role: "Frontend Developer & UI/UX Designer",
-        org: "PT Braincode Solution, Jakarta (WFA)",
-        period: "Mei – Oktober 2024",
-        bullets: [
-          "Membangun dashboard analytics internal dan sistem ERP berbasis SolidJS untuk pengelolaan data operasional.",
-          "Merancang UI/UX dengan Figma dan menghasilkan aplikasi internal untuk tiga perusahaan besar (Telkomsel, Pertamina, dan Mipcon).",
+          "Membangun dashboard manajemen sertifikat seminar yang mempercepat proses penerbitan sertifikat.",
+          "Mengintegrasikan API autentikasi untuk keamanan pengguna serta mengimplementasikan alur aplikasi end-to-end.",
         ],
       },
       {
@@ -367,8 +464,8 @@ const CONTENT = {
         org: "PT Mega Giga Solusindo, Yogyakarta (WFO)",
         period: "April – September 2023",
         bullets: [
-          "Mengimplementasikan tampilan website company profile berbasis Vue.js dari desain tim UI.",
-          "Membangun aplikasi manajemen stok UMKM berbasis CodeIgniter dari riset pengguna dan menguji kualitasnya dengan Postman.",
+          "Mengimplementasikan website company profile berbasis Vue.js serta aplikasi CRUD manajemen stok UMKM berbasis CodeIgniter dari riset pengguna.",
+          "Melakukan pengujian kualitas fungsionalitas API dan web menggunakan Postman.",
         ],
       },
     ],
@@ -380,37 +477,38 @@ const CONTENT = {
         badge: "Juara 2",
         bullets: [
           "Meraih Juara 2 Member Project Championship melalui Sistem Deteksi Potensi Drop-out berbasis Machine Learning.",
-          "Mengolah dataset performa mahasiswa, memilih algoritma ML, dan membangun aplikasi web untuk mengimplementasikan model.",
-          "Berkonsultasi dengan tim konseling kampus untuk menganalisis dan mengoptimalkan fitur pemodelan.",
+          "Mengolah dataset performa mahasiswa, memilih algoritma ML terbaik, dan membangun aplikasi web full-stack untuk inferensi langsung.",
+          "Berkonsultasi dengan tim konseling kampus guna menyelaraskan rekayasa fitur dengan alur keputusan operasional.",
         ],
       },
     ],
     skills: [
       {
-        name: "Data Science & Machine Learning",
-        desc: "Python, Scikit-learn, LightGBM, XGBoost, Optuna, TreeSHAP, Pandas, NumPy, kalibrasi probabilitas, dan pengujian statistik.",
+        name: "AI Engineering, RAG & Agentic Workflows",
+        desc: "Python (async), RAG pipeline end-to-end, Hybrid Search & PostgreSQL embeddings, LLM Gemini & Groq, ekstraksi JSON terstruktur, verifikasi sitasi/sumber, FastAPI, Celery, Redis, dan orkestrasi background worker.",
       },
       {
-        name: "Data Engineering & Analytics",
-        desc: "SQL, pemodelan basis data relasional, feature engineering multi-tabel, Matplotlib, Seaborn, Plotly, dan Excel Pivot.",
+        name: "Data Engineering & Quality Pipelines",
+        desc: "SQL & PLpgSQL (pemodelan relasional, migrasi terversi, RLS), Python ETL (Pandas, PyMuPDF, Parquet), feature engineering multi-tabel, validasi kontrak skema otomatis (pytest), dan version control Git.",
       },
       {
-        name: "Software & Fullstack Engineering",
-        desc: "Streamlit, Golang, Java, REST API, SolidJS, Vue.js, CodeIgniter, Git, serta quality assurance API menggunakan Postman.",
+        name: "Data Analytics, BI & Machine Learning",
+        desc: "Microsoft Excel (Pivot Table & pelaporan KPI), uji statistik, LightGBM, XGBoost, Scikit-learn, Optuna, explainability TreeSHAP, Matplotlib, Seaborn, Plotly, ECharts, serta perancangan dashboard analitik.",
       },
       {
-        name: "UI/UX & Analytics Dashboards",
-        desc: "Desain antarmuka Figma, riset pengguna, serta perancangan dashboard analitik dan ERP korporasi.",
+        name: "Full-Stack Product & Integrasi API",
+        desc: "React 19 / TypeScript, SolidJS, Vue.js, Flutter (Dart), Streamlit, Golang, Java REST API, Docker, Figma UI/UX, dan pengujian Postman.",
       },
       {
-        name: "Bahasa & Kolaborasi",
-        desc: "Indonesia (Aktif), Inggris (Profesional) — pola pikir proaktif, teliti, dan terbiasa berkolaborasi lintas disiplin.",
+        name: "Bahasa & Gaya Kerja",
+        desc: "Indonesia (Aktif), Inggris (Profesional) — analitis dalam pemecahan masalah, proaktif, teliti, dan terbiasa berkolaborasi dengan tim teknis maupun stakeholder bisnis.",
       },
     ],
   },
 };
 
 let currentLang = localStorage.getItem("af-lang") === "id" ? "id" : "en";
+let activeFilter = "all";
 let earlierExpanded = false;
 let activeProjectId = null;
 
@@ -456,25 +554,35 @@ function createEntryCard(item) {
   return article;
 }
 
-function renderContent() {
+function renderProjects() {
   const t = CONTENT[currentLang];
-  document.documentElement.lang = currentLang;
-  document.getElementById("langLabel").textContent = currentLang.toUpperCase();
 
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (t[key]) el.textContent = t[key];
+  // Filter pills
+  const filterBar = document.getElementById("projectFilters");
+  filterBar.innerHTML = "";
+  t.filters.forEach((f) => {
+    const pill = document.createElement("button");
+    pill.type = "button";
+    pill.className = "filter-pill";
+    pill.setAttribute("role", "tab");
+    pill.setAttribute("aria-selected", String(activeFilter === f.key));
+    pill.textContent = f.label;
+    pill.addEventListener("click", () => {
+      activeFilter = f.key;
+      renderProjects();
+    });
+    filterBar.appendChild(pill);
   });
 
-  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
-    const key = el.getAttribute("data-i18n-html");
-    if (t[key]) el.innerHTML = t[key];
-  });
-
-  // Projects grid
+  // Filtered project cards
   const grid = document.getElementById("projectsGrid");
   grid.innerHTML = "";
-  t.projects.forEach((proj) => {
+  const visible =
+    activeFilter === "all"
+      ? t.projects
+      : t.projects.filter((p) => p.tracks.includes(activeFilter));
+
+  visible.forEach((proj) => {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "project-card";
@@ -494,6 +602,24 @@ function renderContent() {
     btn.addEventListener("click", () => openProjectModal(proj.id));
     grid.appendChild(btn);
   });
+}
+
+function renderContent() {
+  const t = CONTENT[currentLang];
+  document.documentElement.lang = currentLang;
+  document.getElementById("langLabel").textContent = currentLang.toUpperCase();
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (t[key]) el.textContent = t[key];
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-html");
+    if (t[key]) el.innerHTML = t[key];
+  });
+
+  renderProjects();
 
   // Experience stacks
   const expPrimary = document.getElementById("experiencePrimary");
@@ -568,15 +694,15 @@ function populateModal(projectId) {
 
   const actions = document.getElementById("modalActions");
   actions.innerHTML = "";
-  if (proj.githubUrl) {
+  (proj.links || []).forEach((lnk) => {
     const a = document.createElement("a");
-    a.className = "modal-link";
-    a.href = proj.githubUrl;
+    a.className = lnk.primary ? "modal-link" : "modal-link secondary";
+    a.href = lnk.url;
     a.target = "_blank";
     a.rel = "noopener noreferrer";
-    a.textContent = t.viewOnGithub;
+    a.textContent = lnk.label;
     actions.appendChild(a);
-  }
+  });
 }
 
 function openProjectModal(projectId) {
@@ -612,7 +738,6 @@ function updateWibClock() {
 }
 
 function initInteractions() {
-  // Theme toggle
   const themeBtn = document.getElementById("themeToggle");
   const syncThemeAria = () => {
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
@@ -627,14 +752,12 @@ function initInteractions() {
     syncThemeAria();
   });
 
-  // Language toggle
   document.getElementById("langToggle").addEventListener("click", () => {
     currentLang = currentLang === "en" ? "id" : "en";
     localStorage.setItem("af-lang", currentLang);
     renderContent();
   });
 
-  // Earlier experience accordion
   const toggleBtn = document.getElementById("toggleEarlierExp");
   const earlierBox = document.getElementById("experienceEarlier");
   toggleBtn.addEventListener("click", () => {
@@ -646,7 +769,6 @@ function initInteractions() {
       : CONTENT[currentLang].showEarlierExp;
   });
 
-  // Copy email helper
   const copyBtn = document.getElementById("copyEmailBtn");
   copyBtn.addEventListener("click", async () => {
     try {
@@ -661,7 +783,6 @@ function initInteractions() {
     }
   });
 
-  // Modal close handlers
   document.getElementById("modalCloseBtn").addEventListener("click", closeProjectModal);
   document.getElementById("projectModal").addEventListener("click", (e) => {
     if (e.target.id === "projectModal") closeProjectModal();
