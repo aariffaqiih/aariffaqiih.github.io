@@ -26,14 +26,14 @@
   <text x="325" y="158" text-anchor="middle" fill="#111315" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Celery + Redis</text>
   <path d="M394 154 L410 154" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round"/>
   <rect x="416" y="140" width="126" height="28" rx="6" fill="#0F5C6E"/>
-  <text x="479" y="158" text-anchor="middle" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Hybrid RAG</text>
+  <text x="479" y="158" text-anchor="middle" fill="#FFFFFF" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">HNSW + RRF</text>
   <path d="M548 154 L564 154" stroke="#9CA3AF" stroke-width="1.8" stroke-linecap="round"/>
   <rect x="570" y="140" width="110" height="28" rx="6" fill="#FEF3C7" stroke="#FDE68A"/>
-  <text x="625" y="158" text-anchor="middle" fill="#92400E" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Verified PDF</text>
+  <text x="625" y="158" text-anchor="middle" fill="#92400E" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">PDF BBox</text>
 
   <!-- Left panel: Knowledge Graph Synthesis -->
   <rect x="104" y="200" width="292" height="220" rx="12" fill="#FFFFFF" stroke="#EAEEF3"/>
-  <text x="122" y="226" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Knowledge Graph Synthesis</text>
+  <text x="122" y="226" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Knowledge Graph &amp; Clustering</text>
   <!-- Graph edges -->
   <line x1="184" y1="278" x2="302" y2="264" stroke="#CBD5E1" stroke-width="2"/>
   <line x1="184" y1="278" x2="220" y2="356" stroke="#CBD5E1" stroke-width="2"/>
@@ -41,34 +41,34 @@
   <line x1="220" y1="356" x2="328" y2="348" stroke="#0F5C6E" stroke-width="2" stroke-dasharray="4 3"/>
   <!-- Nodes -->
   <rect x="126" y="258" width="98" height="36" rx="8" fill="#0F5C6E"/>
-  <text x="175" y="280" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600">13 Parameters</text>
+  <text x="175" y="280" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="11.5" font-weight="600">4-Batch / 13P</text>
 
   <rect x="266" y="246" width="106" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
-  <text x="319" y="267" text-anchor="middle" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Embeddings</text>
+  <text x="319" y="267" text-anchor="middle" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">pgvector 768d</text>
 
   <rect x="148" y="340" width="114" height="34" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
-  <text x="205" y="361" text-anchor="middle" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Evidence Block</text>
+  <text x="205" y="361" text-anchor="middle" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Crossref DOI</text>
 
   <rect x="278" y="332" width="98" height="34" rx="8" fill="#FEF3C7" stroke="#FDE68A"/>
-  <text x="327" y="353" text-anchor="middle" fill="#92400E" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Research Gap</text>
+  <text x="327" y="353" text-anchor="middle" fill="#92400E" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Gap Synthesis</text>
 
-  <text x="122" y="404" fill="#6B7280" font-family="JetBrains Mono, monospace" font-size="10.5">PostgreSQL · PLpgSQL · 11 Migrations</text>
+  <text x="122" y="404" fill="#6B7280" font-family="JetBrains Mono, monospace" font-size="10.5">pgvector HNSW · GIN FTS · RLS</text>
 
-  <!-- Right panel: Grounded Agent Chat & Verification -->
+  <!-- Right panel: Grounded RAG Chat & Failover -->
   <rect x="412" y="200" width="284" height="220" rx="12" fill="#F8FAFC" stroke="#EAEEF3"/>
-  <text x="430" y="226" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Grounded RAG Agent Chat</text>
+  <text x="430" y="226" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Evidence-Grounded RAG Chat</text>
 
   <rect x="430" y="242" width="248" height="44" rx="8" fill="#FFFFFF" stroke="#E5E9F0"/>
-  <text x="442" y="260" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">Compare methodology limitations</text>
-  <text x="442" y="276" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">across uploaded papers...</text>
+  <text x="442" y="260" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">@project /paper — Compare</text>
+  <text x="442" y="276" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">methods &amp; limitations [S1] [S2]</text>
 
   <rect x="430" y="298" width="248" height="72" rx="8" fill="#FFFFFF" stroke="#BFE2EA"/>
-  <text x="442" y="317" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Agentic Synthesis (Verified)</text>
-  <text x="442" y="335" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="10.5">Cited to exact PDF page blocks with</text>
-  <text x="442" y="351" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="10.5">Accept / Edit / Reject human review.</text>
+  <text x="442" y="317" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600">Dual-Provider ModelRegistry</text>
+  <text x="442" y="335" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="10.5">Gemini Core -> Groq Backup failover,</text>
+  <text x="442" y="351" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="10.5">Token Bucket + strict Pydantic JSON.</text>
 
   <rect x="430" y="382" width="108" height="24" rx="12" fill="#DCFCE7"/>
-  <text x="484" y="398" text-anchor="middle" fill="#15803D" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">Source Linked</text>
+  <text x="484" y="398" text-anchor="middle" fill="#15803D" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">BBox Linked</text>
   <rect x="546" y="382" width="132" height="24" rx="12" fill="#FFFFFF" stroke="#DCE2E9"/>
-  <text x="612" y="398" text-anchor="middle" fill="#374151" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">FastAPI + Gemini</text>
+  <text x="612" y="398" text-anchor="middle" fill="#374151" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">Gemini -> Groq</text>
 </svg>
