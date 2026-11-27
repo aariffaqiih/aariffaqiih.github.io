@@ -1,4 +1,4 @@
-/* Portfolio v2 — Tailored for AI Engineer, Data Engineer & Data Analyst roles
+/* Portfolio v2 - Tailored for AI Engineer, Data Engineer & Data Analyst roles
    (PT Wiratek Solusi Asia, PT NexWave Indonesia, & enterprise AI/Data teams). */
 
 const CONTENT = {
@@ -17,10 +17,10 @@ const CONTENT = {
       "I am ‘Aarif Rahmaan Jalaluddin Faqiih, a 5th-semester Informatics student at Telkom University Purwokerto (GPA 3.77/4.00) and Algorithms &amp; Programming Lab Assistant. I build <mark>end-to-end Hybrid RAG &amp; resilient LLM systems</mark> (pgvector HNSW, FastAPI, Celery, Redis, Gemini/Groq failover) alongside <mark>reliable SQL/Python data pipelines</mark> and <mark>clinical &amp; financial ML models</mark>.",
     aboutP2:
       "Having optimized AI datasets at Eklipse.gg, engineered 192-feature credit models for Home Credit, and shipped internal analytics dashboards for <mark>enterprise telecom &amp; energy clients (Telkomsel, Pertamina, Mipcon)</mark>, I bridge AI engineering, data pipelines, and clear business reporting.",
-    showEarlierExp: "Show 3 earlier web & mobile roles (2023–2026)",
+    showEarlierExp: "Show 3 earlier web & mobile roles (2023-2026)",
     hideEarlierExp: "Hide earlier web & mobile roles",
     eduDegree: "B.S. in Informatics",
-    eduDate: "2024 – Present · Semester 5",
+    eduDate: "2024 - Present · Semester 5",
     phoneLabel: "Phone",
     socialLabel: "Profiles",
     copy: "Copy",
@@ -41,7 +41,7 @@ const CONTENT = {
       {
         id: "modellyng",
         tracks: ["ai", "de"],
-        title: "Modellyng — AI & RAG Platform",
+        title: "Modellyng: AI & RAG Platform",
         subtitle: "pgvector HNSW + RRF Hybrid RAG, FastAPI, Celery & Redis",
         metric: "Web + Mobile",
         period: "2026",
@@ -72,10 +72,10 @@ const CONTENT = {
       {
         id: "meteor",
         tracks: ["ai", "de", "da"],
-        title: "Meteor — AI Chat & STEM Lab",
+        title: "Meteor: AI Chat & STEM Lab",
         subtitle: "Multi-LLM Router, 40 AI/Math Solvers, Plot Studio & Lean 4",
         metric: "Live · 56k LOC",
-        period: "2025 – 2026",
+        period: "2025 - 2026",
         thumb: "assets/project-meteor.svg",
         summary:
           "Zero-framework, solo-engineered AI chat platform and interactive STEM/ML laboratory (348 ES modules, 56.4k LOC, 381 commits, 80 Vitest suites / 683 test cases) combining resilient multi-LLM SSE streaming, 40 KaTeX solvers, a 4-chart data viz studio, and 6 Lean 4 formal proofs.",
@@ -124,10 +124,10 @@ const CONTENT = {
       {
         id: "gdgoc-dropout",
         tracks: ["ai", "de", "da"],
-        title: "StayLearn — AI Drop-out App",
+        title: "StayLearn: AI Drop-out App",
         subtitle: "Flask, SHAP Counterfactuals, KMeans & Groq Llama 3",
         metric: "2nd · AUC 0.967",
-        period: "Dec 2025 – Jun 2026",
+        period: "Dec 2025 - Jun 2026",
         thumb: "assets/project-staylearn.png",
         summary:
           "Award-winning (2nd Place GDGoC Championship) live Flask & SQLite retention platform trained on 7,000 student records (ROC-AUC 0.9673, 92% Dropout Recall), combining SHAP + counterfactual XAI, 5-cluster KMeans intervention ranking, a zero-PII Groq/Llama 3 engine, and 11 counselor BI dashboards.",
@@ -164,9 +164,9 @@ const CONTENT = {
           "End-to-end commercial analytics and interactive Google Looker Studio BI dashboard over 20,000 FMCG orders (Rp 875.6M revenue, 93 customers, 3 channels), completed with an 'Expert' predicate at the KarirNex Data Analyst Bootcamp.",
         bullets: [
           "Built a dark-mode Google Looker Studio dashboard featuring price-range sliders, multi-dimension filters, daily demand trends, and channel × product matrices across Rp 875.6M total revenue and Rp 341.2M shipping spend.",
-          "Wrote SQLite SQL queries (CTEs, CASE WHEN campaign flags, strftime grouping) proving April as peak successful revenue month (Rp 20.26M), Online – Toko Hijau as lowest-discount valid channel (Rp 387.8k across 1,698 orders), and normal-day dominance over Payday/Double Date promos for Minyak Goreng.",
+          "Wrote SQLite SQL queries (CTEs, CASE WHEN campaign flags, strftime grouping) proving April as peak successful revenue month (Rp 20.26M), Online - Toko Hijau as lowest-discount valid channel (Rp 387.8k across 1,698 orders), and normal-day dominance over Payday/Double Date promos for Minyak Goreng.",
           "Diagnosed critical operational leakage where Failed (5,089 orders / Rp 222.3M), Returned (4,998 / Rp 217.9M), and Pending (4,870 / Rp 213.4M) nearly equaled Success (5,043 / Rp 222.0M), concentrated in Makanan and the Offline channel.",
-          "Quantified price elasticity via interactive slicing: revenue peaked at Rp 15,001–20,000 (Rp 406.7M, 8,004 orders) before dropping steeply above Rp 20,000 (Rp 243.7M, 3,980 orders); certified with Predicate: Expert (No. 1085/B-1/KBT.DA.3/KRX/I/2026).",
+          "Quantified price elasticity via interactive slicing: revenue peaked at Rp 15,001-20,000 (Rp 406.7M, 8,004 orders) before dropping steeply above Rp 20,000 (Rp 243.7M, 3,980 orders); certified with Predicate: Expert (No. 1085/B-1/KBT.DA.3/KRX/I/2026).",
         ],
         tags: [
           "Google Looker Studio",
@@ -190,15 +190,15 @@ const CONTENT = {
         title: "Credit Default Risk Pipeline",
         subtitle: "7-Table Feature Pipeline · Home Credit × Rakamin",
         metric: "ROC-AUC 0.7450",
-        period: "Feb – Mar 2026",
+        period: "Feb - Mar 2026",
         thumb: "assets/project-home-credit.svg",
         summary:
           "End-to-end 12-phase credit default modeling pipeline over 38,848 Home Credit applicants (8.1% default rate) joining 7 relational CSV tables in Pandas/Scikit-learn into 192 zero-NaN features, complete with threshold-based Rp 191.9M projected business impact.",
         bullets: [
           "Joined 7 relational CSV tables (application_train, bureau, bureau_balance, previous_application, installments_payments, POS_CASH_balance, credit_card_balance) from 122 raw columns into 192 zero-NaN features with leakage-free train-only imputation, 6 MNAR missing flags, 6 domain ratios, and unseen-safe label encoding.",
           "Benchmarked Logistic Regression (Imputer → StandardScaler → lbfgs, class_weight='balanced', RandomizedSearchCV C=0.0012) vs LightGBM: Logistic Regression on all 7 tables won with Test ROC-AUC 0.7450 (+0.0138 over App-Only 0.7312; Default Recall 0.66), outperforming LightGBM (0.6976) which degraded on sparse zero-filled subsidiary aggregates.",
-          "Identified top predictive signals from LGBM split importance (ext_source_mean 1,424, ext_source_2 785, days_id_publish 754, ext_source_3 742, days_registration 723) and EDA risk segments (ages 20–30, Laborers/Drivers, EXT_SOURCE_2 < 0.3).",
-          "Quantified financial impact under 45% LGD on the 7,770-applicant test set: threshold 0.6 prevented 282 defaults for Rp 38.4M optimal Net Benefit (Rp 191.9M projected at full 38,848-applicant scale) with a 3-tier scoring policy (<0.45 Auto-approve, 0.45–0.70 Manual review, >0.70 Auto-reject).",
+          "Identified top predictive signals from LGBM split importance (ext_source_mean 1,424, ext_source_2 785, days_id_publish 754, ext_source_3 742, days_registration 723) and EDA risk segments (ages 20-30, Laborers/Drivers, EXT_SOURCE_2 < 0.3).",
+          "Quantified financial impact under 45% LGD on the 7,770-applicant test set: threshold 0.6 prevented 282 defaults for Rp 38.4M optimal Net Benefit (Rp 191.9M projected at full 38,848-applicant scale) with a 3-tier scoring policy (<0.45 Auto-approve, 0.45-0.70 Manual review, >0.70 Auto-reject).",
         ],
         tags: [
           "Python",
@@ -231,10 +231,10 @@ const CONTENT = {
         period: "Apr 2025",
         thumb: "assets/project-vehicle-sales.svg",
         summary:
-          "23-slide commercial analytics report on 2003–2005 global vehicle sales ($10.03M across 7 product lines), combining manual Excel Pivot Table diagnostics, AI-assisted quarterly/customer drill-downs, and a proactive Shipped-Only data-hygiene audit.",
+          "23-slide commercial analytics report on 2003-2005 global vehicle sales ($10.03M across 7 product lines), combining manual Excel Pivot Table diagnostics, AI-assisted quarterly/customer drill-downs, and a proactive Shipped-Only data-hygiene audit.",
         bullets: [
           "Identified 2004 as the peak revenue year ($4,724,162.60, +34.3% vs 2003's $3,516,979.54; 2005 YTD $1,791,486.71) with recurring Q4/November seasonality peaks ($1.03M in Nov 2003, $1.09M in Nov 2004).",
-          "Proved Classic Cars dominated both 2004 country revenue led by the USA ($560,448.26 across 4,870 units; top US buyer Mini Gifts Distributors Ltd. at 700 units) and Sep 2003 – Mar 2004 volume (11,083 units vs 6,127 Vintage Cars).",
+          "Proved Classic Cars dominated both 2004 country revenue led by the USA ($560,448.26 across 4,870 units; top US buyer Mini Gifts Distributors Ltd. at 700 units) and Sep 2003 - Mar 2004 volume (11,083 units vs 6,127 Vintage Cars).",
           "Proactively flagged ambiguous/risky order statuses (Cancelled, Disputed, On Hold, In Process, Resolved) and validated all KPIs under a strict Shipped-Only filter (2004: $4,528,047.22; USA Classic Cars: $557,537.86; 10,979 units).",
           "Benchmarked top vs bottom B2B accounts (Euro Shopping Channel at 1,879 units vs Baane Mini Imports at 22 units) to deliver executive retention and Q4 inventory recommendations.",
         ],
@@ -252,7 +252,7 @@ const CONTENT = {
       {
         role: "Algorithms & Programming Lab Assistant",
         org: "Informatics Laboratory, Telkom University Purwokerto",
-        period: "September 2026 – Present",
+        period: "September 2026 - Present",
         bullets: [
           "Teach Algorithms & Programming 1 lab sessions and coach undergraduate cohorts on algorithmic logic and clean problem-solving.",
           "Mentor students through debugging exercises, data structures fundamentals, and structured code workflows.",
@@ -261,7 +261,7 @@ const CONTENT = {
       {
         role: "AI & Data Optimization Intern",
         org: "Eklipse.gg, Jakarta (WFO)",
-        period: "August – September 2026",
+        period: "August - September 2026",
         bullets: [
           "Collected, cleaned, and curated training datasets while evaluating and selecting AI models to optimize internal production workflows.",
           "Analyzed user behavior and product performance metrics into actionable analytical reports to guide product and model iterations.",
@@ -270,7 +270,7 @@ const CONTENT = {
       {
         role: "Data Scientist Intern (Project-Based)",
         org: "Home Credit Indonesia × Rakamin, Jakarta (WFA)",
-        period: "February – March 2026",
+        period: "February - March 2026",
         bullets: [
           "Built a multi-table credit default data pipeline across 7 relational tables, engineering 192 clean modeling features.",
           "Evaluated Logistic Regression and LightGBM classifiers, achieving a best performance of ROC-AUC 0.7450.",
@@ -279,7 +279,7 @@ const CONTENT = {
       {
         role: "Frontend Developer & UI/UX Designer (Analytics & ERP)",
         org: "PT Braincode Solution, Jakarta (WFA)",
-        period: "May – October 2024",
+        period: "May - October 2024",
         bullets: [
           "Built internal analytics dashboards and operational ERP systems using SolidJS and Figma specifications.",
           "Delivered internal reporting interfaces and operational apps for major telecom & enterprise clients: Telkomsel, Pertamina, and Mipcon.",
@@ -308,7 +308,7 @@ const CONTENT = {
       {
         role: "Student Intern (Frontend Developer)",
         org: "PT Mega Giga Solusindo, Yogyakarta (WFO)",
-        period: "April – September 2023",
+        period: "April - September 2023",
         bullets: [
           "Implemented responsive Vue.js company profile interfaces and a CodeIgniter CRUD inventory app for SMEs grounded in user research.",
           "Executed API and web quality assurance testing using Postman.",
@@ -319,7 +319,7 @@ const CONTENT = {
       {
         role: "AI Developer & Fullstack Developer",
         org: "Google Developer Group on Campus · Telkom University Purwokerto",
-        period: "December 2025 – June 2026",
+        period: "December 2025 - June 2026",
         badge: "2nd Place",
         bullets: [
           "Won 2nd Place in the Member Project Championship by building an ML-powered Student Drop-out Risk Detection System.",
@@ -347,7 +347,7 @@ const CONTENT = {
       },
       {
         name: "Languages & Working Style",
-        desc: "Indonesian (Native), English (Professional Working) — analytical problem-solver, proactive, detail-oriented, and experienced collaborating with technical and enterprise stakeholders.",
+        desc: "Indonesian (Native), English (Professional Working). Analytical problem-solver, proactive, detail-oriented, and experienced collaborating with technical and enterprise stakeholders.",
       },
     ],
   },
@@ -367,10 +367,10 @@ const CONTENT = {
       "Saya ‘Aarif Rahmaan Jalaluddin Faqiih, mahasiswa Informatika semester 5 Universitas Telkom Purwokerto (IPK 3,77/4,00) dan Asisten Praktikum Algoritma Pemrograman. Saya membangun <mark>sistem Hybrid RAG &amp; LLM tangguh end-to-end</mark> (pgvector HNSW, FastAPI, Celery, Redis, failover Gemini/Groq) sekaligus <mark>data pipeline SQL/Python yang terukur</mark> dan <mark>model ML klinis maupun finansial</mark>.",
     aboutP2:
       "Berbekal pengalaman optimasi dataset AI di Eklipse.gg, rekayasa 192 fitur risiko kredit untuk Home Credit, serta pembangunan dashboard analytics internal bagi <mark>klien korporasi telekomunikasi &amp; energi (Telkomsel, Pertamina, Mipcon)</mark>, saya menjembatani AI engineering, data pipeline, dan pelaporan bisnis yang jernih.",
-    showEarlierExp: "Lihat 3 pengalaman pengembangan web & mobile lainnya (2023–2026)",
+    showEarlierExp: "Lihat 3 pengalaman pengembangan web & mobile lainnya (2023-2026)",
     hideEarlierExp: "Sembunyikan pengalaman lainnya",
     eduDegree: "S1 Informatika",
-    eduDate: "2024 – Sekarang · Semester 5",
+    eduDate: "2024 - Sekarang · Semester 5",
     phoneLabel: "Telepon",
     socialLabel: "Profil",
     copy: "Salin",
@@ -391,7 +391,7 @@ const CONTENT = {
       {
         id: "modellyng",
         tracks: ["ai", "de"],
-        title: "Modellyng — Platform AI & RAG",
+        title: "Modellyng: Platform AI & RAG",
         subtitle: "pgvector HNSW + RRF Hybrid RAG, FastAPI, Celery & Redis",
         metric: "Web + Mobile",
         period: "2026",
@@ -422,10 +422,10 @@ const CONTENT = {
       {
         id: "meteor",
         tracks: ["ai", "de", "da"],
-        title: "Meteor — AI Chat & Lab STEM",
+        title: "Meteor: AI Chat & Lab STEM",
         subtitle: "Router Multi-LLM, 40 Solver AI/Math, Plot Studio & Lean 4",
         metric: "Live · 56k LOC",
-        period: "2025 – 2026",
+        period: "2025 - 2026",
         thumb: "assets/project-meteor.svg",
         summary:
           "Platform chat AI tanpa framework dan laboratorium STEM/ML interaktif yang dibangun mandiri (348 modul ES, 56,4 ribu LOC, 381 commit, 80 test suite Vitest / 683 kasus uji), menggabungkan streaming SSE multi-LLM tangguh, 40 solver KaTeX, studio visualisasi 4 chart, dan 6 bukti formal Lean 4.",
@@ -474,10 +474,10 @@ const CONTENT = {
       {
         id: "gdgoc-dropout",
         tracks: ["ai", "de", "da"],
-        title: "StayLearn — Aplikasi Drop-out",
+        title: "StayLearn: Aplikasi Drop-out",
         subtitle: "Flask, SHAP Counterfactual, KMeans & Groq Llama 3",
         metric: "Juara 2 · 0.967",
-        period: "Des 2025 – Jun 2026",
+        period: "Des 2025 - Jun 2026",
         thumb: "assets/project-staylearn.png",
         summary:
           "Platform web Flask & SQLite peraih Juara 2 GDGoC Championship (7.000 data mahasiswa; ROC-AUC 0,9673; Recall Dropout 92%), memadukan SHAP + counterfactual XAI, rekomendasi intervensi KMeans 5-klaster, mesin LLM Groq/Llama 3 bebas PII, dan 11 dashboard BI konselor.",
@@ -514,9 +514,9 @@ const CONTENT = {
           "Analisis komersial end-to-end dan dashboard BI interaktif Google Looker Studio atas 20.000 pesanan FMCG (total revenue Rp 875,6 juta, 93 pelanggan, 3 channel), lulus dengan predikat 'Expert' di KarirNex Data Analyst Bootcamp.",
         bullets: [
           "Membangun dashboard dark-mode Google Looker Studio berisi slider rentang harga, filter multi-dimensi, tren penjualan harian, dan matriks channel × produk atas total revenue Rp 875,6 juta serta ongkir Rp 341,2 juta.",
-          "Menulis kueri SQL SQLite (CTE, CASE WHEN periode promo, pengelompokan strftime) yang membuktikan April sebagai bulan transaksi sukses tertinggi (Rp 20,26 juta), Online – Toko Hijau sebagai channel sukses dengan diskon terendah (Rp 387,8 ribu dari 1.698 order), serta dominasi hari Normal dibanding Payday/Double Date untuk Minyak Goreng.",
+          "Menulis kueri SQL SQLite (CTE, CASE WHEN periode promo, pengelompokan strftime) yang membuktikan April sebagai bulan transaksi sukses tertinggi (Rp 20,26 juta), Online - Toko Hijau sebagai channel sukses dengan diskon terendah (Rp 387,8 ribu dari 1.698 order), serta dominasi hari Normal dibanding Payday/Double Date untuk Minyak Goreng.",
           "Mengaudit kebocoran operasional signifikan di mana status Failed (5.089 order / Rp 222,3 juta), Returned (4.998 / Rp 217,9 juta), dan Pending (4.870 / Rp 213,4 juta) hampir menyamai Success (5.043 / Rp 222,0 juta), terkonsentrasi pada kategori Makanan dan channel Offline.",
-          "Mengukur sensitivitas harga melalui slicing interaktif: revenue memuncak pada rentang Rp 15.001–20.000 (Rp 406,7 juta; 8.004 order) lalu turun tajam di atas Rp 20.000 (Rp 243,7 juta; 3.980 order); tersertifikasi Predikat Expert (No. 1085/B-1/KBT.DA.3/KRX/I/2026).",
+          "Mengukur sensitivitas harga melalui slicing interaktif: revenue memuncak pada rentang Rp 15.001-20.000 (Rp 406,7 juta; 8.004 order) lalu turun tajam di atas Rp 20.000 (Rp 243,7 juta; 3.980 order); tersertifikasi Predikat Expert (No. 1085/B-1/KBT.DA.3/KRX/I/2026).",
         ],
         tags: [
           "Google Looker Studio",
@@ -540,15 +540,15 @@ const CONTENT = {
         title: "Pipeline Risiko Credit Default",
         subtitle: "Feature Pipeline 7 Tabel · Home Credit × Rakamin",
         metric: "ROC-AUC 0.7450",
-        period: "Feb – Mar 2026",
+        period: "Feb - Mar 2026",
         thumb: "assets/project-home-credit.svg",
         summary:
           "Pipeline 12 fase prediksi gagal bayar kredit atas 38.848 pemohon Home Credit (default 8,1%) yang menggabungkan 7 tabel CSV relasional di Pandas/Scikit-learn menjadi 192 fitur tanpa NaN, lengkap dengan proyeksi net benefit bisnis Rp 191,9 juta.",
         bullets: [
           "Menggabungkan 7 tabel CSV (application_train, bureau, bureau_balance, previous_application, installments_payments, POS_CASH_balance, credit_card_balance) dari 122 kolom awal menjadi 192 fitur tanpa NaN dengan imputasi bebas leakage (train-only), 6 MNAR missing flags, 6 rasio domain, dan label encoding aman unseen.",
           "Membandingkan Logistic Regression (Imputer → StandardScaler → lbfgs, class_weight='balanced', RandomizedSearchCV C=0,0012) vs LightGBM: Logistic Regression pada 7 tabel unggul dengan Test ROC-AUC 0,7450 (+0,0138 vs App-Only 0,7312; Recall Default 0,66), mengungguli LightGBM (0,6976) yang terdampak noise agregasi nol.",
-          "Mengidentifikasi fitur prediktif utama dari importance LGBM (ext_source_mean 1.424, ext_source_2 785, days_id_publish 754, ext_source_3 742, days_registration 723) dan segmen risiko EDA (usia 20–30 tahun, Laborers/Drivers, EXT_SOURCE_2 < 0,3).",
-          "Menghitung dampak finansial (LGD 45%) pada 7.770 pemohon uji: threshold 0,6 mencegah 282 default dengan Net Benefit optimal Rp 38,4 juta (proyeksi Rp 191,9 juta pada skala 38.848 pemohon) serta kebijakan scoring 3-tier (<0,45 Auto-approve, 0,45–0,70 Manual review, >0,70 Auto-reject).",
+          "Mengidentifikasi fitur prediktif utama dari importance LGBM (ext_source_mean 1.424, ext_source_2 785, days_id_publish 754, ext_source_3 742, days_registration 723) dan segmen risiko EDA (usia 20-30 tahun, Laborers/Drivers, EXT_SOURCE_2 < 0,3).",
+          "Menghitung dampak finansial (LGD 45%) pada 7.770 pemohon uji: threshold 0,6 mencegah 282 default dengan Net Benefit optimal Rp 38,4 juta (proyeksi Rp 191,9 juta pada skala 38.848 pemohon) serta kebijakan scoring 3-tier (<0,45 Auto-approve, 0,45-0,70 Manual review, >0,70 Auto-reject).",
         ],
         tags: [
           "Python",
@@ -581,10 +581,10 @@ const CONTENT = {
         period: "Apr 2025",
         thumb: "assets/project-vehicle-sales.svg",
         summary:
-          "Laporan analitik komersial 23 slide atas penjualan kendaraan global 2003–2005 ($10,03 juta pada 7 lini produk), memadukan diagnostik Excel Pivot manual, pendalaman kuartalan/pelanggan berbantuan AI, dan audit kebersihan data Shipped-Only.",
+          "Laporan analitik komersial 23 slide atas penjualan kendaraan global 2003-2005 ($10,03 juta pada 7 lini produk), memadukan diagnostik Excel Pivot manual, pendalaman kuartalan/pelanggan berbantuan AI, dan audit kebersihan data Shipped-Only.",
         bullets: [
           "Mengidentifikasi 2004 sebagai puncak penjualan ($4.724.162,60; naik 34,3% dari 2003 sebesar $3.516.979,54; 2005 YTD $1.791.486,71) dengan pola puncak musiman konsisten di Q4/November ($1,03 juta Nov 2003; $1,09 juta Nov 2004).",
-          "Membuktikan Classic Cars mendominasi baik pendapatan negara 2004 yang dipimpin AS ($560.448,26 dari 4.870 unit; pembeli AS terbesar Mini Gifts Distributors Ltd. 700 unit) maupun volume Sep 2003 – Mar 2004 (11.083 unit vs 6.127 Vintage Cars).",
+          "Membuktikan Classic Cars mendominasi baik pendapatan negara 2004 yang dipimpin AS ($560.448,26 dari 4.870 unit; pembeli AS terbesar Mini Gifts Distributors Ltd. 700 unit) maupun volume Sep 2003 - Mar 2004 (11.083 unit vs 6.127 Vintage Cars).",
           "Menandai secara proaktif status order bermasalah (Cancelled, Disputed, On Hold, In Process, Resolved) lalu memvalidasi ulang seluruh KPI pada filter ketat Shipped-Only (2004: $4.528.047,22; Classic Cars AS: $557.537,86; 10.979 unit).",
           "Memetakan akun B2B teratas vs terendah (Euro Shopping Channel 1.879 unit vs Baane Mini Imports 22 unit) guna merumuskan rekomendasi retensi dan stok Q4.",
         ],
@@ -602,7 +602,7 @@ const CONTENT = {
       {
         role: "Asisten Praktikum Algoritma Pemrograman",
         org: "Laboratorium Informatika, Telkom University Purwokerto",
-        period: "September 2026 – Sekarang",
+        period: "September 2026 - Sekarang",
         bullets: [
           "Mengajar sesi praktikum Algoritma Pemrograman 1 dan melatih logika pemecahan masalah mahasiswa Informatika.",
           "Mendampingi debugging, pemahaman struktur data dasar, dan alur penulisan kode yang terstruktur.",
@@ -611,7 +611,7 @@ const CONTENT = {
       {
         role: "AI & Data Optimization Intern",
         org: "Eklipse.gg, Jakarta (WFO)",
-        period: "Agustus – September 2026",
+        period: "Agustus - September 2026",
         bullets: [
           "Mengumpulkan, membersihkan, dan mengkurasi dataset pelatihan sekaligus mengevaluasi serta menyeleksi model AI untuk optimasi workflow internal.",
           "Menganalisis perilaku pengguna dan performa produk menjadi laporan data yang dapat ditindaklanjuti untuk iterasi produk dan model.",
@@ -620,7 +620,7 @@ const CONTENT = {
       {
         role: "Data Scientist Intern (Project-Based)",
         org: "Home Credit Indonesia × Rakamin, Jakarta (WFA)",
-        period: "Februari – Maret 2026",
+        period: "Februari - Maret 2026",
         bullets: [
           "Membangun pipeline data risiko kredit lintas 7 tabel relasional yang menghasilkan 192 fitur pemodelan bersih.",
           "Membandingkan Logistic Regression dan LightGBM dengan performa terbaik mencapai ROC-AUC 0,7450.",
@@ -629,7 +629,7 @@ const CONTENT = {
       {
         role: "Frontend Developer & UI/UX Designer (Analytics & ERP)",
         org: "PT Braincode Solution, Jakarta (WFA)",
-        period: "Mei – Oktober 2024",
+        period: "Mei - Oktober 2024",
         bullets: [
           "Membangun dashboard analytics internal dan sistem ERP pengelolaan data operasional berbasis SolidJS dan desain Figma.",
           "Menghasilkan aplikasi analitik & operasional internal bagi klien besar telekomunikasi dan energi: Telkomsel, Pertamina, dan Mipcon.",
@@ -658,7 +658,7 @@ const CONTENT = {
       {
         role: "Student Intern (Frontend Developer)",
         org: "PT Mega Giga Solusindo, Yogyakarta (WFO)",
-        period: "April – September 2023",
+        period: "April - September 2023",
         bullets: [
           "Mengimplementasikan website company profile berbasis Vue.js serta aplikasi CRUD manajemen stok UMKM berbasis CodeIgniter dari riset pengguna.",
           "Melakukan pengujian kualitas fungsionalitas API dan web menggunakan Postman.",
@@ -669,7 +669,7 @@ const CONTENT = {
       {
         role: "AI Developer & Fullstack Developer",
         org: "Google Developer Group on Campus · Universitas Telkom Purwokerto",
-        period: "Desember 2025 – Juni 2026",
+        period: "Desember 2025 - Juni 2026",
         badge: "Juara 2",
         bullets: [
           "Meraih Juara 2 Member Project Championship melalui Sistem Deteksi Potensi Drop-out berbasis Machine Learning.",
@@ -697,7 +697,7 @@ const CONTENT = {
       },
       {
         name: "Bahasa & Gaya Kerja",
-        desc: "Indonesia (Aktif), Inggris (Profesional) — analitis dalam pemecahan masalah, proaktif, teliti, dan terbiasa berkolaborasi dengan tim teknis maupun stakeholder bisnis.",
+        desc: "Indonesia (Aktif), Inggris (Profesional). Analitis dalam pemecahan masalah, proaktif, teliti, dan terbiasa berkolaborasi dengan tim teknis maupun stakeholder bisnis.",
       },
     ],
   },
@@ -782,7 +782,7 @@ function renderProjects() {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "project-card";
-    btn.setAttribute("aria-label", `${proj.title} — ${proj.subtitle}`);
+    btn.setAttribute("aria-label", `${proj.title}: ${proj.subtitle}`);
     btn.innerHTML = `
       <div class="project-thumb">
         <img src="${proj.thumb}" alt="${proj.title} preview" loading="lazy" />
