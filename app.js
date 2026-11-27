@@ -26,7 +26,7 @@ const CONTENT = {
     copy: "Copy",
     copied: "Copied",
     filters: [
-      { key: "all", label: "All (5)" },
+      { key: "all", label: "All (6)" },
       { key: "ai", label: "AI & RAG" },
       { key: "de", label: "Data Engineering" },
       { key: "da", label: "Data Analytics & ML" },
@@ -91,30 +91,6 @@ const CONTENT = {
         ],
       },
       {
-        id: "home-credit",
-        tracks: ["de", "da"],
-        title: "Credit Default Risk Pipeline",
-        subtitle: "7-Table Feature Pipeline · Home Credit × Rakamin",
-        metric: "ROC-AUC 0.7450",
-        period: "Feb – Mar 2026",
-        thumb: "assets/project-home-credit.svg",
-        summary:
-          "Multi-table relational data engineering and predictive credit default modeling across seven financial datasets to support borrower risk evaluation.",
-        bullets: [
-          "Joined and aggregated 7 relational bureau, installment, POS, and prior-application tables into a clean 192-feature modeling dataset.",
-          "Benchmarked Logistic Regression and LightGBM models with structured evaluation, achieving a best Hold-Out ROC-AUC of 0.7450.",
-          "Translated key delinquency and debt-ratio signals into clear analytical findings for credit risk review.",
-        ],
-        tags: ["Python", "SQL", "Pandas", "Feature Engineering", "LightGBM", "Logistic Regression"],
-        links: [
-          {
-            label: "GitHub Repository (Notebook)",
-            url: "https://github.com/aariffaqiih/FINAL-TASK-PBI-DATA-SCIENTIST-HCI",
-            primary: true,
-          },
-        ],
-      },
-      {
         id: "gdgoc-dropout",
         tracks: ["ai", "da"],
         title: "StayLearn — AI Drop-out Platform",
@@ -143,6 +119,62 @@ const CONTENT = {
           { label: "Live Web App", url: "https://staylearn.rakhafeb.online/", primary: true },
           { label: "StayLearn App Repo", url: "https://github.com/aariffaqiih/STAYLEARN", primary: false },
           { label: "GDGoC AI & Notebooks", url: "https://github.com/aariffaqiih/GDGoC-AI", primary: false },
+        ],
+      },
+      {
+        id: "fmcg-bi",
+        tracks: ["da", "de"],
+        title: "FMCG Sales & Operational Leakage BI",
+        subtitle: "Excel Pivot, SQL CTEs & Looker Studio · KarirNex",
+        metric: "Looker · Expert",
+        period: "Jan 2026",
+        thumb: "assets/project-fmcg-bi.png",
+        summary:
+          "End-to-end commercial analytics and interactive Google Looker Studio BI dashboard over 20,000 FMCG orders (Rp 875.6M revenue, 93 customers, 3 channels), completed with an 'Expert' predicate at the KarirNex Data Analyst Bootcamp.",
+        bullets: [
+          "Built a dark-mode Google Looker Studio dashboard featuring price-range sliders, multi-dimension filters, daily demand trends, and channel × product matrices across Rp 875.6M total revenue and Rp 341.2M shipping spend.",
+          "Wrote SQLite SQL queries (CTEs, CASE WHEN campaign flags, strftime grouping) proving April as peak successful revenue month (Rp 20.26M), Online – Toko Hijau as lowest-discount valid channel (Rp 387.8k across 1,698 orders), and normal-day dominance over Payday/Double Date promos for Minyak Goreng.",
+          "Diagnosed critical operational leakage where Failed (5,089 orders / Rp 222.3M), Returned (4,998 / Rp 217.9M), and Pending (4,870 / Rp 213.4M) nearly equaled Success (5,043 / Rp 222.0M), concentrated in Makanan and the Offline channel.",
+          "Quantified price elasticity via interactive slicing: revenue peaked at Rp 15,001–20,000 (Rp 406.7M, 8,004 orders) before dropping steeply above Rp 20,000 (Rp 243.7M, 3,980 orders); certified with Predicate: Expert (No. 1085/B-1/KBT.DA.3/KRX/I/2026).",
+        ],
+        tags: [
+          "Google Looker Studio",
+          "SQL (SQLite CTEs)",
+          "Microsoft Excel",
+          "Pivot Tables",
+          "BI Dashboard",
+          "KPI Reporting",
+        ],
+        links: [
+          {
+            label: "Open Full Portfolio & Certificate (PDF)",
+            url: "assets/KarirNex_Data_Analyst_Portfolio.pdf",
+            primary: true,
+          },
+        ],
+      },
+      {
+        id: "home-credit",
+        tracks: ["de", "da"],
+        title: "Credit Default Risk Pipeline",
+        subtitle: "7-Table Feature Pipeline · Home Credit × Rakamin",
+        metric: "ROC-AUC 0.7450",
+        period: "Feb – Mar 2026",
+        thumb: "assets/project-home-credit.svg",
+        summary:
+          "Multi-table relational data engineering and predictive credit default modeling across seven financial datasets to support borrower risk evaluation.",
+        bullets: [
+          "Joined and aggregated 7 relational bureau, installment, POS, and prior-application tables into a clean 192-feature modeling dataset.",
+          "Benchmarked Logistic Regression and LightGBM models with structured evaluation, achieving a best Hold-Out ROC-AUC of 0.7450.",
+          "Translated key delinquency and debt-ratio signals into clear analytical findings for credit risk review.",
+        ],
+        tags: ["Python", "SQL", "Pandas", "Feature Engineering", "LightGBM", "Logistic Regression"],
+        links: [
+          {
+            label: "GitHub Repository (Notebook)",
+            url: "https://github.com/aariffaqiih/FINAL-TASK-PBI-DATA-SCIENTIST-HCI",
+            primary: true,
+          },
         ],
       },
       {
@@ -256,7 +288,7 @@ const CONTENT = {
       },
       {
         name: "Data Analytics, BI & Machine Learning",
-        desc: "Microsoft Excel (Pivot Tables & KPI reporting), statistical testing, LightGBM, XGBoost, Scikit-learn, Optuna, TreeSHAP explainability, Matplotlib, Seaborn, Plotly, ECharts, and analytical dashboard design.",
+        desc: "Google Looker Studio (interactive BI dashboards), Microsoft Excel (Pivot Tables & KPI reporting), SQL analytics (CTEs, aggregations), statistical testing, LightGBM, XGBoost, Scikit-learn, Optuna, TreeSHAP explainability, Matplotlib, Seaborn, Plotly, and ECharts.",
       },
       {
         name: "Full-Stack Product & API Integration",
@@ -293,7 +325,7 @@ const CONTENT = {
     copy: "Salin",
     copied: "Tersalin",
     filters: [
-      { key: "all", label: "Semua (5)" },
+      { key: "all", label: "Semua (6)" },
       { key: "ai", label: "AI & RAG" },
       { key: "de", label: "Data Engineering" },
       { key: "da", label: "Data Analytics & ML" },
@@ -358,30 +390,6 @@ const CONTENT = {
         ],
       },
       {
-        id: "home-credit",
-        tracks: ["de", "da"],
-        title: "Pipeline Risiko Credit Default",
-        subtitle: "Feature Pipeline 7 Tabel · Home Credit × Rakamin",
-        metric: "ROC-AUC 0.7450",
-        period: "Feb – Mar 2026",
-        thumb: "assets/project-home-credit.svg",
-        summary:
-          "Rekayasa data multi-tabel relasional dan pemodelan prediksi gagal bayar kredit lintas tujuh tabel finansial untuk mendukung evaluasi risiko peminjam.",
-        bullets: [
-          "Menggabungkan dan mengagregasi 7 tabel relasional (bureau, angsuran, riwayat pengajuan) menjadi 192 fitur pemodelan yang bersih.",
-          "Membandingkan Logistic Regression dan LightGBM secara terukur dengan performa terbaik mencapai ROC-AUC 0,7450.",
-          "Menerjemahkan indikator risiko keterlambatan dan rasio utang menjadi rekomendasi analitik bagi tim risiko kredit.",
-        ],
-        tags: ["Python", "SQL", "Pandas", "Feature Engineering", "LightGBM", "Logistic Regression"],
-        links: [
-          {
-            label: "Repositori GitHub (Notebook)",
-            url: "https://github.com/aariffaqiih/FINAL-TASK-PBI-DATA-SCIENTIST-HCI",
-            primary: true,
-          },
-        ],
-      },
-      {
         id: "gdgoc-dropout",
         tracks: ["ai", "da"],
         title: "StayLearn — Platform AI Drop-out",
@@ -410,6 +418,62 @@ const CONTENT = {
           { label: "Buka Live Web App", url: "https://staylearn.rakhafeb.online/", primary: true },
           { label: "Repo Aplikasi StayLearn", url: "https://github.com/aariffaqiih/STAYLEARN", primary: false },
           { label: "Repo GDGoC AI & Notebook", url: "https://github.com/aariffaqiih/GDGoC-AI", primary: false },
+        ],
+      },
+      {
+        id: "fmcg-bi",
+        tracks: ["da", "de"],
+        title: "BI Penjualan FMCG & Kebocoran Transaksi",
+        subtitle: "Excel Pivot, SQL CTE & Looker Studio · KarirNex",
+        metric: "Looker · Expert",
+        period: "Jan 2026",
+        thumb: "assets/project-fmcg-bi.png",
+        summary:
+          "Analisis komersial end-to-end dan dashboard BI interaktif Google Looker Studio atas 20.000 pesanan FMCG (total revenue Rp 875,6 juta, 93 pelanggan, 3 channel), lulus dengan predikat 'Expert' di KarirNex Data Analyst Bootcamp.",
+        bullets: [
+          "Membangun dashboard dark-mode Google Looker Studio berisi slider rentang harga, filter multi-dimensi, tren penjualan harian, dan matriks channel × produk atas total revenue Rp 875,6 juta serta ongkir Rp 341,2 juta.",
+          "Menulis kueri SQL SQLite (CTE, CASE WHEN periode promo, pengelompokan strftime) yang membuktikan April sebagai bulan transaksi sukses tertinggi (Rp 20,26 juta), Online – Toko Hijau sebagai channel sukses dengan diskon terendah (Rp 387,8 ribu dari 1.698 order), serta dominasi hari Normal dibanding Payday/Double Date untuk Minyak Goreng.",
+          "Mengaudit kebocoran operasional signifikan di mana status Failed (5.089 order / Rp 222,3 juta), Returned (4.998 / Rp 217,9 juta), dan Pending (4.870 / Rp 213,4 juta) hampir menyamai Success (5.043 / Rp 222,0 juta), terkonsentrasi pada kategori Makanan dan channel Offline.",
+          "Mengukur sensitivitas harga melalui slicing interaktif: revenue memuncak pada rentang Rp 15.001–20.000 (Rp 406,7 juta; 8.004 order) lalu turun tajam di atas Rp 20.000 (Rp 243,7 juta; 3.980 order); tersertifikasi Predikat Expert (No. 1085/B-1/KBT.DA.3/KRX/I/2026).",
+        ],
+        tags: [
+          "Google Looker Studio",
+          "SQL (SQLite CTE)",
+          "Microsoft Excel",
+          "Pivot Tables",
+          "BI Dashboard",
+          "Pelaporan KPI",
+        ],
+        links: [
+          {
+            label: "Buka Deck Portofolio & Sertifikat (PDF)",
+            url: "assets/KarirNex_Data_Analyst_Portfolio.pdf",
+            primary: true,
+          },
+        ],
+      },
+      {
+        id: "home-credit",
+        tracks: ["de", "da"],
+        title: "Pipeline Risiko Credit Default",
+        subtitle: "Feature Pipeline 7 Tabel · Home Credit × Rakamin",
+        metric: "ROC-AUC 0.7450",
+        period: "Feb – Mar 2026",
+        thumb: "assets/project-home-credit.svg",
+        summary:
+          "Rekayasa data multi-tabel relasional dan pemodelan prediksi gagal bayar kredit lintas tujuh tabel finansial untuk mendukung evaluasi risiko peminjam.",
+        bullets: [
+          "Menggabungkan dan mengagregasi 7 tabel relasional (bureau, angsuran, riwayat pengajuan) menjadi 192 fitur pemodelan yang bersih.",
+          "Membandingkan Logistic Regression dan LightGBM secara terukur dengan performa terbaik mencapai ROC-AUC 0,7450.",
+          "Menerjemahkan indikator risiko keterlambatan dan rasio utang menjadi rekomendasi analitik bagi tim risiko kredit.",
+        ],
+        tags: ["Python", "SQL", "Pandas", "Feature Engineering", "LightGBM", "Logistic Regression"],
+        links: [
+          {
+            label: "Repositori GitHub (Notebook)",
+            url: "https://github.com/aariffaqiih/FINAL-TASK-PBI-DATA-SCIENTIST-HCI",
+            primary: true,
+          },
         ],
       },
       {
@@ -523,7 +587,7 @@ const CONTENT = {
       },
       {
         name: "Data Analytics, BI & Machine Learning",
-        desc: "Microsoft Excel (Pivot Table & pelaporan KPI), uji statistik, LightGBM, XGBoost, Scikit-learn, Optuna, explainability TreeSHAP, Matplotlib, Seaborn, Plotly, ECharts, serta perancangan dashboard analitik.",
+        desc: "Google Looker Studio (dashboard BI interaktif), Microsoft Excel (Pivot Table & pelaporan KPI), analitik SQL (CTE, agregasi), uji statistik, LightGBM, XGBoost, Scikit-learn, Optuna, explainability TreeSHAP, Matplotlib, Seaborn, Plotly, dan ECharts.",
       },
       {
         name: "Full-Stack Product & Integrasi API",
