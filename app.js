@@ -140,7 +140,8 @@ const CONTENT = {
           "Unit Tests",
         ],
         links: [
-          { label: "StayLearn App Repo", url: "https://github.com/aariffaqiih/STAYLEARN", primary: true },
+          { label: "Live Web App", url: "https://staylearn.rakhafeb.online/", primary: true },
+          { label: "StayLearn App Repo", url: "https://github.com/aariffaqiih/STAYLEARN", primary: false },
           { label: "GDGoC AI & Notebooks", url: "https://github.com/aariffaqiih/GDGoC-AI", primary: false },
         ],
       },
@@ -406,7 +407,8 @@ const CONTENT = {
           "Unit Tests",
         ],
         links: [
-          { label: "Repo Aplikasi StayLearn", url: "https://github.com/aariffaqiih/STAYLEARN", primary: true },
+          { label: "Buka Live Web App", url: "https://staylearn.rakhafeb.online/", primary: true },
+          { label: "Repo Aplikasi StayLearn", url: "https://github.com/aariffaqiih/STAYLEARN", primary: false },
           { label: "Repo GDGoC AI & Notebook", url: "https://github.com/aariffaqiih/GDGoC-AI", primary: false },
         ],
       },
