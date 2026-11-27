@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#F2F4F7"/>
+  <defs>
+    <filter id="cardShadowMet" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#111315" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="meteorBg" x1="76" y1="54" x2="724" y2="446" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B0F17"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="meteorGlow" x1="120" y1="120" x2="680" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0.12"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#cardShadowMet)">
+    <rect x="76" y="54" width="648" height="392" rx="16" fill="url(#meteorBg)" stroke="#1E293B" stroke-width="1.5"/>
+  </g>
+
+  <!-- Window chrome -->
+  <circle cx="106" cy="84" r="5" fill="#334155"/>
+  <circle cx="124" cy="84" r="5" fill="#334155"/>
+  <circle cx="142" cy="84" r="5" fill="#334155"/>
+  <text x="170" y="88" fill="#E2E8F0" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">meteor-chat.github.io · AI Chat &amp; STEM Lab</text>
+  <rect x="576" y="70" width="120" height="26" rx="13" fill="#0F293A" stroke="#38BDF8" stroke-opacity="0.45"/>
+  <text x="636" y="87" text-anchor="middle" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">348 ES Modules</text>
+  <line x1="76" y1="108" x2="724" y2="108" stroke="#1E293B" stroke-width="1.2"/>
+
+  <!-- Top Pipeline: Intent-based Multi-LLM Router -->
+  <rect x="104" y="126" width="592" height="62" rx="10" fill="url(#meteorGlow)" stroke="#1E293B"/>
+  <text x="122" y="146" fill="#94A3B8" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600">MULTI-LLM INTENT ROUTER · TWO-TIER SSE STREAMING (10s TTFT / 30s STREAM)</text>
+  <rect x="122" y="155" width="126" height="24" rx="6" fill="#0F172A" stroke="#38BDF8" stroke-opacity="0.6"/>
+  <text x="185" y="171" text-anchor="middle" fill="#E0F2FE" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">Heavy / Fast Tier</text>
+  <path d="M254 167 L268 167" stroke="#64748B" stroke-width="1.6" stroke-linecap="round"/>
+  <rect x="274" y="155" width="128" height="24" rx="6" fill="#0F172A" stroke="#818CF8" stroke-opacity="0.6"/>
+  <text x="338" y="171" text-anchor="middle" fill="#E0E7FF" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">Key/Model Health</text>
+  <path d="M408 167 L422 167" stroke="#64748B" stroke-width="1.6" stroke-linecap="round"/>
+  <rect x="428" y="155" width="122" height="24" rx="6" fill="#0F172A" stroke="#34D399" stroke-opacity="0.6"/>
+  <text x="489" y="171" text-anchor="middle" fill="#D1FAE5" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">SSE + StripThink</text>
+  <path d="M556 167 L570 167" stroke="#64748B" stroke-width="1.6" stroke-linecap="round"/>
+  <rect x="576" y="155" width="104" height="24" rx="6" fill="#1E293B" stroke="#FBBF24" stroke-opacity="0.5"/>
+  <text x="628" y="171" text-anchor="middle" fill="#FEF3C7" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">KaTeX + GFM</text>
+
+  <!-- 4 Ecosystem Pillar Cards (2x2) -->
+  <!-- Card 1: /math -->
+  <rect x="104" y="204" width="288" height="100" rx="10" fill="#111827" stroke="#1F2937"/>
+  <text x="122" y="228" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">/math · 40 STEM &amp; AI Solvers</text>
+  <rect x="314" y="214" width="64" height="20" rx="10" fill="#0F293A"/>
+  <text x="346" y="228" text-anchor="middle" fill="#38BDF8" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600">KaTeX</text>
+  <text x="122" y="252" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">Linear &amp; Logistic Regression, NSGA-II,</text>
+  <text x="122" y="270" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">Simulated Annealing, Bayes &amp; 12 EVM KPIs</text>
+  <text x="122" y="292" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">Static pre-rendered routes (Node build)</text>
+
+  <!-- Card 2: /plot -->
+  <rect x="408" y="204" width="288" height="100" rx="10" fill="#111827" stroke="#1F2937"/>
+  <text x="426" y="228" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">/plot · Data Viz Studio</text>
+  <rect x="614" y="214" width="68" height="20" rx="10" fill="#0B2E26"/>
+  <text x="648" y="228" text-anchor="middle" fill="#34D399" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600">CSV/TSV</text>
+  <text x="426" y="252" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">Custom parsers &amp; renderers: Word Cloud,</text>
+  <text x="426" y="270" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">Bar, Time-Series Line &amp; Multi-Series Donut</text>
+  <text x="426" y="292" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">NLP stopwords · Nullable series · Export</text>
+
+  <!-- Card 3: /lab -->
+  <rect x="104" y="318" width="288" height="102" rx="10" fill="#111827" stroke="#1F2937"/>
+  <text x="122" y="342" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">/lab · 13 ML, Graph &amp; 3D Labs</text>
+  <rect x="308" y="328" width="70" height="20" rx="10" fill="#2A1C3A"/>
+  <text x="343" y="342" text-anchor="middle" fill="#C084FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600">WebGL 2</text>
+  <text x="122" y="366" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">60 FPS ML Gradient Descent, Brandes Graph,</text>
+  <text x="122" y="384" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">Web-to-Markdown, Voxel &amp; Three.js + Jolt</text>
+  <text x="122" y="406" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">Float64 Kepler 3D · BroadcastChannel 3D</text>
+
+  <!-- Card 4: /dsa + Quality -->
+  <rect x="408" y="318" width="288" height="102" rx="10" fill="#111827" stroke="#1F2937"/>
+  <text x="426" y="342" fill="#F8FAFC" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Formal Proofs &amp; Test Suite</text>
+  <rect x="614" y="328" width="68" height="20" rx="10" fill="#2E2410"/>
+  <text x="648" y="342" text-anchor="middle" fill="#FBBF24" font-family="JetBrains Mono, monospace" font-size="10" font-weight="600">Lean 4 ✓</text>
+  <text x="426" y="366" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">6 Lean 4 proofs (Sort, Stack, Queue, Cipher)</text>
+  <text x="426" y="384" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="11">80 Vitest test suites (683 test cases)</text>
+  <text x="426" y="406" fill="#64748B" font-family="JetBrains Mono, monospace" font-size="10">56.4k LOC · 381 commits · Zero framework</text>
+</svg>

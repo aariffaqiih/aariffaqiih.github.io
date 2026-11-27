@@ -11,31 +11,57 @@
   <circle cx="106" cy="84" r="5" fill="#E2E6EC"/>
   <circle cx="124" cy="84" r="5" fill="#E2E6EC"/>
   <circle cx="142" cy="84" r="5" fill="#E2E6EC"/>
-  <text x="170" y="88" fill="#68707A" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Global Vehicle Sales Analytics · RevoU Data Analytics</text>
+  <text x="170" y="88" fill="#68707A" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Global Vehicle Sales Analytics (2003–2005) · RevoU</text>
+  <rect x="576" y="70" width="120" height="26" rx="13" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="636" y="87" text-anchor="middle" fill="#C2410C" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">23-Slide Deck</text>
   <line x1="76" y1="108" x2="724" y2="108" stroke="#EEF1F4" stroke-width="1.2"/>
 
-  <!-- Trend area chart -->
-  <rect x="104" y="130" width="592" height="170" rx="12" fill="#F8FAFC" stroke="#EAEEF3"/>
-  <text x="126" y="158" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13.5" font-weight="600">Regional Revenue &amp; Unit Sales Trend</text>
-  <line x1="126" y1="274" x2="670" y2="274" stroke="#DFE4EA" stroke-width="1"/>
-  <line x1="126" y1="234" x2="670" y2="234" stroke="#E9EDF2" stroke-width="1" stroke-dasharray="4 4"/>
-  <line x1="126" y1="194" x2="670" y2="194" stroke="#E9EDF2" stroke-width="1" stroke-dasharray="4 4"/>
+  <!-- Top 3 Verified KPI Cards -->
+  <rect x="104" y="126" width="188" height="72" rx="10" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="120" y="148" fill="#68707A" font-family="Inter, system-ui, sans-serif" font-size="11.5">Peak Annual Sales (2004)</text>
+  <text x="120" y="180" fill="#111315" font-family="JetBrains Mono, monospace" font-size="21" font-weight="700">$4.72M</text>
 
-  <path d="M136 254 L224 236 L312 242 L400 206 L488 192 L576 204 L660 170 L660 274 L136 274 Z" fill="#0F5C6E" fill-opacity="0.10"/>
-  <path d="M136 254 L224 236 L312 242 L400 206 L488 192 L576 204 L660 170" stroke="#0F5C6E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="400" cy="206" r="4.5" fill="#0F5C6E"/>
-  <circle cx="660" cy="170" r="5" fill="#0F5C6E"/>
+  <rect x="306" y="126" width="188" height="72" rx="10" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="322" y="148" fill="#68707A" font-family="Inter, system-ui, sans-serif" font-size="11.5">Top Country (2004 Classic)</text>
+  <text x="322" y="180" fill="#0F5C6E" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700">USA $560K</text>
 
-  <!-- Bottom 2 summary cards -->
-  <rect x="104" y="316" width="286" height="102" rx="12" fill="#FFFFFF" stroke="#EAEEF3"/>
-  <text x="124" y="344" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Top Performing Segments</text>
-  <rect x="124" y="360" width="52" height="40" rx="6" fill="#0F5C6E"/>
-  <rect x="188" y="370" width="52" height="30" rx="6" fill="#3B899B"/>
-  <rect x="252" y="378" width="52" height="22" rx="6" fill="#82B9C5"/>
-  <rect x="316" y="384" width="52" height="16" rx="6" fill="#C4DFE5"/>
+  <rect x="508" y="126" width="188" height="72" rx="10" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="524" y="148" fill="#68707A" font-family="Inter, system-ui, sans-serif" font-size="11.5">Top Line (Sep '03–Mar '04)</text>
+  <text x="524" y="180" fill="#111315" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700">11,083 u</text>
 
-  <rect x="410" y="316" width="286" height="102" rx="12" fill="#FFFFFF" stroke="#EAEEF3"/>
-  <text x="430" y="344" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Analytical Deliverables</text>
-  <text x="430" y="370" fill="#555A60" font-family="Inter, system-ui, sans-serif" font-size="12">• Multi-dimensional Excel Pivot Tables</text>
-  <text x="430" y="392" fill="#555A60" font-family="Inter, system-ui, sans-serif" font-size="12">• Executive KPI Charts &amp; Insights</text>
+  <!-- Left panel: Quarterly Seasonality (Q4 Peak) -->
+  <rect x="104" y="214" width="336" height="206" rx="12" fill="#FFFFFF" stroke="#EAEEF3"/>
+  <text x="124" y="240" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Quarterly Revenue Pattern (Q4 Peak)</text>
+  <line x1="124" y1="378" x2="420" y2="378" stroke="#DFE4EA" stroke-width="1"/>
+  <!-- 2003 Q1-Q4, 2004 Q1-Q4, 2005 Q1-Q2 proportional bars -->
+  <rect x="130" y="352" width="22" height="26" rx="4" fill="#CBD5E1"/>
+  <rect x="158" y="346" width="22" height="32" rx="4" fill="#CBD5E1"/>
+  <rect x="186" y="340" width="22" height="38" rx="4" fill="#CBD5E1"/>
+  <rect x="214" y="268" width="22" height="110" rx="4" fill="#EA580C"/>
+  <rect x="246" y="329" width="22" height="49" rx="4" fill="#94A3B8"/>
+  <rect x="274" y="333" width="22" height="45" rx="4" fill="#94A3B8"/>
+  <rect x="302" y="313" width="22" height="65" rx="4" fill="#94A3B8"/>
+  <rect x="330" y="259" width="22" height="119" rx="4" fill="#0F5C6E"/>
+  <rect x="362" y="315" width="22" height="63" rx="4" fill="#CBD5E1"/>
+  <rect x="390" y="336" width="22" height="42" rx="4" fill="#CBD5E1"/>
+  <text x="225" y="261" text-anchor="middle" fill="#EA580C" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600">Q4 '03</text>
+  <text x="341" y="252" text-anchor="middle" fill="#0F5C6E" font-family="JetBrains Mono, monospace" font-size="9.5" font-weight="600">$2.01M</text>
+  <text x="124" y="402" fill="#68707A" font-family="JetBrains Mono, monospace" font-size="10.5">Nov peaks: $1.03M ('03) &amp; $1.09M ('04)</text>
+
+  <!-- Right panel: Shipped-Only Data Hygiene Audit -->
+  <rect x="456" y="214" width="240" height="206" rx="12" fill="#F8FAFC" stroke="#EAEEF3"/>
+  <text x="474" y="240" fill="#111315" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600">Shipped-Only Hygiene Audit</text>
+  <text x="474" y="264" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11.5">Filtered out Cancelled, Disputed,</text>
+  <text x="474" y="280" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11.5">On Hold &amp; In Process records:</text>
+
+  <rect x="474" y="296" width="204" height="30" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="484" y="315" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">2004 Shipped</text>
+  <text x="668" y="315" text-anchor="end" fill="#111315" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="600">$4,528,047</text>
+
+  <rect x="474" y="334" width="204" height="30" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="484" y="353" fill="#525860" font-family="Inter, system-ui, sans-serif" font-size="11">USA Classic '04</text>
+  <text x="668" y="353" text-anchor="end" fill="#0F5C6E" font-family="JetBrains Mono, monospace" font-size="11.5" font-weight="600">$557,538</text>
+
+  <rect x="474" y="372" width="204" height="30" rx="6" fill="#DCFCE7"/>
+  <text x="576" y="391" text-anchor="middle" fill="#15803D" font-family="JetBrains Mono, monospace" font-size="10.5" font-weight="600">Rankings Verified Robust</text>
 </svg>

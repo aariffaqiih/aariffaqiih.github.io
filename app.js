@@ -26,7 +26,7 @@ const CONTENT = {
     copy: "Copy",
     copied: "Copied",
     filters: [
-      { key: "all", label: "All (6)" },
+      { key: "all", label: "All (7)" },
       { key: "ai", label: "AI & RAG" },
       { key: "de", label: "Data Engineering" },
       { key: "da", label: "Data Analytics & ML" },
@@ -41,7 +41,7 @@ const CONTENT = {
       {
         id: "modellyng",
         tracks: ["ai", "de"],
-        title: "Modellyng — AI Research & RAG Platform",
+        title: "Modellyng — AI & RAG Platform",
         subtitle: "pgvector HNSW + RRF Hybrid RAG, FastAPI, Celery & Redis",
         metric: "Web + Mobile",
         period: "2026",
@@ -70,9 +70,40 @@ const CONTENT = {
         ],
       },
       {
+        id: "meteor",
+        tracks: ["ai", "de", "da"],
+        title: "Meteor — AI Chat & STEM Lab",
+        subtitle: "Multi-LLM Router, 40 AI/Math Solvers, Plot Studio & Lean 4",
+        metric: "Live · 56k LOC",
+        period: "2025 – 2026",
+        thumb: "assets/project-meteor.svg",
+        summary:
+          "Zero-framework, solo-engineered AI chat platform and interactive STEM/ML laboratory (348 ES modules, 56.4k LOC, 381 commits, 80 Vitest suites / 683 test cases) combining resilient multi-LLM SSE streaming, 40 KaTeX solvers, a 4-chart data viz studio, and 6 Lean 4 formal proofs.",
+        bullets: [
+          "Architected a client-side Multi-LLM Chat Engine with intent-based 3-tier model routing (heavy/fast/last across 13 OpenRouter models), rolling 3-model failover arrays, per-key & per-model health cooldowns (401/429 Retry-After/5xx), two-tier SSE timeouts (10s TTFT → 30s stream), <think> tag stripping, and usage telemetry.",
+          "Built 40 pre-rendered KaTeX STEM & AI calculators (OLS Linear Regression, Logistic Regression, Genetic Algorithms & NSGA-II Pareto, Simulated Annealing, Bayes' Theorem, 12 EVM KPI calculators) plus 60 FPS ML Gradient Descent, Brandes Betweenness Centrality, and a Web-to-Markdown AI article extractor.",
+          "Engineered a from-scratch /plot Data Visualization Studio with delimiter-detecting CSV/TSV parsers, NLP stopword/frequency Word Cloud, Bar, nullable Time-Series Line, and Multi-Series Pie/Donut/Polar Area renderers.",
+          "Authored 6 Lean 4 formal proofs (BubbleSort, InsertionSort, MergeSort, Stack, Queue, CaesarCipher) alongside Pure WebGL 2.0 Voxel (12.5k LOC), Three.js + JoltPhysics WASM (5.1k LOC), and Float64 Kepler 3D engines.",
+        ],
+        tags: [
+          "Multi-LLM Routing",
+          "SSE Streaming",
+          "ES Modules (56k LOC)",
+          "Vitest (80 Suites)",
+          "Data Viz Parsers",
+          "WebGL 2 & Three.js",
+          "Lean 4 Proofs",
+          "Node Build Pipeline",
+        ],
+        links: [
+          { label: "Open Live Platform", url: "https://meteor-chat.github.io/", primary: true },
+          { label: "GitHub Repository", url: "https://github.com/meteor-chat/meteor-chat.github.io", primary: false },
+        ],
+      },
+      {
         id: "cdc-diabetes",
         tracks: ["ai", "de", "da"],
-        title: "CDC Diabetes Clinical Risk Screening",
+        title: "CDC Diabetes Risk Screening",
         subtitle: "Clinical AI, Data Quality Pipeline & Streamlit App",
         metric: "ROC-AUC 0.8287",
         period: "Nov 2026",
@@ -93,7 +124,7 @@ const CONTENT = {
       {
         id: "gdgoc-dropout",
         tracks: ["ai", "da"],
-        title: "StayLearn — AI Drop-out Platform",
+        title: "StayLearn — AI Drop-out App",
         subtitle: "SHAP Counterfactuals, Llama 3 Chatbot & Analytics",
         metric: "2nd Place",
         period: "Dec 2025 – Jun 2026",
@@ -123,8 +154,8 @@ const CONTENT = {
       },
       {
         id: "fmcg-bi",
-        tracks: ["da", "de"],
-        title: "FMCG Sales & Operational Leakage BI",
+        tracks: ["da"],
+        title: "FMCG Sales & Leakage BI",
         subtitle: "Excel Pivot, SQL CTEs & Looker Studio · KarirNex",
         metric: "Looker · Expert",
         period: "Jan 2026",
@@ -181,19 +212,25 @@ const CONTENT = {
         id: "vehicle-sales",
         tracks: ["da"],
         title: "Global Vehicle Sales Analytics",
-        subtitle: "Excel Pivot Reporting & KPI Insights · RevoU",
-        metric: "BI & Excel",
+        subtitle: "Excel Pivot, Seasonality & Shipped-Only Audit · RevoU",
+        metric: "$10M · Excel",
         period: "Apr 2025",
         thumb: "assets/project-vehicle-sales.svg",
         summary:
-          "Structured business data analysis identifying regional automotive sales drivers, product mix performance, and executive KPI visualizations for commercial decision-making.",
+          "23-slide commercial analytics report on 2003–2005 global vehicle sales ($10.03M across 7 product lines), combining manual Excel Pivot Table diagnostics, AI-assisted quarterly/customer drill-downs, and a proactive Shipped-Only data-hygiene audit.",
         bullets: [
-          "Analyzed multi-region global vehicle sales datasets using structured Microsoft Excel Pivot Tables to answer core revenue and unit-volume questions.",
-          "Built clear, decision-ready KPI charts translating raw operational records into actionable business reports.",
+          "Identified 2004 as the peak revenue year ($4,724,162.60, +34.3% vs 2003's $3,516,979.54; 2005 YTD $1,791,486.71) with recurring Q4/November seasonality peaks ($1.03M in Nov 2003, $1.09M in Nov 2004).",
+          "Proved Classic Cars dominated both 2004 country revenue led by the USA ($560,448.26 across 4,870 units; top US buyer Mini Gifts Distributors Ltd. at 700 units) and Sep 2003 – Mar 2004 volume (11,083 units vs 6,127 Vintage Cars).",
+          "Proactively flagged ambiguous/risky order statuses (Cancelled, Disputed, On Hold, In Process, Resolved) and validated all KPIs under a strict Shipped-Only filter (2004: $4,528,047.22; USA Classic Cars: $557,537.86; 10,979 units).",
+          "Benchmarked top vs bottom B2B accounts (Euro Shopping Channel at 1,879 units vs Baane Mini Imports at 22 units) to deliver executive retention and Q4 inventory recommendations.",
         ],
-        tags: ["Microsoft Excel", "Pivot Tables", "Data Analytics", "KPI Visualization", "Reporting"],
+        tags: ["Microsoft Excel", "Pivot Tables", "Data Hygiene Audit", "Seasonality Analysis", "KPI Reporting"],
         links: [
-          { label: "View GitHub Profile", url: "https://github.com/aariffaqiih", primary: true },
+          {
+            label: "Open 23-Slide Analysis Deck (PDF)",
+            url: "assets/RevoU_Global_Vehicle_Sales_Analysis.pdf",
+            primary: true,
+          },
         ],
       },
     ],
@@ -280,7 +317,7 @@ const CONTENT = {
     skills: [
       {
         name: "AI Engineering, Hybrid RAG & LLM Systems",
-        desc: "Python (async), end-to-end Hybrid RAG (pgvector HNSW 768-dim embeddings + PostgreSQL GIN FTS + Reciprocal Rank Fusion), dual-provider LLM failover (Gemini → Groq), token-bucket rate limiting, Pydantic strict JSON, FastAPI, Celery, Redis, and prompt-injection-safe synthesis.",
+        desc: "Python (async), end-to-end Hybrid RAG (pgvector HNSW 768-dim embeddings + PostgreSQL GIN FTS + Reciprocal Rank Fusion), multi-tier LLM intent routing & failover (Gemini → Groq, OpenRouter pools), SSE streaming, token-bucket rate limiting, Pydantic strict JSON, FastAPI, Celery, and Redis.",
       },
       {
         name: "Data Engineering & Quality Pipelines",
@@ -291,8 +328,8 @@ const CONTENT = {
         desc: "Google Looker Studio (interactive BI dashboards), Microsoft Excel (Pivot Tables & KPI reporting), SQL analytics (CTEs, aggregations), statistical testing, LightGBM, XGBoost, Scikit-learn, Optuna, TreeSHAP explainability, Matplotlib, Seaborn, Plotly, and ECharts.",
       },
       {
-        name: "Full-Stack Product & API Integration",
-        desc: "React 19 / TypeScript, SolidJS, Vue.js, Flutter (Dart), Streamlit, Golang, Java REST APIs, Docker, Figma UI/UX, and Postman QA.",
+        name: "Full-Stack Product, Testing & Interactive Systems",
+        desc: "React 19 / TypeScript, Vanilla ES Modules, SolidJS, Vue.js, Flutter (Dart), Streamlit, WebGL 2.0 / Three.js, Vitest & pytest automated suites, Lean 4 formal proofs, Golang, Java REST APIs, Docker, Figma UI/UX, and Postman QA.",
       },
       {
         name: "Languages & Working Style",
@@ -325,7 +362,7 @@ const CONTENT = {
     copy: "Salin",
     copied: "Tersalin",
     filters: [
-      { key: "all", label: "Semua (6)" },
+      { key: "all", label: "Semua (7)" },
       { key: "ai", label: "AI & RAG" },
       { key: "de", label: "Data Engineering" },
       { key: "da", label: "Data Analytics & ML" },
@@ -340,7 +377,7 @@ const CONTENT = {
       {
         id: "modellyng",
         tracks: ["ai", "de"],
-        title: "Modellyng — Platform Riset AI & RAG",
+        title: "Modellyng — Platform AI & RAG",
         subtitle: "pgvector HNSW + RRF Hybrid RAG, FastAPI, Celery & Redis",
         metric: "Web + Mobile",
         period: "2026",
@@ -369,9 +406,40 @@ const CONTENT = {
         ],
       },
       {
+        id: "meteor",
+        tracks: ["ai", "de", "da"],
+        title: "Meteor — AI Chat & Lab STEM",
+        subtitle: "Router Multi-LLM, 40 Solver AI/Math, Plot Studio & Lean 4",
+        metric: "Live · 56k LOC",
+        period: "2025 – 2026",
+        thumb: "assets/project-meteor.svg",
+        summary:
+          "Platform chat AI tanpa framework dan laboratorium STEM/ML interaktif yang dibangun mandiri (348 modul ES, 56,4 ribu LOC, 381 commit, 80 test suite Vitest / 683 kasus uji), menggabungkan streaming SSE multi-LLM tangguh, 40 solver KaTeX, studio visualisasi 4 chart, dan 6 bukti formal Lean 4.",
+        bullets: [
+          "Merancang mesin Chat AI multi-LLM dengan routing berbasis intensi 3-tier (heavy/fast/last pada 13 model OpenRouter), failover rolling 3 model per permintaan, circuit breaker kesehatan key & model (401/429 Retry-After/5xx), timeout SSE dua lapis (10 dtk TTFT → 30 dtk stream), pembersihan tag <think>, dan telemetri token.",
+          "Membangun 40 kalkulator STEM & AI berbasis KaTeX ter-prerender (Regresi Linear OLS, Regresi Logistik, Algoritma Genetika & Pareto NSGA-II, Simulated Annealing, Teorema Bayes, 12 KPI EVM) plus lab 60 FPS Gradient Descent ML, Brandes Betweenness Centrality, dan ekstraktor Web-to-Markdown AI.",
+          "Mengembangkan studio visualisasi data /plot dari nol dengan parser CSV/TSV deteksi delimiter otomatis, Word Cloud NLP (stopword & frekuensi), Bar, Line deret waktu (mendukung null), serta Pie/Donut/Polar Area multi-seri.",
+          "Menulis 6 pembuktian formal Lean 4 (BubbleSort, InsertionSort, MergeSort, Stack, Queue, CaesarCipher) serta mesin 3D Pure WebGL 2.0 Voxel (12,5 ribu LOC), Three.js + JoltPhysics WASM (5,1 ribu LOC), dan Tata Surya Kepler Float64.",
+        ],
+        tags: [
+          "Routing Multi-LLM",
+          "SSE Streaming",
+          "ES Modules (56k LOC)",
+          "Vitest (80 Suite)",
+          "Parser Visualisasi Data",
+          "WebGL 2 & Three.js",
+          "Bukti Formal Lean 4",
+          "Build Pipeline Node",
+        ],
+        links: [
+          { label: "Buka Platform Live", url: "https://meteor-chat.github.io/", primary: true },
+          { label: "Repositori GitHub", url: "https://github.com/meteor-chat/meteor-chat.github.io", primary: false },
+        ],
+      },
+      {
         id: "cdc-diabetes",
         tracks: ["ai", "de", "da"],
-        title: "Skrining Risiko Klinis Diabetes CDC",
+        title: "Skrining Risiko Diabetes CDC",
         subtitle: "Clinical AI, Data Quality Pipeline & Web App Streamlit",
         metric: "ROC-AUC 0.8287",
         period: "Nov 2026",
@@ -392,7 +460,7 @@ const CONTENT = {
       {
         id: "gdgoc-dropout",
         tracks: ["ai", "da"],
-        title: "StayLearn — Platform AI Drop-out",
+        title: "StayLearn — Aplikasi Drop-out",
         subtitle: "SHAP Counterfactual, Chatbot Llama 3 & Analitik",
         metric: "Juara 2",
         period: "Des 2025 – Jun 2026",
@@ -422,8 +490,8 @@ const CONTENT = {
       },
       {
         id: "fmcg-bi",
-        tracks: ["da", "de"],
-        title: "BI Penjualan FMCG & Kebocoran Transaksi",
+        tracks: ["da"],
+        title: "BI Penjualan & Kebocoran FMCG",
         subtitle: "Excel Pivot, SQL CTE & Looker Studio · KarirNex",
         metric: "Looker · Expert",
         period: "Jan 2026",
@@ -479,20 +547,26 @@ const CONTENT = {
       {
         id: "vehicle-sales",
         tracks: ["da"],
-        title: "Analisis Penjualan Kendaraan Global",
-        subtitle: "Pelaporan Excel Pivot & KPI · RevoU",
-        metric: "BI & Excel",
+        title: "Analitik Penjualan Kendaraan",
+        subtitle: "Excel Pivot, Musiman & Audit Shipped-Only · RevoU",
+        metric: "$10M · Excel",
         period: "Apr 2025",
         thumb: "assets/project-vehicle-sales.svg",
         summary:
-          "Analisis data bisnis terstruktur untuk memetakan penggerak penjualan otomotif global, performa segmen produk, dan visualisasi KPI untuk pengambilan keputusan.",
+          "Laporan analitik komersial 23 slide atas penjualan kendaraan global 2003–2005 ($10,03 juta pada 7 lini produk), memadukan diagnostik Excel Pivot manual, pendalaman kuartalan/pelanggan berbantuan AI, dan audit kebersihan data Shipped-Only.",
         bullets: [
-          "Menganalisis dataset penjualan lintas wilayah menggunakan Microsoft Excel Pivot Table untuk menjawab pertanyaan utama performa komersial.",
-          "Menyusun visualisasi grafik KPI yang jelas untuk mengubah data operasional menjadi laporan keputusan bisnis.",
+          "Mengidentifikasi 2004 sebagai puncak penjualan ($4.724.162,60; naik 34,3% dari 2003 sebesar $3.516.979,54; 2005 YTD $1.791.486,71) dengan pola puncak musiman konsisten di Q4/November ($1,03 juta Nov 2003; $1,09 juta Nov 2004).",
+          "Membuktikan Classic Cars mendominasi baik pendapatan negara 2004 yang dipimpin AS ($560.448,26 dari 4.870 unit; pembeli AS terbesar Mini Gifts Distributors Ltd. 700 unit) maupun volume Sep 2003 – Mar 2004 (11.083 unit vs 6.127 Vintage Cars).",
+          "Menandai secara proaktif status order bermasalah (Cancelled, Disputed, On Hold, In Process, Resolved) lalu memvalidasi ulang seluruh KPI pada filter ketat Shipped-Only (2004: $4.528.047,22; Classic Cars AS: $557.537,86; 10.979 unit).",
+          "Memetakan akun B2B teratas vs terendah (Euro Shopping Channel 1.879 unit vs Baane Mini Imports 22 unit) guna merumuskan rekomendasi retensi dan stok Q4.",
         ],
-        tags: ["Microsoft Excel", "Pivot Tables", "Data Analytics", "Visualisasi KPI", "Reporting"],
+        tags: ["Microsoft Excel", "Pivot Tables", "Audit Kebersihan Data", "Analisis Musiman", "Pelaporan KPI"],
         links: [
-          { label: "Buka Profil GitHub", url: "https://github.com/aariffaqiih", primary: true },
+          {
+            label: "Buka Deck Analisis 23 Slide (PDF)",
+            url: "assets/RevoU_Global_Vehicle_Sales_Analysis.pdf",
+            primary: true,
+          },
         ],
       },
     ],
@@ -579,7 +653,7 @@ const CONTENT = {
     skills: [
       {
         name: "AI Engineering, Hybrid RAG & Sistem LLM",
-        desc: "Python (async), Hybrid RAG end-to-end (pgvector HNSW 768-dim embeddings + PostgreSQL GIN FTS + Reciprocal Rank Fusion), failover LLM dual-provider (Gemini → Groq), token-bucket rate limiting, Pydantic strict JSON, FastAPI, Celery, Redis, dan sintesis anti prompt-injection.",
+        desc: "Python (async), Hybrid RAG end-to-end (pgvector HNSW 768-dim embeddings + PostgreSQL GIN FTS + Reciprocal Rank Fusion), routing & failover multi-LLM berbasis intensi (Gemini → Groq, pool OpenRouter), SSE streaming, token-bucket rate limiting, Pydantic strict JSON, FastAPI, Celery, dan Redis.",
       },
       {
         name: "Data Engineering & Quality Pipelines",
@@ -590,8 +664,8 @@ const CONTENT = {
         desc: "Google Looker Studio (dashboard BI interaktif), Microsoft Excel (Pivot Table & pelaporan KPI), analitik SQL (CTE, agregasi), uji statistik, LightGBM, XGBoost, Scikit-learn, Optuna, explainability TreeSHAP, Matplotlib, Seaborn, Plotly, dan ECharts.",
       },
       {
-        name: "Full-Stack Product & Integrasi API",
-        desc: "React 19 / TypeScript, SolidJS, Vue.js, Flutter (Dart), Streamlit, Golang, Java REST API, Docker, Figma UI/UX, dan pengujian Postman.",
+        name: "Full-Stack Product, Testing & Sistem Interaktif",
+        desc: "React 19 / TypeScript, Vanilla ES Modules, SolidJS, Vue.js, Flutter (Dart), Streamlit, WebGL 2.0 / Three.js, otomatisasi uji Vitest & pytest, bukti formal Lean 4, Golang, Java REST API, Docker, Figma UI/UX, dan pengujian Postman.",
       },
       {
         name: "Bahasa & Gaya Kerja",
